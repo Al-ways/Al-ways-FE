@@ -94,7 +94,7 @@ JS는 동적 타입으로 모든 변수나 객체를 타입 지정을 하지 않
 <br/>
 <br/>
 
-
+<details>
 <summary>Yarn 사용 이유</summary>
 <aside>
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1581488166/noticon/teg1ooxzhglorh6rk9hs.png" alt="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1581488166/noticon/teg1ooxzhglorh6rk9hs.png" width="40px" /> npm의 장점
@@ -193,10 +193,9 @@ Yarn은 npm보다 더 나은 오류 처리 및 보고를 제공하므로 패키�
  Yarn은 특히 패키지를 설치하고 업데이트할 때 더 많은 메모리와 CPU를 사용하여 npm보다 더 많은 리소스를 사용할 수 있습니다.
 
 </details>
+ <br/>
+  <br/>
 <details>
-
-  <br/>
-  <br/>
 <summary>RTK 사용 이유</summary>
 [Redux를 사용하지 않고 Recoil을 사용하는 이유](https://www.notion.so/Redux-Recoil-f27c08aedbe043e3b99e207418eefe4f?pvs=21)
 
