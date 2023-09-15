@@ -1,11 +1,10 @@
+import { Global } from '@emotion/react';
+import globalStyle from './share/globalStyle';
 import Router from './routes/Router';
-
 const App = () => {
-  const a = import.meta.env.VITE_PLUGIN_KEY;
-  console.log(a);
-
   return (
     <>
+      <Global styles={globalStyle} />
       <Router />
     </>
   );
