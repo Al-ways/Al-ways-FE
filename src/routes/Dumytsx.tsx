@@ -1,14 +1,37 @@
 import styled from '@emotion/styled';
-import ProgressBar from '../components/atom/ProgressBar';
+import ProgressHeaderMolecule from '../components/molecule/ProgressHeaderMolecule';
+import QuestionMolecule from '../components/molecule/QuestionMolecule';
+import { useState } from 'react';
+interface dataProps {
+  page: number;
+  question: string;
+  answer: string[];
+}
 const Dumytsx = () => {
+  const [data, setData] = useState<dataProps[]>([
+    {
+      page: 1,
+      question: '당신은?',
+      answer: ['남자', '여자'],
+    },
+  ]);
   return (
     <DumyContainer>
-      <AtomBox>
-        <ProgressBar page={1} />
-      </AtomBox>
+      {data.map((item) => {
+        return (
+          <div key={item.page}>
+            <AtomBox>
+              <ProgressHeaderMolecule page={item?.page} />
+            </AtomBox>
+
+            <QuestionMolecule answer={item?.answer} />
+          </div>
+        );
+      })}
     </DumyContainer>
   );
 };
+
 const DumyContainer = styled.div`
   width: 414px;
   height: 896px;
@@ -16,7 +39,7 @@ const DumyContainer = styled.div`
   background-color: #000000;
 `;
 const AtomBox = styled.div`
-  margin: 0 auto;
   padding-top: 100px;
 `;
+
 export default Dumytsx;

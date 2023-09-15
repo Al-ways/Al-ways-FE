@@ -24,6 +24,6 @@ const ProgressBarItem = styled.div<{ wid: number }>`
   width: ${(props) => props.wid + '%'};
   height: 10px;
   border-radius: 10px;
-  transition: 0.5s;
+  transition: width 0.5s ease-in-out;
 `;
 export default ProgressBar;
