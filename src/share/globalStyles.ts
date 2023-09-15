@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
-import backgroundImage from '../assets/layout/background.png';
+import background from '../assets/layout/background.png';
+import backgroundNone from '../assets/layout/backgroundNone.png';
 
 const GlobalStyles = css`
   @font-face {
@@ -120,10 +121,14 @@ const GlobalStyles = css`
   }
   body {
     line-height: 1;
-    background-image: url(${backgroundImage});
+    background-image: url(${background});
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+
+    @media (max-width: 1550px) {
+      background-image: url(${backgroundNone});
+    }
   }
   ol,
   ul {
