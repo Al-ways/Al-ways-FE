@@ -30,7 +30,7 @@ const Layout = styled.div`
   height: 869px;
   background-color: black;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   color: white;
 `;
