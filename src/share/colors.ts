@@ -1,21 +1,18 @@
 const COLORS = {
   black: '#000000',
   white: '#fffff',
-  main: '#FFBAAB', // profile div, button 등 가장 자주 쓰이는 color.
-  background: 'FFCAB1', // 배경 등의 color. main color와 조금 차이 있음.
+  main: '#2B324B', // profile box, button 등 가장 자주 쓰이는 color.
+  background: '#FFCAB1', // background color.
 
-  dark_gray: '#3D3D3D;', // 기본 div 배경 색.
-  gray: '#D9D9D9;', // 회색을 써야하는데 배경 색과 차이를 두어야 할 때.
+  dark_gray: '#3D3D3D;', // 기본 box 배경 색. 어두운 회색
+  gray: '#D9D9D9;', // 회색을 써야하는데 배경 색과 차이를 두어야 할 때. 좀 더 가벼운 회색
 
   // 생성되는 card들에 뿌려줄 배경 색.
-  sky: '7C96AB',
-  navy: '273348',
-  light_orange: 'EDC6B1',
-  apricot: 'FF9881',
-  olive_green: 'BFCCB5',
-  pink: 'EF8790',
-  light_pink: 'F49DA9',
-  powder_pink: 'FFC9C9',
-  mustard: 'CAC888',
-  red_bean: '834E67',
+  mint: '#7FB7BB',
+  sky: '#868ED7',
+  violet: '#8E6EEA',
+  green: '#1F4F51',
+  red: '#C35E5F',
+  pink: '#F49DA9',
+  orange: '#FFBAAB',
 };

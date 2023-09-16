@@ -26,8 +26,8 @@ const BackgroundWrapper = styled.div`
 `;
 
 const Layout = styled.div`
-  width: 414px;
-  height: 869px;
+  width: 480px;
+  height: 909px;
   background-color: black;
   display: flex;
   /* justify-content: center; */
