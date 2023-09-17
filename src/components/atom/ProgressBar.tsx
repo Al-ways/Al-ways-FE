@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import React from 'react';
 
 interface ProgressBarProps {
   page: number;
@@ -14,16 +15,16 @@ const ProgressBar = ({ page }: ProgressBarProps) => {
   );
 };
 const ProgressBarContainer = styled.div`
-  width: 300px;
-  height: 10px;
+  width: 400px;
+  height: 15px;
   background-color: #3d3d3d;
   border-radius: 10px;
 `;
 const ProgressBarItem = styled.div<{ wid: number }>`
   background-color: #ffffff;
   width: ${(props) => props.wid + '%'};
-  height: 10px;
+  height: 15px;
   border-radius: 10px;
   transition: width 0.5s ease-in-out;
 `;
-export default ProgressBar;
+export default React.memo(ProgressBar);

@@ -3,7 +3,6 @@ import ProgressHeaderMolecule from '../components/molecule/ProgressHeaderMolecul
 import AnswerMolecule from '../components/molecule/AnswerMolecule';
 import { useState } from 'react';
 import QuestionMolecule from '../components/molecule/QuestionMolecule';
-import Text from '../components/atom/Text';
 interface dataProps {
   page: number;
   question: string;
@@ -25,16 +24,7 @@ const Dumytsx = () => {
             <AtomBox>
               <ProgressHeaderMolecule page={item?.page} />
             </AtomBox>
-            <Text
-              width={'300px'}
-              height={'175px'}
-              align={'center'}
-              vertical={'175px'}
-              color={'#ffffff'}
-              fonts={'60px'}
-              txt={'Q1.'}
-            />
-            <QuestionMolecule />
+            <QuestionMolecule page={item?.page} question={item.question} />
             <AnswerMolecule answer={item?.answer} />
           </div>
         );
@@ -44,8 +34,8 @@ const Dumytsx = () => {
 };
 
 const DumyContainer = styled.div`
-  width: 414px;
-  height: 896px;
+  width: 480px;
+  height: 909px;
   margin: 0 auto;
   background-color: #000000;
 `;

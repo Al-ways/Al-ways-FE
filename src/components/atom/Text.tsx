@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
 interface TextProps {
-  width: string;
-  height: string;
-  color: string;
-  align: string;
-  vertical: string;
-  txt: string;
-  fonts: string;
+  width?: string;
+  height?: string;
+  color?: string;
+  align?: string;
+  vertical?: string;
+  txt: string | number;
+  fonts?: string;
+  fontw?: string;
+  mb?: string;
 }
 
 const Text = ({
@@ -17,6 +19,8 @@ const Text = ({
   color,
   txt,
   fonts,
+  fontw,
+  mb,
 }: TextProps) => {
   return (
     <TextContainer
@@ -26,24 +30,30 @@ const Text = ({
       vertical={vertical}
       color={color}
       fonts={fonts}
+      fontw={fontw}
+      mb={mb}
     >
       {txt}
     </TextContainer>
   );
 };
 const TextContainer = styled.div<{
-  width: string;
-  height: string;
-  color: string;
-  align: string;
-  vertical: string;
-  fonts: string;
+  width?: string;
+  height?: string;
+  color?: string;
+  align?: string;
+  vertical?: string;
+  fonts?: string;
+  fontw?: string;
+  mb?: string;
 }>`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
-  text-align: ${(props) => props.align};
-  color: ${(props) => props.color};
-  font-size: ${(props) => props.fonts};
-  line-height: ${(props) => props.height};
+  width: ${(props) => props.width + 'px' || 'auto'};
+  height: ${(props) => props.height + 'px' || 'auto'};
+  text-align: ${(props) => props.align || 'start'};
+  color: ${(props) => props.color || '#ffffff'};
+  font-size: ${(props) => props.fonts + 'px' || '16px'};
+  line-height: ${(props) => props.height + 'px' || 'auto'};
+  font-weight: ${(props) => props.fontw || 'normal'};
+  margin-bottom: ${(props) => props.mb + 'px' || '0px'};
 `;
 export default Text;

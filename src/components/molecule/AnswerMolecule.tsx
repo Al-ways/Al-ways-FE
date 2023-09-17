@@ -13,7 +13,7 @@ const AnswerMolecule = ({ answer }: QuestionMoeculeProps) => {
 };
 
 const QuestionMoleculeContainer = styled.div`
-  width: 300px;
+  width: 400px;
   margin: 0 auto;
 `;
 export default AnswerMolecule;

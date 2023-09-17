@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import ProgressBar from '../atom/ProgressBar';
-import ProgressText from '../atom/ProgressText';
+import Text from '../atom/Text';
 
 interface ProgressHeaderMoleculeProps {
   page: number;
@@ -8,7 +8,14 @@ interface ProgressHeaderMoleculeProps {
 const ProgressHeaderMolecule = ({ page }: ProgressHeaderMoleculeProps) => {
   return (
     <ProgressHeaderContainer>
-      <ProgressText page={page} />
+      <Text
+        width={'395'}
+        height={'10'}
+        align={'end'}
+        fonts={'10'}
+        mb={'5'}
+        txt={`${page}/7`}
+      />
       <ProgressBar page={page} />
     </ProgressHeaderContainer>
   );
@@ -16,7 +23,7 @@ const ProgressHeaderMolecule = ({ page }: ProgressHeaderMoleculeProps) => {
 
 const ProgressHeaderContainer = styled.div`
   margin: 70px auto 30px auto;
-  width: 300px;
-  height: 20px;
+  width: 400px;
+  height: 15px;
 `;
 export default ProgressHeaderMolecule;
