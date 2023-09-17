@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 import ProgressHeaderMolecule from '../components/molecule/ProgressHeaderMolecule';
-import QuestionMolecule from '../components/molecule/QuestionMolecule';
+import AnswerMolecule from '../components/molecule/AnswerMolecule';
 import { useState } from 'react';
+import QuestionMolecule from '../components/molecule/QuestionMolecule';
+import Text from '../components/atom/Text';
 interface dataProps {
   page: number;
   question: string;
@@ -23,8 +25,17 @@ const Dumytsx = () => {
             <AtomBox>
               <ProgressHeaderMolecule page={item?.page} />
             </AtomBox>
-
-            <QuestionMolecule answer={item?.answer} />
+            <Text
+              width={'300px'}
+              height={'175px'}
+              align={'center'}
+              vertical={'175px'}
+              color={'#ffffff'}
+              fonts={'60px'}
+              txt={'Q1.'}
+            />
+            <QuestionMolecule />
+            <AnswerMolecule answer={item?.answer} />
           </div>
         );
       })}
