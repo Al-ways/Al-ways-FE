@@ -22,7 +22,7 @@ const ProgressHeaderMolecule = ({ page }: ProgressHeaderMoleculeProps) => {
 };
 
 const ProgressHeaderContainer = styled.div`
-  margin: 70px auto 30px auto;
+  margin: 0 auto 30px auto;
   width: 400px;
   height: 15px;
 `;
