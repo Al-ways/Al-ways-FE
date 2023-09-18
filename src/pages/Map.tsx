@@ -1,7 +1,9 @@
+import styled from '@emotion/styled';
+import PrevIconButton from '../components/atom/PrevIconButton';
 const Map = () => {
   return (
     <>
-      <h1>this is Map page</h1>
+      <PrevIconButton />
     </>
   );
 };
