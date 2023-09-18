@@ -1,16 +1,18 @@
 import { css } from '@emotion/react';
+import background from '../assets/layout/background.png';
+import backgroundNone from '../assets/layout/backgroundNone.png';
 
-const GlobalStyle = css`
+const GlobalStyles = css`
   @font-face {
     font-family: 'Pretendard-Regular';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
       format('woff');
-    font-weight: 400;
+    font-weight: 100;
     font-style: normal;
   }
   * {
     font-family: 'Pretendard-Regular', sans-serif;
-    line-height: 1.2; // 세로 간격 조절
+    /* line-height: 1.2; // 세로 간격 조절 */
   }
   /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -119,6 +121,14 @@ const GlobalStyle = css`
   }
   body {
     line-height: 1;
+    background-image: url(${background});
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    @media (max-width: 1550px) {
+      background-image: url(${backgroundNone});
+    }
   }
   ol,
   ul {
@@ -141,4 +151,4 @@ const GlobalStyle = css`
   }
 `;
 
-export default GlobalStyle;
+export default GlobalStyles;
