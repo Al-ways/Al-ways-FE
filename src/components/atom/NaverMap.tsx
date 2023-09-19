@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 
 declare global {
   interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     naver: any;
   }
 }
@@ -41,14 +42,14 @@ const NaverMap = () => {
 
   return (
     <Container>
-      <KakaoMapView ref={mapRef} />
+      <NaverMapView ref={mapRef} />
     </Container>
   );
 };
 const Container = styled.div`
   margin: 30px auto;
 `;
-const KakaoMapView = styled.div`
+const NaverMapView = styled.div`
   width: 440px;
   height: 440px;
   border-radius: 10px;
