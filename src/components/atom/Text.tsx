@@ -9,6 +9,7 @@ interface TextProps {
   fonts?: string;
   fontw?: string;
   mb?: string;
+  br?: string;
 }
 
 const Text = ({
@@ -21,6 +22,7 @@ const Text = ({
   fonts,
   fontw,
   mb,
+  br,
 }: TextProps) => {
   return (
     <TextContainer
@@ -32,6 +34,7 @@ const Text = ({
       fonts={fonts}
       fontw={fontw}
       mb={mb}
+      br={br}
     >
       {txt}
     </TextContainer>
@@ -46,6 +49,7 @@ const TextContainer = styled.div<{
   fonts?: string;
   fontw?: string;
   mb?: string;
+  br?: string;
 }>`
   width: ${(props) => props.width + 'px' || 'auto'};
   height: ${(props) => props.height + 'px' || 'auto'};
@@ -55,5 +59,6 @@ const TextContainer = styled.div<{
   line-height: ${(props) => props.height + 'px' || 'auto'};
   font-weight: ${(props) => props.fontw || 'normal'};
   margin-bottom: ${(props) => props.mb + 'px' || '0px'};
+  border-radius: ${(props) => props.br + 'px' || '0px'};
 `;
 export default Text;
