@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import loginImage from '../assets/icons/loign.png';
+import loginImage from '../../assets/icons/login.png';
 
 interface LoginImageProps {
   setModalState: (modalState: boolean) => void;
