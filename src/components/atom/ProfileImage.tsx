@@ -7,7 +7,7 @@ interface ProfileImageProps {
 }
 
 const ProfileImage = ({ imgUrl }: ProfileImageProps) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return <Profile imgUrl={imgUrl} isLoggedIn={isLoggedIn}></Profile>;
 };
