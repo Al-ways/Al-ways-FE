@@ -23,6 +23,7 @@ interface TextProps {
   cursor?: string;
   ai?: string;
   jc?: string;
+  bc?: string;
 }
 
 const Text = ({
@@ -46,6 +47,7 @@ const Text = ({
   cursor,
   ai,
   jc,
+  bc,
 }: TextProps) => {
   return (
     <TextContainer
@@ -68,6 +70,7 @@ const Text = ({
       cursor={cursor}
       ai={ai}
       jc={jc}
+      bc={bc}
     >
       {txt}
     </TextContainer>
@@ -95,5 +98,6 @@ const TextContainer = styled.div<TextProps>`
   cursor: ${(props) => props.cursor || 'auto'};
   align-items: ${(props) => props.ai || 'auto'};
   justify-content: ${(props) => props.jc || 'auto'};
+  background-color: ${(props) => props.bc || 'none'};
 `;
 export default Text;

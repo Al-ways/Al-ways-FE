@@ -16,6 +16,7 @@ const ThumbnailMolecule = () => {
           display={'flex'}
           ai={'center'}
           jc={'center'}
+          bc={COLORS.dark_gray}
           txt={'맛집추천'}
         />
       </ThumbnailTop>
@@ -28,7 +29,7 @@ const ThumbnailMolecule = () => {
             fonts={'20'}
             mt={'20'}
             align={'center'}
-            txt={'강남 가볼만 한 곳~'}
+            txt={'강남 가볼만 한 곳 ~'}
           />
           <Text
             width={'150'}
@@ -39,6 +40,7 @@ const ThumbnailMolecule = () => {
             bottom={'0'}
             position={'absolute'}
             align={'right'}
+            txt={'좋아요 10 | 조회수 100'}
           />
         </TextWrapper>
       </ThumbnailBottom>
