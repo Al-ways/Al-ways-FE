@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import background from '../assets/layout/background.png';
-import backgroundNone from '../assets/layout/backgroundNone.png';
+import backgroundNone from '../assets/layout/background-none.png';
 
 const GlobalStyles = css`
   @font-face {
@@ -126,8 +126,14 @@ const GlobalStyles = css`
     background-attachment: fixed;
     background-size: cover;
 
+    /* 가로 1550px 이하 시 캐릭터 사라지게 설정 */
     @media (max-width: 1550px) {
       background-image: url(${backgroundNone});
+    }
+
+    /* 스크롤 바 안보이게 설정 */
+    ::-webkit-scrollbar {
+      display: none;
     }
   }
   ol,
