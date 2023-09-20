@@ -38,15 +38,3 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-// const Box = styled.div`
-//   width: 130px;
-//   height: 130px;
-//   font-size: 20px;
-//   border-radius: 10px;
-
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   cursor: pointer;
-//   background-color: ${COLORS.dark_gray};
-// `;

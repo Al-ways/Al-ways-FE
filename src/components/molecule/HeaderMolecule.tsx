@@ -14,7 +14,6 @@ const HeaderMolecule = () => {
     <Header>
       <MenuIconButton state={menuState} setState={setMenuState} />
       <LogoIcon />
-
       {isLogin ? (
         <ProfileImage imgUrl={'1'} />
       ) : (
