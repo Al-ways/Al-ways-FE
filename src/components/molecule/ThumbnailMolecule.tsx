@@ -13,7 +13,7 @@ const ThumbnailMolecule = () => {
   const BarImages = [barImage1, barImage2, barImage3, barImage4, barImage5];
 
   return (
-    <>
+    <LargeThumbnailWrapper>
       {/* <ThumbNailContainer>
         <Img
           src={barImage1}
@@ -64,11 +64,33 @@ const ThumbnailMolecule = () => {
           />
         </ThumbNailContainer>
       ))}
-    </>
+    </LargeThumbnailWrapper>
   );
 };
 
 export default ThumbnailMolecule;
+
+const LargeThumbnailWrapper = styled.div`
+  width: 440px;
+  height: 335px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow-x: scroll;
+
+  /* 스크롤 바 */
+  &::-webkit-scrollbar {
+    width: 440px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: ${COLORS.dark_gray};
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${COLORS.white};
+    border-radius: 10px;
+  }
+`;
 
 const ThumbNailContainer = styled.div`
   width: 250px;

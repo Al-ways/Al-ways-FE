@@ -18,6 +18,7 @@ import SearchOrganism from '../components/organism/SearchOrganism';
 import RecommendedOrganism from '../components/organism/RecommendedOrganism';
 import PopularHeaderMolecule from '../components/molecule/PopularHeaderMolecule';
 import ThumbnailMolecule from '../components/molecule/ThumbnailMolecule';
+import PopularOrganism from '../components/organism/PopuarOrganism';
 
 interface BannerProps {
   image: string;
@@ -62,12 +63,7 @@ const Main = () => {
       <Slider />
       <SearchOrganism />
       <RecommendedOrganism />
-      <PopularContainer>
-        <PopularHeaderMolecule />
-        <LargeThumbnailWrapper>
-          <ThumbnailMolecule />
-        </LargeThumbnailWrapper>
-      </PopularContainer>
+      <PopularOrganism />
       <CommunityContainer>
         <Title>커뮤니티</Title>
         <ViewAll>전체 보기</ViewAll>
