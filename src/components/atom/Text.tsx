@@ -11,6 +11,7 @@ interface TextProps {
   fontw?: string;
   mb?: string;
   mt?: string;
+  mr?: string;
   bottom?: string;
   position?: string;
   br?: string;
@@ -27,6 +28,7 @@ const Text = ({
   fontw,
   mb,
   mt,
+  mr,
   bottom,
   position,
   br,
@@ -42,6 +44,7 @@ const Text = ({
       fontw={fontw}
       mb={mb}
       mt={mt}
+      mr={mr}
       bottom={bottom}
       position={position}
       br={br}
@@ -60,6 +63,7 @@ const TextContainer = styled.div<TextProps>`
   font-weight: ${(props) => props.fontw || 'normal'};
   margin-bottom: ${(props) => props.mb + 'px' || '0px'};
   margin-top: ${(props) => props.mt + 'px' || '0px'};
+  margin-right: ${(props) => props.mr + 'px' || '0px'};
   bottom: ${(props) => props.bottom + 'px' || '0px'};
   position: ${(props) => props.position || 'auto'};
   border-radius: ${(props) => props.br + 'px' || '0px'};
