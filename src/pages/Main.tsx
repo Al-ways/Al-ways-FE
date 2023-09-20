@@ -17,6 +17,7 @@ import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import SearchOrganism from '../components/organism/SearchOrganism';
 import RecommendedOrganism from '../components/organism/RecommendedOrganism';
 import PopularHeaderMolecule from '../components/molecule/PopularHeaderMolecule';
+import ThumbnailMolecule from '../components/molecule/ThumbnailMolecule';
 
 interface BannerProps {
   image: string;
@@ -64,15 +65,7 @@ const Main = () => {
       <PopularContainer>
         <PopularHeaderMolecule />
         <LargeThumbnailWrapper>
-          {BarImages.map((image, index) => (
-            <LargeThumbnailDiv key={index}>
-              <LargeThumbnailImage image={image} />
-              <LargeThumbnailTitle>비어테라스</LargeThumbnailTitle>
-              <LargeThumbnailText>
-                서울특별시 강남구 테헤란로8길 20 1 층
-              </LargeThumbnailText>
-            </LargeThumbnailDiv>
-          ))}
+          <ThumbnailMolecule />
         </LargeThumbnailWrapper>
       </PopularContainer>
       <CommunityContainer>
