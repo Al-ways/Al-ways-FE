@@ -8,7 +8,7 @@ import barImage5 from '../../assets/main/bar5.jpg';
 import Img from '../atom/Img';
 import Text from '../atom/Text';
 
-const ThumbnailMolecule = () => {
+const LargeThumbnailMolecule = () => {
   /* 바 이미지 */
   const BarImages = [barImage1, barImage2, barImage3, barImage4, barImage5];
 
@@ -68,7 +68,7 @@ const ThumbnailMolecule = () => {
   );
 };
 
-export default ThumbnailMolecule;
+export default LargeThumbnailMolecule;
 
 const LargeThumbnailWrapper = styled.div`
   width: 440px;

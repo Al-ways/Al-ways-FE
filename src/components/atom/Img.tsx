@@ -29,9 +29,9 @@ const ImgContainer = styled.img<{
   width: ${(props) => props.width + 'px' || 'auto'};
   height: ${(props) => props.height + 'px' || 'auto'};
   border-radius: ${(props) => props.br + 'px' || '0px'};
-  /* background-size: cover; */
+  background-size: cover;
   /* 원준 추가 */
   margin-top: ${(props) => props.mt + 'px' || '0px'};
-  /* background-position: center; */
+  background-position: center;
 `;
 export default Img;

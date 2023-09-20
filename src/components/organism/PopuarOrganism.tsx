@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import PopularHeaderMolecule from '../molecule/PopularHeaderMolecule';
-import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
+import LargeThumbnailMolecule from '../molecule/LargeThumbnailMolecule';
 
 const PopularOrganism = () => {
   return (
     <Container>
       <PopularHeaderMolecule />
-      <ThumbnailMolecule />
+      <LargeThumbnailMolecule />
     </Container>
   );
 };

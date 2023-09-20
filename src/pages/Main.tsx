@@ -1,24 +1,15 @@
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { COLORS } from '../share/colors';
-import locationImage from '../assets/icons/location.png';
 import bannerImage1 from '../assets/main/banner1.png';
 import bannerImage2 from '../assets/main/banner2.png';
 import bannerImage3 from '../assets/main/banner3.png';
-import rainyImage from '../assets/main/rainy.png';
-// import barImage1 from '../assets/main/bar1.png';
-import barImage1 from '../assets/main/bar1.jpg';
-import barImage2 from '../assets/main/bar2.jpg';
-import barImage3 from '../assets/main/bar3.png';
-import barImage4 from '../assets/main/bar4.jpg';
-import barImage5 from '../assets/main/bar5.jpg';
 import defaultImage from '../assets/icons/default-image.png';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import SearchOrganism from '../components/organism/SearchOrganism';
 import RecommendedOrganism from '../components/organism/RecommendedOrganism';
-import PopularHeaderMolecule from '../components/molecule/PopularHeaderMolecule';
-import ThumbnailMolecule from '../components/molecule/ThumbnailMolecule';
 import PopularOrganism from '../components/organism/PopuarOrganism';
+import alcholImage from '../assets/main/alchol.png';
 
 interface BannerProps {
   image: string;
@@ -51,9 +42,6 @@ const Main = () => {
     return <Banner image={BannerImages[ImageIndex]} />;
   };
 
-  /* 바 이미지 */
-  const BarImages = [barImage1, barImage2, barImage3, barImage4, barImage5];
-
   /* 커뮤니티 이미지 */
   // const CommunityImages = [communityImage, communityImage2, communityImage3];
 
@@ -75,20 +63,13 @@ const Main = () => {
         <CommunityDiv>
           <CommunityTop>
             <CommunityCategory>맛집추천</CommunityCategory>
-            <CommunityView>좋아요 10 | 조회수 100</CommunityView>
           </CommunityTop>
           <CommunityBottom>
-            <CommunityUserInfo>
-              <UserPhoto />
-              <UserInfo>
-                <UserNickname>익명</UserNickname>
-                <UpdatedAt>23. 09. 20</UpdatedAt>
-              </UserInfo>
-            </CommunityUserInfo>
-            <CommunityUserPost>
-              {/* post 제목 12자 이상 시 축약 ? 12자 이하로만 ? */}
-              <Post>강남 맛집 추천 ~</Post>
-            </CommunityUserPost>
+            <Image />
+            <Wrapper>
+              <Post>강남 가볼만 한 곳 ~</Post>
+              <CommunityView>좋아요 10 | 조회수 100</CommunityView>
+            </Wrapper>
           </CommunityBottom>
         </CommunityDiv>
       </CommunityContainer>
@@ -116,155 +97,6 @@ const Title = styled.div`
   margin-bottom: 20px;
 
   display: flex;
-`;
-
-/* 날씨별 추천 배너 */
-const RecommendedContainer = styled.div`
-  width: 480px;
-  height: 150px;
-  margin-bottom: 30px;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`;
-const ThumbnailDiv = styled.div`
-  width: 440px;
-  height: 150px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  background-color: ${COLORS.dark_gray};
-
-  &:only-child {
-    margin-bottom: 0;
-  }
-`;
-const ThumbnailTitle = styled.div`
-  width: 400px;
-  height: 50px;
-  font-size: 45px;
-  margin-top: 20px;
-`;
-const ThumbnailText = styled.div`
-  width: 400px;
-  height: 16px;
-  font-size: 16px;
-  bottom: 20px;
-
-  position: absolute;
-`;
-const ThumbnailImage = styled.div`
-  width: 100px;
-  height: 100px;
-  top: 25px;
-  right: 20px;
-
-  position: absolute;
-  background-image: url(${rainyImage});
-  background-size: cover;
-
-  animation: fadeIn 2s;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-`;
-
-/* 인기 술집 */
-const PopularContainer = styled.div`
-  width: 480px;
-  height: 380px;
-  margin-bottom: 30px;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`;
-const TitleText = styled.div`
-  margin-right: 20px;
-`;
-const Contents = styled.div`
-  display: flex;
-`;
-const ContentsText = styled.div``;
-const LocationIcon = styled.div`
-  width: 24px;
-  height: 24px;
-  margin-right: 5px;
-
-  background-image: url(${locationImage});
-`;
-
-const LargeThumbnailWrapper = styled.div`
-  width: 440px;
-  height: 335px;
-
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  overflow-x: scroll;
-
-  /* 스크롤 바 */
-  &::-webkit-scrollbar {
-    width: 440px;
-    height: 15px;
-    border-radius: 10px;
-    background-color: ${COLORS.dark_gray};
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: ${COLORS.white};
-    border-radius: 10px;
-  }
-`;
-const LargeThumbnailDiv = styled.div`
-  width: 250px;
-  height: 300px;
-  margin-right: 20px;
-  border-radius: 10px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  cursor: pointer;
-  background-color: ${COLORS.dark_gray};
-
-  &:last-child {
-    margin-right: 0;
-  }
-`;
-const LargeThumbnailImage = styled.div<LargeThumbnailProps>`
-  width: 210px;
-  height: 180px;
-  margin-top: 20px;
-  border-radius: 10px;
-
-  background-image: url(${(props) => props.image});
-  background-size: cover;
-  background-position: center;
-`;
-const LargeThumbnailTitle = styled.div`
-  width: 210px;
-  height: 24px;
-  font-size: 24px;
-  margin-top: 20px;
-`;
-const LargeThumbnailText = styled.div`
-  width: 210px;
-  height: 16px;
-  font-size: 16px;
-  margin-top: 5px;
 `;
 
 /* 커뮤니티 */
@@ -305,25 +137,22 @@ const CommunityDiv = styled.div`
 `;
 const CommunityTop = styled.div`
   width: 400px;
-  height: 16px;
+  height: 20px;
   margin-top: 20px;
-
-  display: flex;
-  justify-content: space-between;
 `;
 const CommunityCategory = styled.div`
-  width: 150px;
-  height: 16px;
+  width: 100px;
+  height: 20px;
   font-size: 16px;
-`;
-const CommunityView = styled.div`
-  width: 250px;
-  height: 12px;
-  font-size: 12px;
-  margin-top: 4px;
+  border-radius: 10px;
 
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: ${COLORS.dark_gray};
 `;
+
 const CommunityBottom = styled.div`
   width: 400px;
   height: 80px;
@@ -331,11 +160,12 @@ const CommunityBottom = styled.div`
 
   position: absolute;
   display: flex;
+  /* align-items: center; */
 `;
 
 const CommunityUserInfo = styled.div`
   width: 150px;
-  height: 80px;
+  height: 50px;
 
   display: flex;
   align-items: center;
@@ -367,6 +197,7 @@ const CommunityUserPost = styled.div`
   width: 250px;
   height: 80px;
 
+  position: relative;
   display: flex;
   align-items: center;
 `;
@@ -374,6 +205,7 @@ const Post = styled.div`
   width: 250px;
   height: 20px;
   font-size: 20px;
+  margin-top: 20px;
 
   text-align: center;
 `;
@@ -387,4 +219,44 @@ const ViewAll = styled.div`
   position: absolute;
   cursor: pointer;
   color: ${COLORS.gray};
+`;
+
+const Image = styled.div`
+  width: 100px;
+  height: 80px;
+
+  background-image: url(${alcholImage});
+`;
+
+const Wrapper = styled.div`
+  width: 300px;
+  height: 80px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+`;
+
+const CommunityView = styled.div`
+  width: 150px;
+  height: 12px;
+  font-size: 12px;
+  margin-top: 4px;
+  right: 0;
+  bottom: 0;
+
+  position: absolute;
+  text-align: right;
+`;
+
+const CommunityProfile = styled.div`
+  width: 150px;
+  height: 14px;
+  font-size: 14px;
+  margin-top: 4px;
+  left: 0;
+  bottom: 0;
+
+  position: absolute;
+  text-align: left;
 `;

@@ -10,11 +10,19 @@ interface TextProps {
   fonts?: string;
   fontw?: string;
   mb?: string;
+  br?: string;
+
+  /* 원준 추가*/
   mt?: string;
   mr?: string;
   bottom?: string;
   position?: string;
-  br?: string;
+  display?: string;
+  top?: string;
+  right?: string;
+  cursor?: string;
+  ai?: string;
+  jc?: string;
 }
 
 const Text = ({
@@ -27,11 +35,17 @@ const Text = ({
   fonts,
   fontw,
   mb,
+  br,
   mt,
   mr,
   bottom,
   position,
-  br,
+  display,
+  top,
+  right,
+  cursor,
+  ai,
+  jc,
 }: TextProps) => {
   return (
     <TextContainer
@@ -48,6 +62,12 @@ const Text = ({
       bottom={bottom}
       position={position}
       br={br}
+      display={display}
+      top={top}
+      right={right}
+      cursor={cursor}
+      ai={ai}
+      jc={jc}
     >
       {txt}
     </TextContainer>
@@ -62,10 +82,18 @@ const TextContainer = styled.div<TextProps>`
   line-height: ${(props) => props.height + 'px' || 'auto'};
   font-weight: ${(props) => props.fontw || 'normal'};
   margin-bottom: ${(props) => props.mb + 'px' || '0px'};
+  border-radius: ${(props) => props.br + 'px' || '0px'};
+
+  /* 원준 추가*/
   margin-top: ${(props) => props.mt + 'px' || '0px'};
   margin-right: ${(props) => props.mr + 'px' || '0px'};
   bottom: ${(props) => props.bottom + 'px' || '0px'};
   position: ${(props) => props.position || 'auto'};
-  border-radius: ${(props) => props.br + 'px' || '0px'};
+  display: ${(props) => props.display || 'auto'};
+  top: ${(props) => props.top + 'px' || '0px'};
+  right: ${(props) => props.right + 'px' || '0px'};
+  cursor: ${(props) => props.cursor || 'auto'};
+  align-items: ${(props) => props.ai || 'auto'};
+  justify-content: ${(props) => props.jc || 'auto'};
 `;
 export default Text;
