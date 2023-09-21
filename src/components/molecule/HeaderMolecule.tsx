@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
-
 import LogoIcon from '../atom/LogoIcon';
 import MenuIconButton from '../atom/MenuIconButton';
 import ProfileImage from '../atom/ProfileImage';
@@ -25,7 +24,6 @@ const HeaderMolecule = () => {
 
 export default HeaderMolecule;
 
-/* 헤더 */
 const Header = styled.div`
   width: 480px;
   height: 80px;

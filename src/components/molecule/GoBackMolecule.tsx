@@ -14,4 +14,5 @@ export default GoBackMolecule;
 const GoBackContainer = styled.div`
   width: 480px;
   height: 50px;
+  margin-bottom: 30px;
 `;
