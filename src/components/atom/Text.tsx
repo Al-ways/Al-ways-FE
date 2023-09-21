@@ -15,6 +15,7 @@ interface TextProps {
   /* 원준 추가*/
   mt?: string;
   mr?: string;
+  ml?: string;
   bottom?: string;
   position?: string;
   display?: string;
@@ -39,6 +40,7 @@ const Text = ({
   br,
   mt,
   mr,
+  ml,
   bottom,
   position,
   display,
@@ -61,6 +63,7 @@ const Text = ({
       mb={mb}
       mt={mt}
       mr={mr}
+      ml={ml}
       bottom={bottom}
       position={position}
       br={br}
@@ -90,6 +93,7 @@ const TextContainer = styled.div<TextProps>`
   /* 원준 추가*/
   margin-top: ${(props) => props.mt + 'px' || '0px'};
   margin-right: ${(props) => props.mr + 'px' || '0px'};
+  margin-left: ${(props) => props.ml + 'px' || '0px'};
   bottom: ${(props) => props.bottom + 'px' || '0px'};
   position: ${(props) => props.position || 'auto'};
   display: ${(props) => props.display || 'auto'};

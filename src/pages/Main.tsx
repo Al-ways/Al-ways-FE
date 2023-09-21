@@ -6,7 +6,7 @@ import bannerImage3 from '../assets/main/banner3.png';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import SearchOrganism from '../components/organism/SearchOrganism';
 import RecommendedOrganism from '../components/organism/RecommendedOrganism';
-import PopularOrganism from '../components/organism/PopuarOrganism';
+import PopularLocationOrganism from '../components/organism/PopularLocationOrganism';
 import CommunityOrganism from '../components/organism/CommunityOrganism';
 
 interface BannerProps {
@@ -42,7 +42,7 @@ const Main = () => {
       <Slider />
       <SearchOrganism />
       <RecommendedOrganism />
-      <PopularOrganism />
+      <PopularLocationOrganism />
       <CommunityOrganism />
     </>
   );

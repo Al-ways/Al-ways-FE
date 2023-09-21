@@ -2,21 +2,21 @@ import styled from '@emotion/styled';
 import Text from '../atom/Text';
 import LocationIcon from '../atom/LocationIcon';
 
-const PopularHeaderMolecule = () => {
+const PopularLocationHeaderMolecule = () => {
   return (
-    <PopularHeader>
+    <PopularLocationHeader>
       <Text mr={'20'} txt={'이번 주 인기 술집'} />
       <IconTitle>
         <LocationIcon />
         <Text txt={'강남구'} />
       </IconTitle>
-    </PopularHeader>
+    </PopularLocationHeader>
   );
 };
 
-export default PopularHeaderMolecule;
+export default PopularLocationHeaderMolecule;
 
-const PopularHeader = styled.div`
+const PopularLocationHeader = styled.div`
   width: 440px;
   height: 24px;
   font-size: 24px;
