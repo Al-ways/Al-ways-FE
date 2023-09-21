@@ -20,7 +20,7 @@ export default App;
 
 const Background = styled.div`
   /* height: 100vh; */
-  margin-right: 300px;
+  /* margin-right: 300px; */
 
   display: flex;
   align-items: center;
@@ -29,7 +29,9 @@ const Background = styled.div`
 
 const Layout = styled.div`
   width: 480px;
+  /* min-width: 480px; */
   min-height: 909px;
+  margin: 10px 300px;
 
   display: flex;
   flex-direction: column;

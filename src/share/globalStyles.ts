@@ -12,7 +12,6 @@ const GlobalStyles = css`
   }
   * {
     font-family: 'Pretendard-Regular', sans-serif;
-    /* line-height: 1.2; // 세로 간격 조절 */
   }
   /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
