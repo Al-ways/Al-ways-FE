@@ -18,6 +18,7 @@ const Container = styled.select`
   border-radius: 10px;
   color: #ffffff;
   font-size: 20px;
+  margin-left: 20px;
 `;
 
 export default OptionButton;
