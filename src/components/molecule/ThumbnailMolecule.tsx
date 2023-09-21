@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { COLORS } from '../../share/colors';
 import Text from '../atom/Text';
 import Img from '../atom/Img';
-import alcholImage from '../../assets/main/alchol.png';
+import alcholImage from '../../assets/icons/alchol.png';
 
 const ThumbnailMolecule = () => {
   return (

@@ -1,7 +1,9 @@
+import HeaderMolecule from '../components/molecule/HeaderMolecule';
+
 const Search = () => {
   return (
     <>
-      <h1>this is Search page</h1>
+      <HeaderMolecule />
     </>
   );
 };

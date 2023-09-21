@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
 import { COLORS } from '../../share/colors';
-import ThumbnailMolecule from '../molecule/ThumnailMolecule';
+import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
 
 const CommunityOrganism = () => {
   return (

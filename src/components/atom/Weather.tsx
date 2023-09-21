@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import rainyImage from '../../assets/main/rainy.png';
+import rainyImage from '../../assets/icons/weather-rainy.png';
 
 const Weather = () => {
   return <WeatherlImage />;
