@@ -2,35 +2,38 @@ import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 import globalStyles from './share/globalStyles';
 import Router from './routes/Router';
+
 const App = () => {
   return (
     <>
       <Global styles={globalStyles} />
-      <BackgroundWrapper>
+      <Background>
         <Layout>
           <Router />
         </Layout>
-      </BackgroundWrapper>
+      </Background>
     </>
   );
 };
 
 export default App;
 
-const BackgroundWrapper = styled.div`
+const Background = styled.div`
+  /* height: 100vh; */
+  margin-right: 300px;
+
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  height: 100vh;
-  margin-right: 12.5%;
+  justify-content: flex-end;
 `;
 
 const Layout = styled.div`
   width: 480px;
-  height: 909px;
-  background-color: black;
+  min-height: 909px;
+
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
+  flex-direction: column;
+  background-color: black;
   color: white;
+  display: flex;
 `;

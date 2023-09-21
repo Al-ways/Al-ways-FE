@@ -1,0 +1,3 @@
+const SliderMolecule = () => {
+  return <></>;
+};
