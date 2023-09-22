@@ -7,7 +7,6 @@ import ThumbnailContainerOrganism from '../components/organism/ThumbnailContaine
 const Search = () => {
   return (
     <>
-      <GoBackMolecule />
       <SearchInputMolecule />
       <SortTextMolecule />
       <PopularKeywordOrganism />

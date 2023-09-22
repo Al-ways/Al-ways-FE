@@ -7,16 +7,19 @@ import List from '../pages/List';
 import Detail from '../pages/Detail';
 import My from '../pages/My';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
+import GoBackMolecule from '../components/molecule/GoBackMolecule';
 
 const Router = () => {
+  const url = window.location.pathname;
+
   return (
     <BrowserRouter>
       <HeaderMolecule />
+      {url == '/' ? null : <GoBackMolecule />}
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/examination" element={<Examination />} />
         <Route path="/search/" element={<Search />} />
-        {/* <Route path="/search/:keyword" element={<Search />} /> */}
         <Route path="/map" element={<Map />} />
         <Route path="/list" element={<List />} />
         <Route path="/detail/:id" element={<Detail />} />
