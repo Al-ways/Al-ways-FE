@@ -3,7 +3,7 @@ import Text from '../atom/Text';
 import { COLORS } from '../../share/colors';
 import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
 
-const MyBookmarkedOrganism = () => {
+const MyBookmarkOrganism = () => {
   return (
     <Container>
       <Text
@@ -29,7 +29,7 @@ const MyBookmarkedOrganism = () => {
   );
 };
 
-export default MyBookmarkedOrganism;
+export default MyBookmarkOrganism;
 
 const Container = styled.div`
   width: 480px;

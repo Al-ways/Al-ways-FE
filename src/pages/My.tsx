@@ -1,5 +1,6 @@
 import BreakLineImage from '../components/atom/BreakLineImage';
-import MyBookmarkedOrganism from '../components/organism/MyBookmarkedOrganism';
+import MyBookmarkOrganism from '../components/organism/MyBookmarkOrganism';
+import MyCommentOrganism from '../components/organism/MyCommentOrganism';
 import MyPostOrganism from '../components/organism/MyPostOrganism';
 import ProfileOrganism from '../components/organism/ProfileOrganism';
 
@@ -8,8 +9,9 @@ const My = () => {
     <>
       <ProfileOrganism />
       <BreakLineImage />
-      <MyBookmarkedOrganism />
+      <MyBookmarkOrganism />
       <MyPostOrganism />
+      <MyCommentOrganism />
     </>
   );
 };
