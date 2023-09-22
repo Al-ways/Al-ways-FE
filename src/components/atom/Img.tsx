@@ -8,8 +8,9 @@ interface ImgProps {
   br?: string;
   /* 원준 추가 */
   mt?: string;
+  mb?: string;
 }
-const Img = ({ src, alt, width, height, br, mt }: ImgProps) => {
+const Img = ({ src, alt, width, height, br, mt, mb }: ImgProps) => {
   return (
     <ImgContainer
       src={src}
@@ -18,6 +19,7 @@ const Img = ({ src, alt, width, height, br, mt }: ImgProps) => {
       height={height}
       br={br}
       mt={mt}
+      mb={mb}
     />
   );
 };
@@ -26,6 +28,7 @@ const ImgContainer = styled.img<{
   height?: string;
   br?: string;
   mt?: string;
+  mb?: string;
 }>`
   width: ${(props) => props.width + 'px' || 'auto'};
   height: ${(props) => props.height + 'px' || 'auto'};
@@ -33,6 +36,7 @@ const ImgContainer = styled.img<{
   background-size: cover;
   /* 원준 추가 */
   margin-top: ${(props) => props.mt + 'px' || '0px'};
+  margin-bottom: ${(props) => props.mb + 'px' || '0px'};
   background-position: center;
 `;
 export default Img;

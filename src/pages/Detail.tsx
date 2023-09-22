@@ -1,9 +1,9 @@
-import InformationMolecule from '../components/molecule/InformationMolecule';
+import BarDetailOrganism from '../components/organism/BarDetailOrganism';
 
 const Detail = () => {
   return (
     <>
-      <InformationMolecule />
+      <BarDetailOrganism />
     </>
   );
 };
