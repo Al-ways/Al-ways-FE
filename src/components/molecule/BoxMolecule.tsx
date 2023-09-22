@@ -39,6 +39,6 @@ const BoxContainer = styled.div<{
   height: ${(props) => props.height + 'px'};
   color: ${(props) => props.color || COLORS.white};
   border-radius: ${(props) => props.br + 'px' || '0px'};
-  cursor: pointer;
   background-color: ${COLORS.dark_gray};
+  cursor: pointer;
 `;

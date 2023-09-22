@@ -20,7 +20,6 @@ const CommunityOrganism = () => {
         top={'10'}
         right={'20'}
         position={'absolute'}
-        cursor={'pointer'}
         color={COLORS.gray}
         txt={'전체보기'}
       />

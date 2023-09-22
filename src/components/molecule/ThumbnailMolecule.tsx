@@ -110,6 +110,7 @@ const Container = styled.div`
   border-radius: 10px;
   margin-bottom: 20px;
 
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -14,6 +14,7 @@ const SortTextMolecule = () => {
         height={'20'}
         fonts={'20'}
         ml={'20'}
+        cursor={'pointer'}
         txt={'별점순'}
       />
       <Text
@@ -23,6 +24,7 @@ const SortTextMolecule = () => {
         height={'20'}
         fonts={'20'}
         ml={'20'}
+        cursor={'pointer'}
         txt={'찜한순'}
       />
       <Text
@@ -32,6 +34,7 @@ const SortTextMolecule = () => {
         height={'20'}
         fonts={'20'}
         ml={'20'}
+        cursor={'pointer'}
         txt={'가까운순'}
       />
     </SortContanier>
