@@ -25,6 +25,7 @@ interface TextProps {
   ai?: string;
   jc?: string;
   bc?: string;
+  onClick?: () => void;
 }
 
 const Text = ({
@@ -50,6 +51,7 @@ const Text = ({
   ai,
   jc,
   bc,
+  onClick,
 }: TextProps) => {
   return (
     <TextContainer
@@ -74,6 +76,7 @@ const Text = ({
       ai={ai}
       jc={jc}
       bc={bc}
+      onClick={onClick}
     >
       {txt}
     </TextContainer>
@@ -103,5 +106,8 @@ const TextContainer = styled.div<TextProps>`
   align-items: ${(props) => props.ai || 'auto'};
   justify-content: ${(props) => props.jc || 'auto'};
   background-color: ${(props) => props.bc || 'none'};
+
+  /* cursor: ${(props) =>
+    props.cursor || 'auto' || props.onClick ? 'pointer' : 'auto'}; */
 `;
 export default Text;

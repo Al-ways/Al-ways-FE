@@ -13,9 +13,7 @@ const CommunityThumbnailMolecule = () => {
           height={'20'}
           fonts={'16'}
           br={'10'}
-          display={'flex'}
-          ai={'center'}
-          jc={'center'}
+          align={'center'}
           bc={COLORS.dark_gray}
           txt={'맛집추천'}
         />
