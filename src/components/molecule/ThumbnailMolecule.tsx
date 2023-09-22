@@ -58,7 +58,7 @@ const ThumbnailMolecule = () => {
               <Text
                 width={'75'}
                 height={'20'}
-                bc={COLORS.night}
+                bgc={COLORS.night}
                 align={'center'}
                 br={'10'}
                 mr={'10'}
@@ -67,7 +67,7 @@ const ThumbnailMolecule = () => {
               <Text
                 width={'75'}
                 height={'20'}
-                bc={COLORS.violet}
+                bgc={COLORS.violet}
                 align={'center'}
                 br={'10'}
                 mr={'10'}

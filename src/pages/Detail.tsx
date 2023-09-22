@@ -1,7 +1,9 @@
+import InformationMolecule from '../components/molecule/InformationMolecule';
+
 const Detail = () => {
   return (
     <>
-      <h1>this is Detail page</h1>
+      <InformationMolecule />
     </>
   );
 };
