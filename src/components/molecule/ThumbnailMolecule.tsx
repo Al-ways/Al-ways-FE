@@ -58,7 +58,7 @@ const ThumbnailMolecule = () => {
               <Text
                 width={'75'}
                 height={'20'}
-                bc={COLORS.night}
+                bgc={COLORS.night}
                 align={'center'}
                 br={'10'}
                 mr={'10'}
@@ -67,7 +67,7 @@ const ThumbnailMolecule = () => {
               <Text
                 width={'75'}
                 height={'20'}
-                bc={COLORS.violet}
+                bgc={COLORS.violet}
                 align={'center'}
                 br={'10'}
                 mr={'10'}
@@ -109,11 +109,12 @@ const Container = styled.div`
   height: 150px;
   border-radius: 10px;
   margin-bottom: 20px;
+  gap: 20px;
 
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   background-color: ${COLORS.dark_gray};
 `;
 

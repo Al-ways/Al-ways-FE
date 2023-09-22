@@ -1,7 +1,13 @@
+import BreakLineImage from '../components/atom/BreakLineImage';
+import BarDetailOrganism from '../components/organism/BarDetailOrganism';
+import CommentOrganism from '../components/organism/CommentOrganism';
+
 const Detail = () => {
   return (
     <>
-      <h1>this is Detail page</h1>
+      <BarDetailOrganism />
+      <BreakLineImage />
+      <CommentOrganism />
     </>
   );
 };

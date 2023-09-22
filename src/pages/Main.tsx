@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import bannerImage1 from '../assets/main/banner1.png';
 import bannerImage2 from '../assets/main/banner2.png';
 import bannerImage3 from '../assets/main/banner3.png';
-import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import SearchOrganism from '../components/organism/SearchOrganism';
 import RecommendedOrganism from '../components/organism/RecommendedOrganism';
 import PopularLocationOrganism from '../components/organism/PopularLocationOrganism';
@@ -38,7 +37,6 @@ const Main = () => {
 
   return (
     <>
-      <HeaderMolecule />
       <Slider />
       <SearchOrganism />
       <RecommendedOrganism />
