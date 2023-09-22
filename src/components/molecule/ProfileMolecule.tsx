@@ -36,17 +36,18 @@ const ProfileMolecule = () => {
       </UserInfo>
       <ButtonWrapper>
         <Text
-          width={'80'}
+          width={'90'}
           height={'40'}
           br={'10'}
           mt={'25'}
           align={'center'}
           bgc={COLORS.gray}
           color={COLORS.black}
+          cursor={'pointer'}
           txt={'프로필 관리'}
         />
         <Text
-          width={'80'}
+          width={'90'}
           height={'40'}
           br={'10'}
           mb={'20'}
@@ -54,6 +55,7 @@ const ProfileMolecule = () => {
           align={'center'}
           bgc={COLORS.gray}
           color={COLORS.black}
+          cursor={'pointer'}
           txt={'성향 테스트'}
         />
       </ButtonWrapper>

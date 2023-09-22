@@ -1,9 +1,9 @@
-import ProfileMolecule from '../components/molecule/ProfileMolecule';
+import ProfileOrganism from '../components/organism/ProfileOrganism';
 
 const My = () => {
   return (
     <>
-      <ProfileMolecule />
+      <ProfileOrganism />
     </>
   );
 };
