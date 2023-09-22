@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
-import PopularHeaderMolecule from '../molecule/PopularHeaderMolecule';
+import PopularLocationHeaderMolecule from '../molecule/PopularLocationHeaderMolecule';
 import LargeThumbnailMolecule from '../molecule/LargeThumbnailMolecule';
 
-const PopularOrganism = () => {
+const PopularLocationOrganism = () => {
   return (
     <Container>
-      <PopularHeaderMolecule />
+      <PopularLocationHeaderMolecule />
       <LargeThumbnailMolecule />
     </Container>
   );
 };
 
-export default PopularOrganism;
+export default PopularLocationOrganism;
 
 const Container = styled.div`
   width: 480px;

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
 import { COLORS } from '../../share/colors';
-import Weather from '../atom/Wheather';
+import Weather from '../atom/Weather';
 
 const RecomendedMolecule = () => {
   return (

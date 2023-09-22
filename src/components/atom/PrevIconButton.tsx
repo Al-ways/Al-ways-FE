@@ -1,12 +1,10 @@
 import styled from '@emotion/styled';
-import { ArrowIosBackOutline } from '@emotion-icons/evaicons-outline/ArrowIosBackOutline';
+// import { ArrowIosBackOutline } from '@emotion-icons/evaicons-outline/ArrowIosBackOutline';
 
 const PrevIconButton = () => {
   return (
     <ImgButtonContainer>
-      <PrevButton>
-        <PrevIcon />
-      </PrevButton>
+      <PrevButton>{/* <PrevIcon /> */}</PrevButton>
     </ImgButtonContainer>
   );
 };
@@ -22,10 +20,10 @@ const PrevButton = styled.button`
   background-color: inherit;
   cursor: pointer;
 `;
-const PrevIcon = styled(ArrowIosBackOutline)`
-  width: 50px;
-  height: 50px;
-  color: white;
-  margin-left: -5.6px;
-`;
+// const PrevIcon = styled(ArrowIosBackOutline)`
+//   width: 50px;
+//   height: 50px;
+//   color: white;
+//   margin-left: -5.6px;
+// `;
 export default PrevIconButton;

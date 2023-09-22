@@ -13,7 +13,7 @@ interface BoxProps {
 
 const BoxMolecule = ({ width, height, color, txt, fonts, br }: BoxProps) => {
   return (
-    <Container width={width} height={height} color={color} br={br}>
+    <BoxContainer width={width} height={height} color={color} br={br}>
       <Text
         width={width}
         height={height}
@@ -23,13 +23,13 @@ const BoxMolecule = ({ width, height, color, txt, fonts, br }: BoxProps) => {
         align={'center'}
         br={br}
       />
-    </Container>
+    </BoxContainer>
   );
 };
 
 export default BoxMolecule;
 
-const Container = styled.div<{
+const BoxContainer = styled.div<{
   width: string;
   height: string;
   color?: string;

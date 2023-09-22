@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import { COLORS } from '../../share/colors';
 import Text from '../atom/Text';
 import Img from '../atom/Img';
-import alcholImage from '../../assets/main/alchol.png';
+import alcholImage from '../../assets/icons/alchol.png';
 
-const ThumbnailMolecule = () => {
+const CommunityThumbnailMolecule = () => {
   return (
     <ThumbnailWrapper>
       <ThumbnailTop>
@@ -13,9 +13,7 @@ const ThumbnailMolecule = () => {
           height={'20'}
           fonts={'16'}
           br={'10'}
-          display={'flex'}
-          ai={'center'}
-          jc={'center'}
+          align={'center'}
           bc={COLORS.dark_gray}
           txt={'맛집추천'}
         />
@@ -48,7 +46,7 @@ const ThumbnailMolecule = () => {
   );
 };
 
-export default ThumbnailMolecule;
+export default CommunityThumbnailMolecule;
 
 const ThumbnailWrapper = styled.div`
   width: 440px;

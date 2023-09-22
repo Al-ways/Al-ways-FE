@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
-import SearchContainerMolecule from '../molecule/SearchContainerMolecule';
+// import SearchContainerMolecule from '../molecule/SearchContainerMolecule';
+import BoxMolecule from '../molecule/BoxMolecule';
 
 const SearchOrganism = () => {
   return (
@@ -12,7 +13,30 @@ const SearchOrganism = () => {
         fonts={'24'}
         mb={'20'}
       />
-      <SearchContainerMolecule />
+      {/* <SearchContainerMolecule /> */}
+      <BoxContainer>
+        <BoxMolecule
+          width={'130'}
+          height={'130'}
+          fonts={'20'}
+          br={'10'}
+          txt={'추천받기'}
+        />
+        <BoxMolecule
+          width={'130'}
+          height={'130'}
+          fonts={'20'}
+          br={'10'}
+          txt={'검색하기'}
+        />
+        <BoxMolecule
+          width={'130'}
+          height={'130'}
+          fonts={'20'}
+          br={'10'}
+          txt={'지도보기'}
+        />
+      </BoxContainer>
     </Container>
   );
 };
@@ -28,4 +52,12 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+`;
+
+const BoxContainer = styled.div`
+  width: 440px;
+  height: 130px;
+
+  display: flex;
+  justify-content: space-between;
 `;
