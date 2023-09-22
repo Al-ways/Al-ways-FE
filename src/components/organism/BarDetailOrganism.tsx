@@ -30,6 +30,7 @@ export default BarDetailOrganism;
 const Container = styled.div`
   width: 480px;
   height: 564px;
+  margin-bottom: 30px;
 
   display: flex;
   flex-direction: column;
