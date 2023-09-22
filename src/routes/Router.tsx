@@ -9,6 +9,9 @@ import My from '../pages/My';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import GoBackMolecule from '../components/molecule/GoBackMolecule';
 
+import Login from '../pages/Login';
+
+
 const Router = () => {
   const url = window.location.pathname;
 
@@ -19,7 +22,8 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/examination" element={<Examination />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/search/" element={<Search />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/map" element={<Map />} />
         <Route path="/list" element={<List />} />
         <Route path="/detail" element={<Detail />} />
