@@ -17,15 +17,15 @@ const InformationMolecule = () => {
             width={'30'}
             height={'30'}
           />
-          <Text width={'375'} height={'30'} fonts={'20'} txt={'위치'} />
+          <Text width={'370'} height={'30'} fonts={'20'} txt={'위치'} />
         </TextContainer>
         <TextContainer>
           <Img src={timeImage} alt={'location'} width={'30'} height={'30'} />
-          <Text width={'375'} height={'30'} fonts={'20'} txt={'영업시간'} />
+          <Text width={'370'} height={'30'} fonts={'20'} txt={'영업시간'} />
         </TextContainer>
         <TextContainer>
           <Img src={phoneImage} alt={'location'} width={'30'} height={'30'} />
-          <Text width={'375'} height={'30'} fonts={'20'} txt={'연락처'} />
+          <Text width={'370'} height={'30'} fonts={'20'} txt={'연락처'} />
         </TextContainer>
       </ParagraphContainer>
     </InformationContainer>
@@ -63,6 +63,6 @@ const ParagraphContainer = styled.div`
 const TextContainer = styled.div`
   width: 400px;
   height: 30px;
-  gap: 5px;
+  gap: 10px;
   display: flex;
 `;

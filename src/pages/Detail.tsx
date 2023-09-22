@@ -1,4 +1,5 @@
 import BreakLineImage from '../components/atom/BreakLineImage';
+import CommentMolecule from '../components/molecule/CommentMolecule';
 import BarDetailOrganism from '../components/organism/BarDetailOrganism';
 
 const Detail = () => {
@@ -6,6 +7,7 @@ const Detail = () => {
     <>
       <BarDetailOrganism />
       <BreakLineImage />
+      <CommentMolecule />
     </>
   );
 };
