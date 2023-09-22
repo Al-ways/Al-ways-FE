@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
-import { COLORS } from '../../share/colors';
 import Kakao from '../../assets/icons/kakao.png';
 import Google from '../../assets/icons/google.png';
 import Naver from '../../assets/icons/naver.png';
+import Text from '../atom/Text';
 interface SocialLoginButtonMoleculeProps {
   name: string;
 }
@@ -14,35 +14,74 @@ const SocialLoginButtonMolecule = ({
   const naver = Naver;
   if (name === 'kakao') {
     return (
-      <Container>
-        <SocialIcon src={kakao} />
+      <Container bgc={'#fee501'}>
+        <IconBox>
+          <SocialIcon src={kakao} />
+        </IconBox>
+        <TextBox>
+          <Text
+            txt={'카카오 로그인'}
+            fonts={'24'}
+            fontw={'bold'}
+            color={'#39201f'}
+          />
+        </TextBox>
       </Container>
     );
   }
   if (name === 'google') {
     return (
-      <Container>
-        <SocialIcon src={google} />
+      <Container bgc={'#ffffff'}>
+        <IconBox>
+          <SocialIcon src={google} />
+        </IconBox>
+        <TextBox>
+          <Text
+            txt={'구글 로그인'}
+            color={'#000000'}
+            fonts={'24'}
+            fontw={'bold'}
+          />
+        </TextBox>
       </Container>
     );
   }
   if (name === 'naver') {
     return (
-      <Container>
-        <SocialIcon src={naver} />
+      <Container bgc={'#02c75a'}>
+        <IconBox>
+          <SocialIcon src={naver} />
+        </IconBox>
+        <TextBox>
+          <Text txt={'네이버 로그인'} fonts={'24'} fontw={'bold'} />
+        </TextBox>
       </Container>
     );
   }
 };
-const Container = styled.div`
-  width: 90px;
-  height: 90px;
-  border-radius: 12px;
-  background-color: ${COLORS.white};
+const Container = styled.button<{ bgc: string }>`
+  width: 322px;
+  height: 46px;
+  border-radius: 5px;
+  background-color: ${(props) => props.bgc};
+  display: flex;
+  align-items: center;
+  margin: 30px auto 0 auto;
+  cursor: pointer;
+  border: none;
+`;
+const IconBox = styled.div`
+  width: 20%;
+  display: flex;
+  justify-content: center;
 `;
 const SocialIcon = styled.img`
-  width: 40px;
-  height: 40px;
-  margin: 25px 25px 0 25px;
+  width: 24px;
+  height: 24px;
+`;
+const TextBox = styled.div`
+  width: 70%;
+  display: flex;
+  justify-content: center;
 `;
 export default SocialLoginButtonMolecule;
