@@ -4,9 +4,6 @@ import defulatImage from '../../assets/icons/default-image.png';
 import Text from '../atom/Text';
 import Img from '../atom/Img';
 
-//   width: 100px;
-//   height: 40px;
-//   margin-right: 110px;
 const CommentMolecule = () => {
   return (
     <CommentContainer>
@@ -72,12 +69,4 @@ const CommentBottom = styled.div`
   flex-direction: column;
   align-items: end;
   justify-content: space-between;
-`;
-const Comment = styled.div`
-  width: 300px;
-  height: 30px;
-`;
-const UpdatedAt = styled.div`
-  width: 300px;
-  height: 30px;
 `;

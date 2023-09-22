@@ -1,13 +1,13 @@
 import BreakLineImage from '../components/atom/BreakLineImage';
-import CommentMolecule from '../components/molecule/CommentMolecule';
 import BarDetailOrganism from '../components/organism/BarDetailOrganism';
+import CommentOrganism from '../components/organism/CommentOrganism';
 
 const Detail = () => {
   return (
     <>
       <BarDetailOrganism />
       <BreakLineImage />
-      <CommentMolecule />
+      <CommentOrganism />
     </>
   );
 };
