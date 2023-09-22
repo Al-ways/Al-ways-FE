@@ -6,9 +6,9 @@ import ProfileImage from '../atom/ProfileImage';
 import LoginImage from '../atom/LoginImage';
 
 const HeaderMolecule = () => {
-  const [menuState, setMenuState] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
-  const [loginModalState, setLoginModalState] = useState(false);
+  const [menuState, setMenuState] = useState<boolean>(false);
+  const [isLogin, setIsLogin] = useState<boolean>(false);
+  const [loginModalState, setLoginModalState] = useState<boolean>(false);
   return (
     <Header>
       <MenuIconButton state={menuState} setState={setMenuState} />

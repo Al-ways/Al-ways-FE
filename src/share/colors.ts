@@ -1,4 +1,23 @@
-export const COLORS = {
+interface IColors {
+  black: string;
+  white: string;
+  main: string;
+  background: string;
+  dark_gray: string;
+  gray: string;
+  mint: string;
+  sky: string;
+  violet: string;
+  purple: string;
+  navy: string;
+  night: string;
+  green: string;
+  red: string;
+  pink: string;
+  orange: string;
+}
+
+export const COLORS: IColors = {
   black: '#00000',
   white: '#ffffff',
   main: '#AE73B8', // profile box, button 등 가장 자주 쓰이는 color.
