@@ -6,10 +6,12 @@ import Search from '../pages/Search';
 import List from '../pages/List';
 import Detail from '../pages/Detail';
 import My from '../pages/My';
+import HeaderMolecule from '../components/molecule/HeaderMolecule';
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <HeaderMolecule />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/examination" element={<Examination />} />
