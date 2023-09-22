@@ -1,8 +1,7 @@
-import GoBackMolecule from '../components/molecule/GoBackMolecule';
 import SearchInputMolecule from '../components/molecule/SearchInputMolecule';
 import SortTextMolecule from '../components/molecule/SortTextMolecule';
 import PopularKeywordOrganism from '../components/organism/PopularKeywordOrganism';
-import ThumbnailContainerOrganism from '../components/organism/ThumbnailContainerOrganism';
+import ThumbnailOrganism from '../components/organism/ThumbnailOrganism';
 
 const Search = () => {
   return (
@@ -10,7 +9,7 @@ const Search = () => {
       <SearchInputMolecule />
       <SortTextMolecule />
       <PopularKeywordOrganism />
-      <ThumbnailContainerOrganism />
+      <ThumbnailOrganism />
     </>
   );
 };

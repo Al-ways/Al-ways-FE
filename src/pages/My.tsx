@@ -1,8 +1,7 @@
 import BreakLineImage from '../components/atom/BreakLineImage';
-import CommunityOrganism from '../components/organism/CommunityOrganism';
 import MyBookmarkedOrganism from '../components/organism/MyBookmarkedOrganism';
+import MyPostOrganism from '../components/organism/MyPostOrganism';
 import ProfileOrganism from '../components/organism/ProfileOrganism';
-import ThumbnailContainerOrganism from '../components/organism/ThumbnailContainerOrganism';
 
 const My = () => {
   return (
@@ -10,9 +9,7 @@ const My = () => {
       <ProfileOrganism />
       <BreakLineImage />
       <MyBookmarkedOrganism />
-      {/* Title, Location, 전체 보기 */}
-      {/* <ThumbnailContainerOrganism /> */}
-      {/* <CommunityOrganism /> */}
+      <MyPostOrganism />
     </>
   );
 };
