@@ -18,7 +18,7 @@ interface IColors {
 }
 
 export const COLORS: IColors = {
-  black: '#00000',
+  black: '#000000',
   white: '#ffffff',
   main: '#AE73B8', // profile box, button 등 가장 자주 쓰이는 color.
   background: '#B96BC6', // background color.

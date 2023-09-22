@@ -10,8 +10,9 @@ interface ImgProps {
   mt?: string;
   mb?: string;
   mr?: string;
+  ml?: string;
 }
-const Img = ({ src, alt, width, height, br, mt, mb, mr }: ImgProps) => {
+const Img = ({ src, alt, width, height, br, mt, mb, mr, ml }: ImgProps) => {
   return (
     <ImgContainer
       src={src}
@@ -22,6 +23,7 @@ const Img = ({ src, alt, width, height, br, mt, mb, mr }: ImgProps) => {
       mt={mt}
       mb={mb}
       mr={mr}
+      ml={ml}
     />
   );
 };
@@ -32,6 +34,7 @@ const ImgContainer = styled.img<{
   mt?: string;
   mb?: string;
   mr?: string;
+  ml?: string;
 }>`
   width: ${(props) => props.width + 'px' || 'auto'};
   height: ${(props) => props.height + 'px' || 'auto'};
@@ -41,6 +44,7 @@ const ImgContainer = styled.img<{
   margin-top: ${(props) => props.mt + 'px' || '0px'};
   margin-bottom: ${(props) => props.mb + 'px' || '0px'};
   margin-right: ${(props) => props.mr + 'px' || '0px'};
+  margin-left: ${(props) => props.ml + 'px' || '0px'};
   background-position: center;
 `;
 export default Img;

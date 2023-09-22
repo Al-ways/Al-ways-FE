@@ -1,7 +1,9 @@
+import ProfileMolecule from '../components/molecule/ProfileMolecule';
+
 const My = () => {
   return (
     <>
-      <h1>this is My page</h1>
+      <ProfileMolecule />
     </>
   );
 };
