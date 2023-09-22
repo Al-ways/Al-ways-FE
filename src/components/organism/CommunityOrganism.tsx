@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
 import { COLORS } from '../../share/colors';
-import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
+import CommunityThumbnailMolecule from '../molecule/CommunityThumbnailMolecule';
 
 const CommunityOrganism = () => {
   return (
@@ -24,7 +24,7 @@ const CommunityOrganism = () => {
         color={COLORS.gray}
         txt={'전체보기'}
       />
-      <ThumbnailMolecule />
+      <CommunityThumbnailMolecule />
     </Container>
   );
 };
