@@ -108,6 +108,11 @@ const Container = styled.div`
   width: 440px;
   height: 150px;
   border-radius: 10px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   display: flex;
   align-items: center;
