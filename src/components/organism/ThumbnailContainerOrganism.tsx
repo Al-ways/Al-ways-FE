@@ -15,7 +15,7 @@ export default ThumbnailContainerOrganism;
 
 const Container = styled.div`
   width: 480px;
-  /* margin-bottom: 30px; */
+  margin-bottom: 30px;
 
   display: flex;
   align-items: center;

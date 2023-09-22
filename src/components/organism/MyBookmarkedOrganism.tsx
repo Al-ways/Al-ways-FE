@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
+import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
 import Text from '../atom/Text';
 import { COLORS } from '../../share/colors';
-import CommunityThumbnailMolecule from '../molecule/CommunityThumbnailMolecule';
 
-const CommunityOrganism = () => {
+const MyBookmarkedOrganism = () => {
   return (
     <Container>
       <Text
@@ -12,7 +12,7 @@ const CommunityOrganism = () => {
         fonts={'24'}
         mb={'20'}
         display={'flex'}
-        txt={'커뮤니티'}
+        txt={'nickname 님이 찜한 술집'}
       />
       <Text
         height={'12'}
@@ -24,17 +24,16 @@ const CommunityOrganism = () => {
         color={COLORS.gray}
         txt={'전체보기'}
       />
-      <CommunityThumbnailMolecule />
-      <CommunityThumbnailMolecule />
-      <CommunityThumbnailMolecule />
+      <ThumbnailMolecule />
     </Container>
   );
 };
 
-export default CommunityOrganism;
+export default MyBookmarkedOrganism;
 
 const Container = styled.div`
   width: 480px;
+  margin-bottom: 30px;
 
   position: relative;
   display: flex;
