@@ -8,6 +8,7 @@ interface InputProps {
   placeText?: string;
   align?: string;
   bgc?: string;
+  mr?: number;
 }
 const Input = ({
   width,
@@ -17,6 +18,7 @@ const Input = ({
   placeText,
   align,
   bgc,
+  mr,
 }: InputProps) => {
   return (
     <Container
@@ -27,6 +29,7 @@ const Input = ({
       placeholder={placeText}
       align={align}
       bgc={bgc}
+      mr={mr}
     />
   );
 };
@@ -37,6 +40,7 @@ interface ContainerProps {
   br?: number;
   align?: string;
   bgc?: string;
+  mr?: number;
 }
 const Container = styled.input<ContainerProps>`
   width: ${(props) => props.width + 'px' || 'auto'};
@@ -48,6 +52,7 @@ const Container = styled.input<ContainerProps>`
   color: black;
   border-radius: ${(props) => props.br + 'px' || '0px'};
   padding: 0px 20px;
+  margin-right: ${(props) => props.mr + 'px' || '0px'};
   :focus {
     outline: none;
   }

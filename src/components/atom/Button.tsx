@@ -7,6 +7,7 @@ interface ButtonProps {
   bgc?: string;
   color?: string;
   br?: number;
+  mt?: number;
 }
 const Button = ({
   width,
@@ -16,6 +17,7 @@ const Button = ({
   bgc,
   color,
   br,
+  mt,
 }: ButtonProps) => {
   return (
     <Container
@@ -25,6 +27,7 @@ const Button = ({
       bgc={bgc}
       color={color}
       br={br}
+      mt={mt}
     >
       {children}
     </Container>
@@ -39,5 +42,6 @@ const Container = styled.div<ButtonProps>`
   background-color: ${(props) => props.bgc || 'white'};
   color: ${(props) => props.color || 'black'};
   border-radius: ${(props) => props.br + 'px' || '0px'};
+  margin-top: ${(props) => props.mt + 'px' || '0px'};
 `;
 export default Button;
