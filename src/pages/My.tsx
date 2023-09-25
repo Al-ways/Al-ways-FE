@@ -1,7 +1,17 @@
+import BreakLineImage from '../components/atom/BreakLineImage';
+import MyBookmarkOrganism from '../components/organism/MyBookmarkOrganism';
+import MyCommentOrganism from '../components/organism/MyCommentOrganism';
+import MyPostOrganism from '../components/organism/MyPostOrganism';
+import ProfileOrganism from '../components/organism/ProfileOrganism';
+
 const My = () => {
   return (
     <>
-      <h1>this is My page</h1>
+      <ProfileOrganism />
+      <BreakLineImage />
+      <MyBookmarkOrganism />
+      <MyPostOrganism />
+      <MyCommentOrganism />
     </>
   );
 };

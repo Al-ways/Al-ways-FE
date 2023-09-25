@@ -3,7 +3,7 @@ import Text from '../atom/Text';
 import { COLORS } from '../../share/colors';
 import CommunityThumbnailMolecule from '../molecule/CommunityThumbnailMolecule';
 
-const CommunityOrganism = () => {
+const MyPostOrganism = () => {
   return (
     <Container>
       <Text
@@ -12,7 +12,7 @@ const CommunityOrganism = () => {
         fonts={'24'}
         mb={'20'}
         display={'flex'}
-        txt={'커뮤니티'}
+        txt={'nickname 님이 작성한 포스팅'}
       />
       <Text
         height={'12'}
@@ -31,10 +31,11 @@ const CommunityOrganism = () => {
   );
 };
 
-export default CommunityOrganism;
+export default MyPostOrganism;
 
 const Container = styled.div`
   width: 480px;
+  margin-bottom: 30px;
 
   position: relative;
   display: flex;

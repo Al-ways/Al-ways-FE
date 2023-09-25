@@ -9,7 +9,7 @@ import barImage3 from '../../assets/main/bar3.png';
 const ThumbnailMolecule = () => {
   const BarImages = [barImage1, barImage2, barImage3];
   return (
-    // <Container>
+    // <ThumbnailContainer>
     //   <Img src={barImage1} alt={'thumbnail'} width={'110'} height={'110'} />
     //   <InformationBox>
     //     <TextBox>
@@ -42,10 +42,10 @@ const ThumbnailMolecule = () => {
     //     <Text width={'260'} height={'45'} fonts={'20'} ml={'10'} txt={'bar'} />
     //     <Text width={'250'} height={'45'} ml={'10'} mr={'10'} txt={'address'} />
     //   </InformationBox>
-    // </Container>
+    // </ThumbnailContainer>
     <>
       {BarImages.map((image, index) => (
-        <Container key={index}>
+        <ThumbnailContainer key={index}>
           <Img
             src={image}
             alt={`thumbnail${index + 1}`}
@@ -96,7 +96,7 @@ const ThumbnailMolecule = () => {
               txt={`address${index + 1}`}
             />
           </InformationBox>
-        </Container>
+        </ThumbnailContainer>
       ))}
     </>
   );
@@ -104,7 +104,7 @@ const ThumbnailMolecule = () => {
 
 export default ThumbnailMolecule;
 
-const Container = styled.div`
+const ThumbnailContainer = styled.div`
   width: 440px;
   height: 150px;
   border-radius: 10px;
