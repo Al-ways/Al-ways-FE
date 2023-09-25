@@ -3,11 +3,7 @@ import SocialLoginOranism from '../components/organism/SocialLoginOranism';
 import bgLogin from '../assets/login/bgLogin.png';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import GoBackMolecule from '../components/molecule/GoBackMolecule';
-import { useParams } from 'react-router-dom';
 const Login = () => {
-  const ref = useParams();
-  console.log(ref.id);
-
   return (
     <Container>
       <HeaderMolecule />

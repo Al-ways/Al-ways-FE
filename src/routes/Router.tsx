@@ -10,7 +10,7 @@ import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import GoBackMolecule from '../components/molecule/GoBackMolecule';
 
 import Login from '../pages/Login';
-
+import EditProfile from '../pages/EditProfile';
 
 const Router = () => {
   const url = window.location.pathname;
@@ -27,7 +27,8 @@ const Router = () => {
         <Route path="/map" element={<Map />} />
         <Route path="/list" element={<List />} />
         <Route path="/detail" element={<Detail />} />
-        <Route path="/my" element={<My />} />
+        <Route path="/my/:id" element={<My />} />
+        <Route path="/my/:id/edit" element={<EditProfile />} />
         {/* <Route path="/community" element={<></>} /> */}
       </Routes>
     </BrowserRouter>
