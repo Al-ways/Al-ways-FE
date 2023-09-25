@@ -16,20 +16,26 @@ const CommentMolecule = () => {
           mr={'10'}
         />
         <Text
-          width={'100'}
+          width={'150'}
           height={'40'}
-          mr={'110'}
+          mr={'70'}
           fonts={'19'}
           txt={'닉네임'}
         />
-        <Text width={'140'} height={'40'} fonts={'18'} txt={'⭐⭐⭐⭐⭐'} />
+        <Text
+          width={'130'}
+          height={'40'}
+          fonts={'18'}
+          align={'right'}
+          txt={'⭐⭐⭐⭐⭐'}
+        />
       </CommentTop>
       <CommentBottom>
-        <Text width={'350'} height={'30'} fonts={'18'} txt={'comment'} />
+        <Text width={'350'} height={'44'} fonts={'18'} txt={'comment'} />
         <Text
           width={'350'}
-          height={'30'}
-          fonts={'18'}
+          height={'16'}
+          fonts={'16'}
           color={COLORS.gray}
           txt={'23. 09. 23'}
         />
@@ -45,7 +51,7 @@ const CommentContainer = styled.div`
   height: 150px;
   border-radius: 10px;
   margin-bottom: 20px;
-  gap: 20px;
+  /* gap: 20px; */
 
   cursor: pointer;
   display: flex;
@@ -58,6 +64,7 @@ const CommentContainer = styled.div`
 const CommentTop = styled.div`
   width: 400px;
   height: 40px;
+  margin-bottom: 10px;
 
   display: flex;
 `;
