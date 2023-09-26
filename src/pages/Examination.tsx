@@ -1,9 +1,6 @@
+import ExaminationTemplate from '../components/template/ExaminationTemplate';
 const Examination = () => {
-  return (
-    <>
-      <h1>this is Examination page</h1>
-    </>
-  );
+  return <ExaminationTemplate />;
 };
 
 export default Examination;

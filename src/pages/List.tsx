@@ -1,17 +1,7 @@
-import styled from '@emotion/styled';
-import OptionSelectMolecule from '../components/molecule/OptionSelectMolecule';
-import OptionContentMolecule from '../components/molecule/OptionContentMolecule';
+import ListTemplate from '../components/template/ListTemplate';
 
 const List = () => {
-  return (
-    <Container>
-      <OptionSelectMolecule />
-      <OptionContentMolecule />
-    </Container>
-  );
+  return <ListTemplate />;
 };
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+
 export default List;
