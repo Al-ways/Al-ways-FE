@@ -14,7 +14,7 @@ const CommunityThumbnailMolecule = () => {
           fonts={'16'}
           br={'10'}
           align={'center'}
-          bc={COLORS.dark_gray}
+          bgc={COLORS.dark_gray}
           txt={'맛집추천'}
         />
       </ThumbnailTop>

@@ -1,15 +1,7 @@
-import BreakLineImage from '../components/atom/BreakLineImage';
-import BarDetailOrganism from '../components/organism/BarDetailOrganism';
-import CommentOrganism from '../components/organism/CommentOrganism';
+import DetailTemplate from '../components/template/DetailTemplate';
 
 const Detail = () => {
-  return (
-    <>
-      <BarDetailOrganism />
-      <BreakLineImage />
-      <CommentOrganism />
-    </>
-  );
+  return <DetailTemplate />;
 };
 
 export default Detail;

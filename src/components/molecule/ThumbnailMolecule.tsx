@@ -77,7 +77,7 @@ const ThumbnailMolecule = () => {
                 width={'100'}
                 height={'20'}
                 fonts={'14'}
-                align={'center'}
+                align={'right'}
                 txt={'⭐⭐⭐⭐⭐'}
               />
             </TextBox>
