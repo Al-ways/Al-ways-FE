@@ -3,20 +3,12 @@ import background from '../assets/layout/background.png';
 import backgroundNone from '../assets/layout/background-none.png';
 
 const GlobalStyles = css`
-  @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-      format('woff');
+  * {
+    font-family: 'Pretendard';
     font-weight: 100;
     font-style: normal;
   }
-  * {
-    font-family: 'Pretendard-Regular', sans-serif;
-  }
-  /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+
   html,
   body,
   div,

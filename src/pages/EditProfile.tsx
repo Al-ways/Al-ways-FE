@@ -20,6 +20,7 @@ const EditProfile = () => {
         color={'#3D3D3D'}
         txt={'회원을 탈퇴하시겠습니까?'}
         align={'end'}
+        fontw={'100'}
       />
     </Container>
   );
