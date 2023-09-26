@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { COLORS } from '../../share/colors';
+
 interface TextProps {
   width?: string;
   height?: string;
@@ -91,7 +92,7 @@ const TextContainer = styled.div<TextProps>`
   color: ${(props) => props.color || COLORS.white};
   font-size: ${(props) => props.fonts + 'px' || '16px'};
   line-height: ${(props) => props.height + 'px' || 'auto'};
-  font-weight: ${(props) => props.fontw || 'normal'};
+  font-weight: ${(props) => props.fontw || '100'};
   margin-bottom: ${(props) => props.mb + 'px' || '0px'};
   border-radius: ${(props) => props.br + 'px' || '0px'};
 
