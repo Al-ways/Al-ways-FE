@@ -11,6 +11,7 @@ import GoBackMolecule from '../components/molecule/GoBackMolecule';
 
 import Login from '../pages/Login';
 import EditProfile from '../pages/EditProfile';
+import Wishlist from '../pages/Wishlist';
 
 const Router = () => {
   const url = window.location.pathname;
@@ -29,6 +30,7 @@ const Router = () => {
         <Route path="/detail" element={<Detail />} />
         <Route path="/my/:id" element={<My />} />
         <Route path="/my/:id/edit" element={<EditProfile />} />
+        <Route path="/my/:id/wishlist" element={<Wishlist />} />
         {/* <Route path="/community" element={<></>} /> */}
       </Routes>
     </BrowserRouter>
