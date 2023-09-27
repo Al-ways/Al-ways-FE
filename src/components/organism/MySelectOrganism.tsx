@@ -21,4 +21,5 @@ export default MySelectOrganism;
 const Container = styled.div`
   width: 480px;
   height: 55px;
+  margin: -30px 0 30px;
 `;

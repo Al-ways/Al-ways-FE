@@ -1,7 +1,7 @@
-import MySelectOrganism from '../components/organism/MySelectOrganism';
+import WishlistTemplate from '../components/template/WishlistTemplate';
 
 const Wishlist = () => {
-  return <MySelectOrganism />;
+  return <WishlistTemplate />;
 };
 
 export default Wishlist;
