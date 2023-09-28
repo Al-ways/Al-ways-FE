@@ -77,9 +77,7 @@ const Text = ({
       ai={ai}
       jc={jc}
       bgc={bgc}
-      onClick={() => {
-        onClick;
-      }}
+      onClick={onClick}
     >
       {txt}
     </TextContainer>
