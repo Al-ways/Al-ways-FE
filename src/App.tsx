@@ -19,19 +19,33 @@ const App = () => {
 export default App;
 
 const Background = styled.div`
-  width: 100vw;
+  width: 80%;
   height: 100vh;
 
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media (max-width: 800px) {
+    width: 85%;
+  }
+  @media (max-width: 620px) {
+    width: 90%;
+  }
+  @media (max-width: 580px) {
+    width: 95%;
+  }
+  @media (max-width: 520px) {
+    width: 97.5%;
+  }
 `;
 
 const Layout = styled.div`
-  width: 480px;
+  min-width: 480px;
+  max-width: 100%;
   height: 909px;
-  margin-right: 300px;
+  /* margin-right: 300px; */
 
   display: flex;
   flex-direction: column;

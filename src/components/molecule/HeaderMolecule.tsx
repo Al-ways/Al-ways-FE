@@ -26,7 +26,7 @@ export default HeaderMolecule;
 
 const Header = styled.div`
   width: 480px;
-  height: 80px;
+  height: 70px;
   flex-shrink: 0;
 
   display: flex;

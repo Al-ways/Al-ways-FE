@@ -18,14 +18,14 @@ const Profile = styled.div<{
   imgUrl?: string;
   isLoggedIn?: boolean;
 }>`
-  width: 50px;
-  height: 50px;
+  width: 40x;
+  height: 40px;
   margin-right: 20px;
   border-radius: 50%;
 
   cursor: pointer;
-
   ${(props) => `
   background-image: url(${props.isLoggedIn ? props.imgUrl : profileImages});
  `}
+  background-position: cover;
 `;
