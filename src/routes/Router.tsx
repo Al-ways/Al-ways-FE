@@ -8,6 +8,7 @@ import Detail from '../pages/Detail';
 import My from '../pages/My';
 import Login from '../pages/Login';
 import EditProfile from '../pages/EditProfile';
+import Wishlist from '../pages/Wishlist';
 import Recommended from '../pages/Recommended';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import GoBackMolecule from '../components/molecule/GoBackMolecule';
@@ -29,6 +30,7 @@ const Router = () => {
         <Route path="/detail" element={<Detail />} />
         <Route path="/my/:id" element={<My />} />
         <Route path="/my/:id/edit" element={<EditProfile />} />
+        <Route path="/my/:id/wishlist" element={<Wishlist />} />
         <Route path="/login" element={<Login />} />
         {/* <Route path="/community" element={<></>} /> */}
       </Routes>
