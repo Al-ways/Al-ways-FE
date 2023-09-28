@@ -19,43 +19,30 @@ const App = () => {
 export default App;
 
 const Background = styled.div`
-  /* height: 100vh; */
-  /* margin: 10px 300px; */
+  width: 100vw;
+  height: 100vh;
 
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 `;
 
 const Layout = styled.div`
-  /* width: 480px; */
-  min-width: 480px;
-  min-height: 909px;
-  /* max-height: 909px; */
-  margin: 10px 300px;
+  width: 480px;
+  height: 909px;
+  margin-right: 300px;
 
   display: flex;
   flex-direction: column;
-  background-color: black;
   color: white;
-  display: flex;
+  background-color: black;
+
+  /* 스크롤 바 생성 */
+  overflow-y: auto;
+
+  /* 스크롤 바 안보이게 설정 */
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
-
-// const Layout = styled.div`
-//   width: 480px;
-//   min-height: 909px;
-//   max-height: 909px;
-
-//   display: flex;
-//   flex-direction: column;
-
-//   background-color: black;
-//   color: white;
-
-//   /* 스크롤 바 생성*/
-//   overflow: auto;
-//   /* 스크롤 바 안보이게 설정 */
-//   ::-webkit-scrollbar {
-//     display: none;
-//   }
-// `;

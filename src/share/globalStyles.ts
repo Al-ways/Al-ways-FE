@@ -4,11 +4,15 @@ import backgroundNone from '../assets/layout/background-none.png';
 
 const GlobalStyles = css`
   * {
-    font-family: 'Pretendard';
-    font-weight: 100;
-    font-style: normal;
+    /* Noto Sans Kr 폰트 설정 */
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Pretendard', sans-serif;
   }
 
+  /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
   html,
   body,
   div,
@@ -121,13 +125,8 @@ const GlobalStyles = css`
     @media (max-width: 1550px) {
       background-image: url(${backgroundNone});
     }
-
-    /* 스크롤 바 안보이게 설정 */
-    ::-webkit-scrollbar {
-      display: none;
-    }
   }
-  ol,
+  */ ol,
   ul {
     list-style: none;
   }
