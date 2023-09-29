@@ -3,15 +3,15 @@ import QuestionButton from '../atom/QuestionButton';
 import { examination } from '../../api/examination';
 interface QuestionMoeculeProps {
   page: number;
+  setPage: (page: number) => void;
 }
-const AnswerMolecule = ({ page }: QuestionMoeculeProps) => {
+const AnswerMolecule = ({ page, setPage }: QuestionMoeculeProps) => {
   const data = examination(page);
-  console.log(data);
 
   return (
     <QuestionMoleculeContainer>
-      <QuestionButton txt={data.answer[0]} />
-      <QuestionButton txt={data.answer[1]} />
+      <QuestionButton click={() => setPage(page)} txt={data.answer[0]} />
+      <QuestionButton click={() => setPage(page)} txt={data.answer[1]} />
     </QuestionMoleculeContainer>
   );
 };

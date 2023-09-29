@@ -2,9 +2,10 @@ import styled from '@emotion/styled';
 import Text from './Text';
 interface ProgressButtonProps {
   txt: string;
+  click?: () => void;
 }
 
-const QuestionButton = ({ txt }: ProgressButtonProps) => {
+const QuestionButton = ({ txt, click }: ProgressButtonProps) => {
   return (
     <ProgressButtonContainer>
       <Text
@@ -14,6 +15,7 @@ const QuestionButton = ({ txt }: ProgressButtonProps) => {
         vertical={'50'}
         fonts={'20'}
         txt={txt}
+        onClick={click}
       />
     </ProgressButtonContainer>
   );
