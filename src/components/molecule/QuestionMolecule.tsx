@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
 import Img from '../atom/Img';
+import { examination } from '../../api/examination';
 interface QuestionMoleculeProps {
   page: number;
-  question: string;
 }
-const QuestionMolecule = ({ page, question }: QuestionMoleculeProps) => {
+const QuestionMolecule = ({ page }: QuestionMoleculeProps) => {
+  const data = examination(page);
+
   return (
     <>
       <QuestionImgContainer>
@@ -24,7 +26,7 @@ const QuestionMolecule = ({ page, question }: QuestionMoleculeProps) => {
           width={'400'}
           height={'100'}
           vertical={'100'}
-          txt={`Q${page}.`}
+          txt={`Q${page + 1}.`}
           align={'center'}
           fonts={'60'}
         />
@@ -32,7 +34,7 @@ const QuestionMolecule = ({ page, question }: QuestionMoleculeProps) => {
           width={'400'}
           height={'75'}
           vertical={'75'}
-          txt={question}
+          txt={data.question}
           align={'center'}
           fonts={'20'}
         />

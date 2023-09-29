@@ -1,13 +1,17 @@
 import styled from '@emotion/styled';
 import QuestionButton from '../atom/QuestionButton';
+import { examination } from '../../api/examination';
 interface QuestionMoeculeProps {
-  answer: string[];
+  page: number;
 }
-const AnswerMolecule = ({ answer }: QuestionMoeculeProps) => {
+const AnswerMolecule = ({ page }: QuestionMoeculeProps) => {
+  const data = examination(page);
+  console.log(data);
+
   return (
     <QuestionMoleculeContainer>
-      <QuestionButton txt={answer[0]} />
-      <QuestionButton txt={answer[1]} />
+      <QuestionButton txt={data.answer[0]} />
+      <QuestionButton txt={data.answer[1]} />
     </QuestionMoleculeContainer>
   );
 };
