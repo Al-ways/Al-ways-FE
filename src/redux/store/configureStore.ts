@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-
+import examinationReducer from '../reducers/examinationSlice';
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    examination: examinationReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

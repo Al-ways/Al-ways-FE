@@ -12,8 +12,12 @@ export const examinationSlice = createSlice({
   name: 'examination',
   initialState,
   reducers: {
-    setExamination: (state, action: PayloadAction<string[]>) => {
-      state.value = action.payload;
+    addValue: (state: ExaminationState, action: PayloadAction<string>) => {
+      state.value.push(action.payload);
     },
   },
 });
+
+export const { addValue } = examinationSlice.actions;
+
+export default examinationSlice.reducer;
