@@ -1,18 +1,8 @@
 import styled from '@emotion/styled';
 import loginImage from '../../assets/icons/login.png';
 
-interface LoginImageProps {
-  setModalState: (modalState: boolean) => void;
-}
-
-const LoginImage = ({ setModalState }: LoginImageProps) => {
-  return (
-    <Login
-      onClick={() => {
-        setModalState(true);
-      }}
-    ></Login>
-  );
+const LoginImage = () => {
+  return <Login />;
 };
 
 export default LoginImage;

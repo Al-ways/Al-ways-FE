@@ -2,12 +2,11 @@ import styled from '@emotion/styled';
 import MenuImage from '../../assets/icons/menu.png';
 
 interface MenuIconButtonProps {
-  state: boolean;
-  setState: (state: boolean) => void;
+  toggleMenu: () => void;
 }
 
-const MenuIconButton = ({ state, setState }: MenuIconButtonProps) => {
-  return <Menu onClick={() => setState(!state)} />;
+const MenuIconButton = ({ toggleMenu }: MenuIconButtonProps) => {
+  return <Menu onClick={toggleMenu} />;
 };
 const Menu = styled.div`
   width: 40px;
