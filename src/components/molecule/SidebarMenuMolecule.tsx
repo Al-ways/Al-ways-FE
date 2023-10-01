@@ -4,12 +4,13 @@ import Text from '../atom/Text';
 
 interface SidebarMenuProps {
   txt: string;
+  onClick: () => void;
 }
 
-const SidebarMenuMolecule = ({ txt }: SidebarMenuProps) => {
+const SidebarMenuMolecule = ({ txt, onClick }: SidebarMenuProps) => {
   return (
     <>
-      <Wrapper>
+      <Wrapper onClick={onClick}>
         <Text width={'220'} height={'40'} fonts={'20'} txt={txt} />
         <GoIcon />
       </Wrapper>

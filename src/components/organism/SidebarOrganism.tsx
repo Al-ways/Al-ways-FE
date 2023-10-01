@@ -6,6 +6,7 @@ import BreakLineImage from '../atom/BreakLineImage';
 import Text from '../atom/Text';
 import SidebarMenuMolecule from '../molecule/SidebarMenuMolecule';
 import SidebarUserStateMolecule from '../molecule/SidebarUserStateMolecule';
+import { useNavigate } from 'react-router-dom';
 
 interface SidebarProps {
   toggleMenu?: () => void;
@@ -13,30 +14,58 @@ interface SidebarProps {
 }
 
 const SidebarOrganism = ({ toggleMenu, isMenuOpen }: SidebarProps) => {
+  const navigate = useNavigate();
+  const handleSidebarClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   return (
-    <>
-      <SidebarWrapper onClick={toggleMenu}>
-        <Sidebar isMenuOpen={isMenuOpen}>
-          <CloseIcon toggleMenu={toggleMenu} />
-          <SidebarUserStateMolecule />
-          <BreakLineImage width={'280'} height={'5'} mb={'30'} />
-          <SidebarMenuMolecule txt={'검색'} />
-          <SidebarMenuMolecule txt={'지도'} />
-          <SidebarMenuMolecule txt={'전체 리스트'} />
-          <SidebarMenuMolecule txt={'마이페이지'} />
-          <Text
-            width={'280'}
-            height={'16'}
-            fonts={'16'}
-            bottom={'20'}
-            cursor={'pointer'}
-            color={COLORS.dark_gray}
-            position={'absolute'}
-            txt={'로그아웃'}
-          />
-        </Sidebar>
-      </SidebarWrapper>
-    </>
+    <SidebarWrapper onClick={toggleMenu}>
+      <Sidebar isMenuOpen={isMenuOpen} onClick={handleSidebarClick}>
+        <CloseIcon toggleMenu={toggleMenu} />
+        <SidebarUserStateMolecule />
+        <BreakLineImage width={'280'} height={'5'} mb={'30'} />
+        <SidebarMenuMolecule
+          txt={'검색'}
+          onClick={() => {
+            navigate('/search');
+            if (toggleMenu) toggleMenu();
+          }}
+        />
+        <SidebarMenuMolecule
+          txt={'지도'}
+          onClick={() => {
+            navigate('/map');
+            if (toggleMenu) toggleMenu();
+          }}
+        />
+        <SidebarMenuMolecule
+          txt={'전체 리스트'}
+          onClick={() => {
+            navigate('/list');
+            if (toggleMenu) toggleMenu();
+          }}
+        />
+        <SidebarMenuMolecule
+          txt={'마이페이지'}
+          onClick={() => {
+            navigate('/my');
+            if (toggleMenu) toggleMenu();
+          }}
+        />
+
+        <Text
+          width={'280'}
+          height={'16'}
+          fonts={'16'}
+          bottom={'20'}
+          cursor={'pointer'}
+          color={COLORS.dark_gray}
+          position={'absolute'}
+          txt={'로그아웃'}
+        />
+      </Sidebar>
+    </SidebarWrapper>
   );
 };
 
@@ -50,6 +79,20 @@ const SidebarWrapper = styled.div`
   position: absolute;
   display: flex;
   background-color: rgba(0, 0, 0, 0.5);
+`;
+
+const Sidebar = styled.div<SidebarProps>`
+  width: 320px;
+  height: 909px;
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #141414;
+
+  animation: ${(props) => (props.isMenuOpen ? slideIn : slideOut)} 0.75s
+    forwards;
 `;
 
 // 사이드 바 슬라이드 효과
@@ -68,18 +111,4 @@ const slideOut = keyframes`
   to {
     transform: translateX(-50%);
   }
-`;
-
-const Sidebar = styled.div<SidebarProps>`
-  width: 320px;
-  height: 909px;
-  align-items: center;
-
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  background-color: #141414;
-
-  animation: ${(props) => (props.isMenuOpen ? slideIn : slideOut)} 0.75s
-    forwards;
 `;
