@@ -1,29 +1,41 @@
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleMenu } from '../../redux/modules/menuSlice';
 import styled from '@emotion/styled';
 import LogoIcon from '../atom/LogoIcon';
 import MenuIconButton from '../atom/MenuIconButton';
-import ProfileImage from '../atom/ProfileImage';
-import LoginImage from '../atom/LoginImage';
-import { RootState } from '../../redux/store/configureStore';
 import { COLORS } from '../../share/colors';
+import LoginImage from '../atom/LoginImage';
 
-const HeaderMolecule = () => {
-  // useSelector hook을 이용한 store에 저장된 state 가져오기.
-  // useDispatch hook을 사용해 변경할 값을 reducer에 전달
-  const dispatch = useDispatch();
-  const isMenuOpen = useSelector((state: RootState) => state.menu.isOpen);
+interface SidebarProps {
+  isOpen: boolean;
+}
 
-  const [isLogin, setIsLogin] = useState<boolean>(false);
+interface HeaderProps {
+  toggleMenu: () => void;
+}
+
+const HeaderMolecule = ({ toggleMenu }: HeaderProps) => {
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen);
+  // };
+
   return (
     <>
       <Header>
-        <MenuIconButton toggleMenu={() => dispatch(toggleMenu())} />
+        <MenuIconButton onClick={toggleMenu} />
         <LogoIcon />
-        {isLogin ? <ProfileImage imgUrl={'1'} /> : <LoginImage />}
+        <LoginImage />
       </Header>
-      {isMenuOpen && <Sidebar></Sidebar>}
+      {/* {isMenuOpen && (
+        <SidebarWrapper onClick={toggleMenu}>
+          <Sidebar isOpen={isMenuOpen}>
+            <CloseButton onClick={toggleMenu}>X</CloseButton>
+            <MenuItem>Home</MenuItem>
+            <MenuItem>Profile</MenuItem>
+            <MenuItem>Settings</MenuItem>
+          </Sidebar>
+        </SidebarWrapper>
+      )} */}
     </>
   );
 };
@@ -40,13 +52,46 @@ const Header = styled.div`
   align-items: center;
 `;
 
-const Sidebar = styled.div`
-  width: 200px;
-  height: 100%;
-  top: 0;
-  left: 0;
+const SidebarWrapper = styled.div`
+  width: 480px;
+  height: 909px;
+  z-index: 1;
 
   position: fixed;
-  background-color: ${COLORS.main};
+  background-color: rgba(0, 0, 0, 0.5);
+`;
+
+const Sidebar = styled.div<SidebarProps>`
+  width: 320px;
+  height: 909px;
+  z-index: 1;
+
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  position: fixed;
+  background-color: ${COLORS.black};
+
+  transform: ${(props) =>
+    props.isOpen ? 'translateX(0)' : 'translateX(-100%)'};
+  transition: transform 0.3s ease-out;
+`;
+
+const MenuItem = styled.div`
+  padding-left: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #555;
+  }
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: transparent;
   color: ${COLORS.white};
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 `;
