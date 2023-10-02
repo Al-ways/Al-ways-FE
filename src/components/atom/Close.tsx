@@ -5,15 +5,15 @@ interface CloseProps {
   toggleMenu?: () => void;
 }
 
-const CloseIcon = ({ toggleMenu }: CloseProps) => {
+const Close = ({ toggleMenu }: CloseProps) => {
   return (
     <Container>
-      <Close onClick={toggleMenu} />
+      <Button onClick={toggleMenu} />
     </Container>
   );
 };
 
-export default CloseIcon;
+export default Close;
 
 const Container = styled.div`
   width: 280px;
@@ -21,7 +21,7 @@ const Container = styled.div`
   margin: 20px 0 30px 0;
 `;
 
-const Close = styled.div`
+const Button = styled.div`
   width: 24px;
   height: 24px;
 

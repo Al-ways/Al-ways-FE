@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
-import LocationIcon from '../atom/LocationIcon';
+import Location from '../atom/Location';
 
 const PopularLocationHeaderMolecule = () => {
   return (
     <PopularLocationHeader>
       <Text mr={'20'} txt={'이번 주 인기 술집'} />
       <IconTitle>
-        <LocationIcon />
+        <Location />
         <Text txt={'강남구'} />
       </IconTitle>
     </PopularLocationHeader>

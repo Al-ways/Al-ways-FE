@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import locationImage from '../../assets/icons/location.png';
 import { useNavigate } from 'react-router-dom';
 
-const LocationIcon = () => {
+const Location = () => {
   const navigate = useNavigate();
   return (
-    <Location
+    <Image
       onClick={() => {
         navigate('/');
       }}
@@ -13,9 +13,9 @@ const LocationIcon = () => {
   );
 };
 
-export default LocationIcon;
+export default Location;
 
-const Location = styled.div`
+const Image = styled.div`
   width: 24px;
   height: 24px;
   margin-right: 5px;

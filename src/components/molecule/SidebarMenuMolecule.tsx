@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import GoIcon from '../atom/GoIcon';
+import Next from '../atom/Next';
 import Text from '../atom/Text';
 
 interface SidebarMenuProps {
@@ -12,7 +12,7 @@ const SidebarMenuMolecule = ({ txt, onClick }: SidebarMenuProps) => {
     <>
       <Wrapper onClick={onClick}>
         <Text width={'220'} height={'40'} fonts={'20'} txt={txt} />
-        <GoIcon />
+        <Next />
       </Wrapper>
     </>
   );

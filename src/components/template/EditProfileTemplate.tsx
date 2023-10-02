@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import EditProfileFromOrganism from '../organism/EditProfileFromOrganism';
 import Text from '../atom/Text';
-import BreakLineImage from '../atom/BreakLineImage';
+import BreakLine from '../atom/BreakLine';
 
 const EditProfileTemplate = () => {
   return (
@@ -14,7 +14,7 @@ const EditProfileTemplate = () => {
         txt={'프로필 관리'}
       />
       <EditProfileFromOrganism />
-      <BreakLineImage width={'480'} height={'10'} mb={'30'} />
+      <BreakLine width={'480'} height={'10'} mb={'30'} />
       <Text
         width={'440'}
         height={'16'}
