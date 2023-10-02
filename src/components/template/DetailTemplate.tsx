@@ -6,7 +6,7 @@ const DetailTemplate = () => {
   return (
     <>
       <BarDetailOrganism />
-      <BreakLineImage />
+      <BreakLineImage width={'480'} height={'10'} mb={'30'} />
       <CommentOrganism />
     </>
   );

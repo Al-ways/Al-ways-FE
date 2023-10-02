@@ -1,10 +1,27 @@
 // import { configureStore } from '@reduxjs/toolkit';
-// import thunkMiddleware from 'redux-thunk';
-// import rootReducer from '../reducers/todosSlice';
+// import menuSlice from '../modules/menuSlice';
+
+// // 초기 세팅 - configureStore: slice 들의 집합
+// // const store = configureStore({
+// //   reducer: {},
+// // });
 
 // const store = configureStore({
-//   reducer: rootReducer,
-//   middleware: [thunkMiddleware],
+//   reducer: {
+//     menu: menuSlice.reducer,
+//   },
 // });
 
+// // typescript 사용으로 RootState 필요함
+// export type RootState = ReturnType<typeof store.getState>;
 // export default store;
+
+import { configureStore } from '@reduxjs/toolkit';
+import examinationReducer from '../reducers/examinationSlice';
+export const store = configureStore({
+  reducer: {
+    examination: examinationReducer,
+  },
+});
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

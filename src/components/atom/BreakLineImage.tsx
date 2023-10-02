@@ -1,16 +1,27 @@
 import styled from '@emotion/styled';
 import { COLORS } from '../../share/colors';
 
-const BreakLineImage = () => {
-  return <BreakLine />;
+interface BreakLineProps {
+  width?: string;
+  height?: string;
+  mb?: string;
+}
+
+const BreakLineImage = ({ width, height, mb }: BreakLineProps) => {
+  return (
+    <div>
+      <BreakLine width={width} height={height} mb={mb} />
+    </div>
+  );
 };
 
 export default BreakLineImage;
 
-const BreakLine = styled.div`
-  width: 480px;
-  height: 15px;
-  margin-bottom: 30px;
+const BreakLine = styled.div<BreakLineProps>`
+  width: ${(props) => props.width + 'px' || 'auto'};
+  height: ${(props) => props.height + 'px' || 'auto'};
+  margin-bottom: ${(props) => props.mb + 'px' || 'auto'};
+  color: white;
 
   background-color: ${COLORS.dark_gray};
 `;

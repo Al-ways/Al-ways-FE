@@ -12,13 +12,23 @@ import Wishlist from '../pages/Wishlist';
 import Recommended from '../pages/Recommended';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import GoBackMolecule from '../components/molecule/GoBackMolecule';
+import { useState } from 'react';
+
+import SidebarOrganism from '../components/organism/SidebarOrganism';
 
 const Router = () => {
   const url = window.location.pathname;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <BrowserRouter>
-      <HeaderMolecule />
+      <HeaderMolecule toggleMenu={toggleMenu} />
+      {isMenuOpen && (
+        <SidebarOrganism toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+      )}
       {url == '/' ? null : <GoBackMolecule />}
       <Routes>
         <Route path="/" element={<Main />} />

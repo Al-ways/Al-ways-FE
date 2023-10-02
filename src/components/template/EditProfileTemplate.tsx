@@ -14,7 +14,7 @@ const EditProfileTemplate = () => {
         txt={'프로필 관리'}
       />
       <EditProfileFromOrganism />
-      <BreakLineImage />
+      <BreakLineImage width={'480'} height={'10'} mb={'30'} />
       <Text
         width={'440'}
         height={'16'}
