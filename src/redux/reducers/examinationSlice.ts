@@ -1,10 +1,14 @@
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 interface ExaminationState {
   value: string[];
 }
+
 const initialState: ExaminationState = {
   value: [],
 };
+
 export const examinationSlice = createSlice({
   name: 'examination',
   initialState,
@@ -14,5 +18,7 @@ export const examinationSlice = createSlice({
     },
   },
 });
+
 export const { addValue } = examinationSlice.actions;
+
 export default examinationSlice.reducer;
