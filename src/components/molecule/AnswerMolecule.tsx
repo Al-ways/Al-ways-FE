@@ -15,9 +15,21 @@ const AnswerMolecule = ({ page, setPage }: QuestionMoeculeProps) => {
     dispatch(addValue(value));
     setPage(page);
   };
-  // if(page===6){
-  //   return ()
-  // }
+  if (page === 6) {
+    return (
+      <QuestionMoleculeContainer>
+        {data.answer.map((el: string, index: number) => {
+          return (
+            <QuestionButton
+              key={index}
+              click={() => handler(page, data.answer[index])}
+              txt={el}
+            />
+          );
+        })}
+      </QuestionMoleculeContainer>
+    );
+  }
   return (
     <QuestionMoleculeContainer>
       <QuestionButton

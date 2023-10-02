@@ -3,6 +3,7 @@ import QuestionMolecule from '../molecule/QuestionMolecule';
 import AnswerMolecule from '../molecule/AnswerMolecule';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+
 const ExaminationTemplate = () => {
   interface ExaminationState {
     value: number;
