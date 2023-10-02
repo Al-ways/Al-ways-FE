@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import BreakLineImage from '../atom/BreakLineImage';
 import MyBookmarkOrganism from '../organism/MyBookmarkOrganism';
 import MyCommentOrganism from '../organism/MyCommentOrganism';
@@ -8,7 +9,7 @@ const MyTemplate = () => {
   return (
     <>
       <ProfileOrganism />
-      <BreakLineImage />
+      <BreakLineImage width={'480'} height={'10'} mb={'30'} />
       <MyBookmarkOrganism />
       <MyPostOrganism />
       <MyCommentOrganism />

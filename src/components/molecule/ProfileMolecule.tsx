@@ -41,7 +41,7 @@ const ProfileMolecule = () => {
           br={'10'}
           mt={'25'}
           align={'center'}
-          bgc={COLORS.gray}
+          bgc={COLORS.light_gray}
           color={COLORS.black}
           cursor={'pointer'}
           txt={'프로필 관리'}
@@ -53,7 +53,7 @@ const ProfileMolecule = () => {
           mb={'20'}
           mt={'20'}
           align={'center'}
-          bgc={COLORS.gray}
+          bgc={COLORS.light_gray}
           color={COLORS.black}
           cursor={'pointer'}
           txt={'성향 테스트'}

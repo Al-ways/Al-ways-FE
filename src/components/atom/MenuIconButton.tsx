@@ -1,21 +1,43 @@
+// import styled from '@emotion/styled';
+// import MenuImage from '../../assets/icons/menu.png';
+
+// interface MenuIconButtonProps {
+//   toggleMenu: () => void;
+// }
+
+// const MenuIconButton = ({ toggleMenu }: MenuIconButtonProps) => {
+//   return <Menu onClick={toggleMenu} />;
+// };
+// const Menu = styled.div`
+//   width: 40px;
+//   height: 40px;
+//   margin-left: 20px;
+
+//   cursor: pointer;
+//   background-image: url(${MenuImage});
+//   background-size: cover;
+// `;
+
+// export default MenuIconButton;
+
 import styled from '@emotion/styled';
 import MenuImage from '../../assets/icons/menu.png';
 
 interface MenuIconButtonProps {
-  state: boolean;
-  setState: (state: boolean) => void;
+  onClick: () => void;
 }
 
-const MenuIconButton = ({ state, setState }: MenuIconButtonProps) => {
-  return <Menu onClick={() => setState(!state)} />;
+const MenuIconButton = ({ onClick }: MenuIconButtonProps) => {
+  return <Menu onClick={onClick} />;
 };
 const Menu = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin-left: 20px;
 
   cursor: pointer;
   background-image: url(${MenuImage});
+  background-size: cover;
 `;
 
 export default MenuIconButton;

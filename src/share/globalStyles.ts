@@ -7,6 +7,8 @@ const GlobalStyles = css`
     /* Noto Sans Kr 폰트 설정 */
     /* font-family: 'Noto Sans KR', sans-serif; */
     font-family: 'Pretendard', sans-serif;
+    /* letter-spacing: -1.75px; */
+    /* word-spacing: 5px; */
   }
 
   /* http://meyerweb.com/eric/tools/css/reset/

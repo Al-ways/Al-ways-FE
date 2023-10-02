@@ -21,7 +21,7 @@ const MyBookmarkOrganism = () => {
         right={'20'}
         position={'absolute'}
         cursor={'pointer'}
-        color={COLORS.gray}
+        color={COLORS.light_gray}
         txt={'전체보기'}
       />
       <ThumbnailMolecule />
