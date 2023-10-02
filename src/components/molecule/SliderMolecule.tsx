@@ -1,21 +1,14 @@
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import DotBar from '../atom/DotBar';
+import bannerImage1 from '../../assets/main/banner1.png';
+import bannerImage2 from '../../assets/main/banner2.png';
+import bannerImage3 from '../../assets/main/banner3.png';
 
-interface SliderMoleculeProps {
-  BannerImages: Array<string>;
-  dotState: boolean;
-  time: number;
-}
-interface BannerProp {
-  image: string;
-}
+const SliderMolecule = () => {
+  // 배너 이미지
+  const BannerImages = [bannerImage1, bannerImage2, bannerImage3];
 
-const SliderMolecule = ({
-  BannerImages,
-  dotState,
-  time,
-}: SliderMoleculeProps) => {
   // 현재 보여지고 있는 이미지(인덱스), 초기값 0: 첫 번째 이미지
   const [ImageIndex, setImageIndex] = useState(0);
 
@@ -26,7 +19,7 @@ const SliderMolecule = ({
       setImageIndex(
         (currentImageIndex) => (currentImageIndex + 1) % BannerImages.length,
       );
-    }, time * 1000);
+    }, 4000);
 
     // clearInterval 함수로 언마운트 시 타이머 제거
     return () => clearInterval(timer);
@@ -39,13 +32,11 @@ const SliderMolecule = ({
   return (
     <Slider>
       <Banner image={BannerImages[ImageIndex]} />
-      {dotState && (
-        <DotBar
-          BannerImages={BannerImages}
-          activeDot={ImageIndex}
-          onClickDot={handleClickDot}
-        />
-      )}
+      <DotBar
+        BannerImages={BannerImages}
+        activeDot={ImageIndex}
+        onClickDot={handleClickDot}
+      />
     </Slider>
   );
 };
@@ -54,14 +45,15 @@ export default SliderMolecule;
 
 const Slider = styled.div`
   width: 480px;
-  height: 350px;
+  height: 320px;
   margin-bottom: 30px;
 
   position: relative;
 `;
-const Banner = styled.div<BannerProp>`
+
+const Banner = styled.div<{ image: string }>`
   width: 480px;
-  height: 350px;
+  height: 320px;
 
   cursor: pointer;
   background-image: url(${(props) => props.image});

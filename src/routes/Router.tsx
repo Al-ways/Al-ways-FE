@@ -10,6 +10,7 @@ import Login from '../pages/Login';
 import EditProfile from '../pages/EditProfile';
 import Wishlist from '../pages/Wishlist';
 import Recommended from '../pages/Recommended';
+import Community from '../pages/Community';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import SidebarOrganism from '../components/organism/SidebarOrganism';
 import PrevMolecule from '../components/molecule/PrevMolecule';
@@ -41,7 +42,7 @@ const Router = () => {
         <Route path="/my/:id/edit" element={<EditProfile />} />
         <Route path="/my/:id/wishlist" element={<Wishlist />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/community" element={<></>} /> */}
+        <Route path="/community" element={<Community />} />
       </Routes>
     </BrowserRouter>
   );
