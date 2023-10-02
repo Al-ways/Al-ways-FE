@@ -1,13 +1,45 @@
 import styled from '@emotion/styled';
 import QuestionButton from '../atom/QuestionButton';
+import { examination } from '../../api/examination';
+import { useDispatch } from 'react-redux';
+import { addValue } from '../../redux/reducers/examinationSlice';
 interface QuestionMoeculeProps {
-  answer: string[];
+  page: number;
+  setPage: (page: number) => void;
 }
-const AnswerMolecule = ({ answer }: QuestionMoeculeProps) => {
+const AnswerMolecule = ({ page, setPage }: QuestionMoeculeProps) => {
+  const dispatch = useDispatch();
+  const data = examination(page);
+
+  const handler = (page: number, value: string) => {
+    dispatch(addValue(value));
+    setPage(page);
+  };
+  if (page === 6) {
+    return (
+      <QuestionMoleculeContainer>
+        {data.answer.map((el: string, index: number) => {
+          return (
+            <QuestionButton
+              key={index}
+              click={() => handler(page, data.answer[index])}
+              txt={el}
+            />
+          );
+        })}
+      </QuestionMoleculeContainer>
+    );
+  }
   return (
     <QuestionMoleculeContainer>
-      <QuestionButton txt={answer[0]} />
-      <QuestionButton txt={answer[1]} />
+      <QuestionButton
+        click={() => handler(page, data.answer[0])}
+        txt={data.answer[0]}
+      />
+      <QuestionButton
+        click={() => handler(page, data.answer[1])}
+        txt={data.answer[1]}
+      />
     </QuestionMoleculeContainer>
   );
 };
