@@ -8,7 +8,11 @@ interface BreakLineProps {
 }
 
 const BreakLineImage = ({ width, height, mb }: BreakLineProps) => {
-  return <BreakLine width={width} height={height} mb={mb} />;
+  return (
+    <div>
+      <BreakLine width={width} height={height} mb={mb} />
+    </div>
+  );
 };
 
 export default BreakLineImage;
@@ -17,6 +21,7 @@ const BreakLine = styled.div<BreakLineProps>`
   width: ${(props) => props.width + 'px' || 'auto'};
   height: ${(props) => props.height + 'px' || 'auto'};
   margin-bottom: ${(props) => props.mb + 'px' || 'auto'};
+  color: white;
 
   background-color: ${COLORS.dark_gray};
 `;

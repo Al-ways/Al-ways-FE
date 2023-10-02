@@ -1,18 +1,27 @@
-import { configureStore } from '@reduxjs/toolkit';
-import menuSlice from '../modules/menuSlice';
+// import { configureStore } from '@reduxjs/toolkit';
+// import menuSlice from '../modules/menuSlice';
 
-// 초기 세팅 - configureStore: slice 들의 집합
+// // 초기 세팅 - configureStore: slice 들의 집합
+// // const store = configureStore({
+// //   reducer: {},
+// // });
+
 // const store = configureStore({
-//   reducer: {},
+//   reducer: {
+//     menu: menuSlice.reducer,
+//   },
 // });
 
-const store = configureStore({
+// // typescript 사용으로 RootState 필요함
+// export type RootState = ReturnType<typeof store.getState>;
+// export default store;
+
+import { configureStore } from '@reduxjs/toolkit';
+import examinationReducer from '../reducers/examinationSlice';
+export const store = configureStore({
   reducer: {
-    menu: menuSlice.reducer,
+    examination: examinationReducer,
   },
 });
-
-// typescript 사용으로 RootState 필요함
 export type RootState = ReturnType<typeof store.getState>;
-
-export default store;
+export type AppDispatch = typeof store.dispatch;

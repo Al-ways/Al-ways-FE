@@ -7,16 +7,14 @@ import ProfileOrganism from '../organism/ProfileOrganism';
 
 const MyTemplate = () => {
   return (
-    <Container>
+    <>
       <ProfileOrganism />
       <BreakLineImage width={'480'} height={'10'} mb={'30'} />
       <MyBookmarkOrganism />
       <MyPostOrganism />
       <MyCommentOrganism />
-    </Container>
+    </>
   );
 };
 
 export default MyTemplate;
-
-const Container = styled.div``;

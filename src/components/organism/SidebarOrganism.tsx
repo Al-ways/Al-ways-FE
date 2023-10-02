@@ -18,6 +18,12 @@ const SidebarOrganism = ({ toggleMenu, isMenuOpen }: SidebarProps) => {
   const handleSidebarClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
+  const menuItems = [
+    { txt: '검색', route: '/search' },
+    { txt: '지도', route: '/map' },
+    { txt: '전체 리스트', route: '/list' },
+    { txt: '마이페이지', route: '/my' },
+  ];
 
   return (
     <SidebarWrapper onClick={toggleMenu}>
@@ -25,34 +31,16 @@ const SidebarOrganism = ({ toggleMenu, isMenuOpen }: SidebarProps) => {
         <CloseIcon toggleMenu={toggleMenu} />
         <SidebarUserStateMolecule />
         <BreakLineImage width={'280'} height={'5'} mb={'30'} />
-        <SidebarMenuMolecule
-          txt={'검색'}
-          onClick={() => {
-            navigate('/search');
-            if (toggleMenu) toggleMenu();
-          }}
-        />
-        <SidebarMenuMolecule
-          txt={'지도'}
-          onClick={() => {
-            navigate('/map');
-            if (toggleMenu) toggleMenu();
-          }}
-        />
-        <SidebarMenuMolecule
-          txt={'전체 리스트'}
-          onClick={() => {
-            navigate('/list');
-            if (toggleMenu) toggleMenu();
-          }}
-        />
-        <SidebarMenuMolecule
-          txt={'마이페이지'}
-          onClick={() => {
-            navigate('/my');
-            if (toggleMenu) toggleMenu();
-          }}
-        />
+        {menuItems.map((item, index) => (
+          <SidebarMenuMolecule
+            key={index}
+            txt={item.txt}
+            onClick={() => {
+              navigate(item.route);
+              if (toggleMenu) toggleMenu();
+            }}
+          />
+        ))}
 
         <Text
           width={'280'}

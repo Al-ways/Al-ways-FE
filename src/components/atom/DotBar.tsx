@@ -46,5 +46,5 @@ const Dot = styled.div<DotProp>`
 
   cursor: pointer;
   background-color: ${(props) =>
-    props.isActive ? COLORS.dark_gray : COLORS.gray};
+    props.isActive ? COLORS.dark_gray : COLORS.light_gray};
 `;

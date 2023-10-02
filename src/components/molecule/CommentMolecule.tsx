@@ -36,7 +36,7 @@ const CommentMolecule = () => {
           width={'350'}
           height={'16'}
           fonts={'16'}
-          color={COLORS.gray}
+          color={COLORS.light_gray}
           txt={'23. 09. 23'}
         />
       </CommentBottom>
