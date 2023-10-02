@@ -7,17 +7,17 @@ interface BreakLineProps {
   mb?: string;
 }
 
-const BreakLineImage = ({ width, height, mb }: BreakLineProps) => {
+const BreakLine = ({ width, height, mb }: BreakLineProps) => {
   return (
     <div>
-      <BreakLine width={width} height={height} mb={mb} />
+      <Image width={width} height={height} mb={mb} />
     </div>
   );
 };
 
-export default BreakLineImage;
+export default BreakLine;
 
-const BreakLine = styled.div<BreakLineProps>`
+const Image = styled.div<BreakLineProps>`
   width: ${(props) => props.width + 'px' || 'auto'};
   height: ${(props) => props.height + 'px' || 'auto'};
   margin-bottom: ${(props) => props.mb + 'px' || 'auto'};

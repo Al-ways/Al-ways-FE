@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 import rainyImage from '../../assets/icons/weather-rainy.png';
 
 const Weather = () => {
-  return <WeatherlImage />;
+  return <Image />;
 };
 
 export default Weather;
 
-const WeatherlImage = styled.div`
+const Image = styled.div`
   width: 100px;
   height: 100px;
   top: 25px;

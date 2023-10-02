@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 import loginImage from '../../assets/icons/login.png';
 
-const LoginImage = () => {
-  return <Login />;
+const Login = () => {
+  return <Image />;
 };
 
-export default LoginImage;
+export default Login;
 
-const Login = styled.div`
+const Image = styled.div`
   width: 40px;
   height: 40px;
   margin-right: 20px;

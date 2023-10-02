@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
-import LogoIcon from '../atom/LogoIcon';
-import MenuIconButton from '../atom/MenuIconButton';
-import LoginImage from '../atom/LoginImage';
+import Logo from '../atom/Logo';
+import DrawerMenu from '../atom/DrawerMenu';
+import Login from '../atom/Login';
 
 interface HeaderProps {
   toggleMenu: () => void;
@@ -17,9 +17,9 @@ const HeaderMolecule = ({ toggleMenu }: HeaderProps) => {
   return (
     <>
       <Header>
-        <MenuIconButton onClick={toggleMenu} />
-        <LogoIcon />
-        <LoginImage />
+        <DrawerMenu onClick={toggleMenu} />
+        <Logo />
+        <Login />
       </Header>
       {/* {isMenuOpen && (
         <SidebarWrapper onClick={toggleMenu}>

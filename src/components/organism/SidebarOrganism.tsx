@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import { COLORS } from '../../share/colors';
-import CloseIcon from '../atom/CloseIcon';
-import BreakLineImage from '../atom/BreakLineImage';
+import Close from '../atom/Close';
+import BreakLine from '../atom/BreakLine';
 import Text from '../atom/Text';
 import SidebarMenuMolecule from '../molecule/SidebarMenuMolecule';
 import SidebarUserStateMolecule from '../molecule/SidebarUserStateMolecule';
@@ -28,9 +28,9 @@ const SidebarOrganism = ({ toggleMenu, isMenuOpen }: SidebarProps) => {
   return (
     <SidebarWrapper onClick={toggleMenu}>
       <Sidebar isMenuOpen={isMenuOpen} onClick={handleSidebarClick}>
-        <CloseIcon toggleMenu={toggleMenu} />
+        <Close toggleMenu={toggleMenu} />
         <SidebarUserStateMolecule />
-        <BreakLineImage width={'280'} height={'5'} mb={'30'} />
+        <BreakLine width={'280'} height={'5'} mb={'30'} />
         {menuItems.map((item, index) => (
           <SidebarMenuMolecule
             key={index}

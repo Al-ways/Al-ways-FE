@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import logoImage from '../../assets/icons/logo.png';
 import { useNavigate } from 'react-router-dom';
 
-const LogoIcon = () => {
+const Logo = () => {
   const navigate = useNavigate();
   return (
-    <Logo
+    <Button
       onClick={() => {
         navigate('/');
       }}
@@ -13,9 +13,9 @@ const LogoIcon = () => {
   );
 };
 
-export default LogoIcon;
+export default Logo;
 
-const Logo = styled.div`
+const Button = styled.div`
   width: 150px;
   height: 50px;
 

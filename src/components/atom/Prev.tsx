@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import GoBackImage from '../../assets/icons/go-back.png';
+import prevImage from '../../assets/icons/prev.png';
 import { useNavigate } from 'react-router-dom';
 
-const GoBackIcon = () => {
+const Prev = () => {
   const navigate = useNavigate();
 
   return (
-    <GoBack
+    <Button
       onClick={() => {
         navigate(-1);
       }}
@@ -14,13 +14,13 @@ const GoBackIcon = () => {
   );
 };
 
-export default GoBackIcon;
+export default Prev;
 
-const GoBack = styled.div`
+const Button = styled.div`
   width: 50px;
   height: 50px;
   margin-left: 20px;
 
   cursor: pointer;
-  background-image: url(${GoBackImage});
+  background-image: url(${prevImage});
 `;

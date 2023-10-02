@@ -27,10 +27,10 @@ interface MenuIconButtonProps {
   onClick: () => void;
 }
 
-const MenuIconButton = ({ onClick }: MenuIconButtonProps) => {
-  return <Menu onClick={onClick} />;
+const DrawerMenu = ({ onClick }: MenuIconButtonProps) => {
+  return <Image onClick={onClick} />;
 };
-const Menu = styled.div`
+const Image = styled.div`
   width: 40px;
   height: 40px;
   margin-left: 20px;
@@ -40,4 +40,4 @@ const Menu = styled.div`
   background-size: cover;
 `;
 
-export default MenuIconButton;
+export default DrawerMenu;
