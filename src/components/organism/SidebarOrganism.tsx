@@ -72,8 +72,8 @@ const SidebarWrapper = styled.div`
 const Sidebar = styled.div<SidebarProps>`
   width: 320px;
   height: 909px;
-  align-items: center;
 
+  align-items: center;
   display: flex;
   flex-direction: column;
   position: absolute;
