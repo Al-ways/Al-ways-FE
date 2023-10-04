@@ -1,20 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export const useCurrentLocation = () => {
-  const [currentLocation, setCurrentLocation] =
-    useState<GeolocationPosition | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleSuccess = (position: GeolocationPosition) => {
-    setCurrentLocation(position);
-  };
-
-  const handleError = (error: GeolocationPositionError) => {
-    setError(error.message);
-  };
+export default function useCurrentLocation() {
+  const [location, setLocation] = useState({
+    latitude: 0,
+    longitude: 0,
+  });
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
-  }, []);
-  return { currentLocation, error };
-};
+    navigator.geolocation.getCurrentPosition((position) => {
+      setLocation({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      });
+    });
+  }, [location]);
+
+  return location;
+}

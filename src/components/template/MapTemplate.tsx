@@ -5,6 +5,7 @@ import NaverMap from '../atom/NaverMap';
 import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
 const MapTemplate = () => {
   const [search, setSearch] = useState('');
+
   return (
     <Container>
       <SearchInput value={search} setValue={setSearch} />
