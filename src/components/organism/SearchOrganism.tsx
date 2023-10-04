@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
-// import SearchContainerMolecule from '../molecule/SearchContainerMolecule';
 import BoxMolecule from '../molecule/BoxMolecule';
 
 const SearchOrganism = () => {
@@ -13,7 +12,6 @@ const SearchOrganism = () => {
         fonts={'24'}
         mb={'20'}
       />
-      {/* <SearchContainerMolecule /> */}
       <BoxContainer>
         <BoxMolecule
           width={'130'}
@@ -21,6 +19,7 @@ const SearchOrganism = () => {
           fonts={'20'}
           br={'10'}
           txt={'추천받기'}
+          routes={'/recommended'}
         />
         <BoxMolecule
           width={'130'}
@@ -28,6 +27,7 @@ const SearchOrganism = () => {
           fonts={'20'}
           br={'10'}
           txt={'검색하기'}
+          routes={'/search'}
         />
         <BoxMolecule
           width={'130'}
@@ -35,6 +35,7 @@ const SearchOrganism = () => {
           fonts={'20'}
           br={'10'}
           txt={'지도보기'}
+          routes={'/map'}
         />
       </BoxContainer>
     </Container>
