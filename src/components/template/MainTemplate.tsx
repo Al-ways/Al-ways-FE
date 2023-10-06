@@ -1,6 +1,6 @@
 import SearchOrganism from '../organism/SearchOrganism';
 import SliderMolecule from '../molecule/SliderMolecule';
-import RecommendedOrganism from '../organism/RecommendedOrganism';
+import WeatherOrganism from '../organism/WeatherOrganism';
 import PopularLocationOrganism from '../organism/PopularLocationOrganism';
 import CommunityOrganism from '../organism/CommunityOrganism';
 
@@ -9,7 +9,7 @@ const MainTemplate = () => {
     <>
       <SliderMolecule />
       <SearchOrganism />
-      <RecommendedOrganism />
+      <WeatherOrganism />
       <PopularLocationOrganism />
       <CommunityOrganism />
     </>

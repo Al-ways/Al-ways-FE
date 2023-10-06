@@ -1,15 +1,14 @@
 import styled from '@emotion/styled';
-import RecomendedMolecule from '../molecule/RecomendedMolecule';
-
-const RecommendedOrganism = () => {
+import WeatherMolecule from '../molecule/WeatherMolecule';
+const WeatherOrganism = () => {
   return (
     <Container>
-      <RecomendedMolecule />
+      <WeatherMolecule />
     </Container>
   );
 };
 
-export default RecommendedOrganism;
+export default WeatherOrganism;
 
 const Container = styled.div`
   width: 480px;

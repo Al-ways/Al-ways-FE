@@ -3,10 +3,10 @@ import Text from '../atom/Text';
 import { COLORS } from '../../share/colors';
 import Weather from '../atom/Weather';
 
-const RecomendedMolecule = () => {
+const WeatherMolecule = () => {
   return (
     <>
-      <RecommenedBanner>
+      <WheatherBanner>
         <Text
           width={'400'}
           height={'50'}
@@ -23,18 +23,17 @@ const RecomendedMolecule = () => {
           position={'absolute'}
         />
         <Weather />
-      </RecommenedBanner>
+      </WheatherBanner>
     </>
   );
 };
 
-export default RecomendedMolecule;
+export default WeatherMolecule;
 
-const RecommenedBanner = styled.div`
+const WheatherBanner = styled.div`
   width: 440px;
   height: 150px;
   border-radius: 10px;
-  /* margin-bottom: 20px; */
 
   position: relative;
   display: flex;
