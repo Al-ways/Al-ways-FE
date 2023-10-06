@@ -5,8 +5,10 @@ interface OptionButtonProps {
 const OptionButton = ({ list }: OptionButtonProps) => {
   return (
     <Container>
-      {list.map((option) => (
-        <option value={option}>{option}</option>
+      {list.map((option, idx) => (
+        <option value={option} key={idx}>
+          {option}
+        </option>
       ))}
     </Container>
   );

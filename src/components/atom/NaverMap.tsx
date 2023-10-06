@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store/configureStore';
 
 declare global {
   interface Window {
@@ -9,6 +11,8 @@ declare global {
 }
 const NaverMap = () => {
   const mapRef = useRef(null);
+  const location = useSelector((state: RootState) => state.currentLocation);
+  console.log(location);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -21,7 +25,10 @@ const NaverMap = () => {
     const handleScriptLoad = () => {
       const container = mapRef.current; // 지도를 표시할 DOM 요소 선택
       const options = {
-        center: new window.naver.maps.LatLng(37.583148999097, 127.04697090384), // 지도의 중심 좌표 설정 (예시: 서울)
+        center: new window.naver.maps.LatLng(
+          location.latitude,
+          location.longitude,
+        ), // 지도의 중심 좌표 설정 (예시: 서울)
         zoom: 17, // 지도의 확대 레벨 설정
       };
       const mapInstance = new window.naver.maps.Map(container, options); // 지도 생성 및 표시
@@ -43,8 +50,8 @@ const NaverMap = () => {
       // });
       const markerOptions = {
         position: new window.naver.maps.LatLng(
-          37.583148999097,
-          127.04697090384,
+          location.latitude,
+          location.longitude,
         ),
         map: mapInstance,
       };
@@ -77,8 +84,9 @@ const NaverMap = () => {
         document.head.removeChild(script);
       }
     };
-  }, []);
-
+  }, [location]);
+  if (!location.latitude || !location.longitude)
+    return <NaverMapView>Loading</NaverMapView>;
   return (
     <Container>
       <NaverMapView ref={mapRef} />

@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import OptionSelectMolecule from '../molecule/OptionSelectMolecule';
 import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
 import Text from '../atom/Text';
-
 const ListTemplate = () => {
   return (
     <Container>

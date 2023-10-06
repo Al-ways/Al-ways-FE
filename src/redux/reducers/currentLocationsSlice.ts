@@ -1,33 +1,30 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface CurrentLocationsState {
-  value: {
-    lat: string | number;
-    lon: string | number;
-  };
+interface LocationState {
+  latitude: number | null;
+  longitude: number | null;
 }
-const initialState: CurrentLocationsState = {
-  value: {
-    lat: '',
-    lon: '',
-  },
-};
-console.log(initialState);
+interface initialState {
+  latitude: number | null;
+  longitude: number | null;
+}
 
-export const currentLocationsSlice = createSlice({
-  name: 'currentLocations',
+const initialState: initialState = {
+  latitude: null,
+  longitude: null,
+};
+
+const currentLocationSlice = createSlice({
+  name: 'location',
   initialState,
   reducers: {
-    addValue: (
-      state: CurrentLocationsState,
-      action: PayloadAction<{ lat: string | number; lon: string | number }>,
-    ) => {
-      state.value.lat = action.payload.lat;
-      state.value.lon = action.payload.lon;
+    setLocation(state: initialState, action: PayloadAction<LocationState>) {
+      state.latitude = action.payload.latitude;
+      state.longitude = action.payload.longitude;
     },
-    // updateValue:
   },
 });
 
-export const { addValue } = currentLocationsSlice.actions;
-export default currentLocationsSlice.reducer;
+export const { setLocation } = currentLocationSlice.actions;
+
+export default currentLocationSlice.reducer;

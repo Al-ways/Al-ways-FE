@@ -18,9 +18,11 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import examinationReducer from '../reducers/examinationSlice';
+import currentLocationsSlice from '../reducers/currentLocationsSlice';
 export const store = configureStore({
   reducer: {
     examination: examinationReducer,
+    currentLocation: currentLocationsSlice,
   },
 });
 
