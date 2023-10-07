@@ -19,7 +19,7 @@ const WeatherOrganism = () => {
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=576217254852d28ff29e275ca843c5fe&units=metric`;
     let response = await fetch(url);
     let data = await response.json();
-    // console.log(data);
+    console.log(data);
     setWeather(data);
   };
 
@@ -28,9 +28,7 @@ const WeatherOrganism = () => {
   }, []);
 
   return (
-    <Container>
-      <WeatherMolecule weather={weather} />
-    </Container>
+    <Container>{weather && <WeatherMolecule weather={weather} />}</Container>
   );
 };
 
