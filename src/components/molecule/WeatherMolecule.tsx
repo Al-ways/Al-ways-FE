@@ -3,7 +3,7 @@ import Text from '../atom/Text';
 import { COLORS } from '../../share/colors';
 import Weather from '../atom/Weather';
 
-interface WeatherProps {
+interface WeatherData {
   name: string;
   main: {
     temp: number;
@@ -13,7 +13,7 @@ interface WeatherProps {
   }[];
 }
 
-const WeatherMolecule = ({ weather }: { weather: WeatherProps }) => {
+const WeatherMolecule = ({ weather }: { weather: WeatherData }) => {
   // console.log(weather);
 
   // 날씨 번역
