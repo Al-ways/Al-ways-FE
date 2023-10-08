@@ -19,10 +19,10 @@ const WeatherMolecule = ({ weather }: { weather: WeatherProps }) => {
   // 날씨 번역
   const weatherTranslation: { [key: string]: string } = {
     'sky is clear': '맑음',
-    'few clouds': '구름',
-    'scattered clouds': '구름',
-    'broken clouds': '구름',
-    'overcast clouds': '구름',
+    'few clouds': '흐림',
+    'scattered clouds': '흐림',
+    'broken clouds': '흐림',
+    'overcast clouds': '흐림',
     'shower rain': '비',
     'light rain': '비',
     'moderate rain': '비',
@@ -32,9 +32,8 @@ const WeatherMolecule = ({ weather }: { weather: WeatherProps }) => {
     mist: '안개',
   };
 
-  const translatedWeather =
-    weatherTranslation[weather.weather[0].description] ||
-    weather.weather[0].description;
+  // 번역한 날씨명 변수
+  const translatedWeather = weatherTranslation[weather.weather[0].description];
 
   return (
     <WheatherBanner>
@@ -55,7 +54,7 @@ const WeatherMolecule = ({ weather }: { weather: WeatherProps }) => {
         bottom={'20'}
         position={'absolute'}
       />
-      <Weather />
+      <Weather translatedWeather={translatedWeather} />
     </WheatherBanner>
   );
 };
