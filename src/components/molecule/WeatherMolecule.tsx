@@ -35,19 +35,39 @@ const WeatherMolecule = ({ weather }: { weather: WeatherProps }) => {
   // 번역한 날씨명 변수
   const translatedWeather = weatherTranslation[weather.weather[0].description];
 
+  let weatherTitle;
+  switch (translatedWeather) {
+    case '맑음':
+      weatherTitle = '오늘은 술 마시기 좋은 날!';
+      break;
+    case '흐림':
+      weatherTitle = '흐린 날엔 어디로 가볼까?';
+      break;
+    case '천둥번개':
+      weatherTitle = '이 날씨에 나가시려구요? ';
+      break;
+    case '안개':
+      weatherTitle = `${translatedWeather} 낀 날엔 어디로 가볼까?`;
+      break;
+    default:
+      weatherTitle = `${translatedWeather} 날엔 어디로 가볼까?`;
+      break;
+  }
+
   return (
     <WheatherBanner>
       <Text
         width={'400'}
-        height={'50'}
-        fonts={'45'}
+        height={'24'}
+        fonts={'24'}
+        fontw={'400'}
         mt={'20'}
-        txt={'비 오는 날엔?'}
+        txt={weatherTitle}
       />
       <Text
         width={'400'}
-        height={'16'}
-        fonts={'16'}
+        height={'14'}
+        fonts={'14'}
         txt={`${weather.name}, ${Math.floor(
           weather.main.temp,
         )}°C, ${translatedWeather}`}
@@ -63,7 +83,7 @@ export default WeatherMolecule;
 
 const WheatherBanner = styled.div`
   width: 440px;
-  height: 150px;
+  height: 110px;
   border-radius: 10px;
 
   position: relative;
