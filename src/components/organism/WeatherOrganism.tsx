@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import WeatherMolecule from '../molecule/WeatherMolecule';
 import { useNavigate } from 'react-router-dom';
+import LoadingMolecule from '../molecule/LoadingMolecule';
 
 interface WeatherData {
   name: string;
@@ -17,7 +18,11 @@ const WeatherOrganism = ({ weather }: { weather: WeatherData | null }) => {
 
   return (
     <Container onClick={() => navigate('/recommended')}>
-      {weather && <WeatherMolecule weather={weather} />}
+      {weather ? (
+        <WeatherMolecule weather={weather} />
+      ) : (
+        <LoadingMolecule txt={'날씨 정보를 로딩중입니다. ☀️🌤️☁️'} />
+      )}
     </Container>
   );
 };
