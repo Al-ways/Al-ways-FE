@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
-import sunnyImage from '../../assets/icons/weather-sunny.png';
-import cloudImage from '../../assets/icons/weather-cloud.png';
-import mistImage from '../../assets/icons/weather-mist.png';
-import thunderImage from '../../assets/icons/weather-thunder.png';
-import rainyImage from '../../assets/icons/weather-rainy.png';
-import snowImage from '../../assets/icons/weather-snow.png';
+import sunnyImage from '../../assets/main/weather/weather-sunny.png';
+import cloudImage from '../../assets/main/weather/weather-cloud.png';
+import mistImage from '../../assets/main/weather/weather-mist.png';
+import thunderImage from '../../assets/main/weather/weather-thunder.png';
+import rainyImage from '../../assets/main/weather/weather-rainy.png';
+import snowImage from '../../assets/main/weather/weather-sunny.png';
 
 interface WeatherProps {
   translatedWeather: string;
@@ -33,7 +33,7 @@ const Weather = ({ translatedWeather }: WeatherProps) => {
       weatherImg = mistImage;
       break;
     default:
-      weatherImg = '날씨 정보를 불러오고 있습니다.';
+      weatherImg = sunnyImage;
       break;
   }
 
@@ -43,9 +43,9 @@ const Weather = ({ translatedWeather }: WeatherProps) => {
 export default Weather;
 
 const Image = styled.div<{ weatherImg: string }>`
-  width: 100px;
-  height: 100px;
-  top: 25px;
+  width: 70px;
+  height: 70px;
+  top: 20px;
   right: 20px;
 
   position: absolute;
