@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store/configureStore';
 import loading from '../../assets/loading.gif';
+import { stores } from '../../api/map';
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -39,22 +40,22 @@ const NaverMap = () => {
       //   // 추가적인 위치 정보...
       // ];
 
-      // locations.forEach(location => {
-      //   const markerOptions = {
-      //     position: new window.naver.maps.LatLng(location.lat, location.lng),
-      //     map: mapInstance,
-      //   };
+      stores.forEach((location) => {
+        const markerOptions = {
+          position: new window.naver.maps.LatLng(location.lat, location.lng),
+          map: mapInstance,
+        };
 
-      //   new window.naver.maps.Marker(markerOptions); // 각 위치에 대한 마커 생성 및 표시
-      // });
-      const markerOptions = {
-        position: new window.naver.maps.LatLng(
-          location.latitude,
-          location.longitude,
-        ),
-        map: mapInstance,
-      };
-      new window.naver.maps.Marker(markerOptions);
+        new window.naver.maps.Marker(markerOptions); // 각 위치에 대한 마커 생성 및 표시
+      });
+      // const markerOptions = {
+      //   position: new window.naver.maps.LatLng(
+      //     location.latitude,
+      //     location.longitude,
+      //   ),
+      //   map: mapInstance,
+      // };
+      // new window.naver.maps.Marker(markerOptions);
       // 2. 현재 위치에서의 가게 마커 정보 찍기
 
       // const bounds = mapInstance.getBounds(); // 현재 지도의 뷰포트 영역
