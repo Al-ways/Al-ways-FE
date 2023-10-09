@@ -15,9 +15,8 @@ const MapTemplate = () => {
   };
   // //  클릭 이벤트
   // const handleSearchClick = () => {
-  //   navigate(`/map?q=${searchValue}}`); // '/list' 경로로 이동
+  //   navigate(`/map?q=${searchValue}`); // '/list' 경로로 이동
   // };
-
   return (
     <Container>
       <SearchInput value={searchValue} onChange={handleInputChange} />
