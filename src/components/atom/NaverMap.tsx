@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store/configureStore';
-
+import loading from '../../assets/loading.gif';
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -12,7 +12,6 @@ declare global {
 const NaverMap = () => {
   const mapRef = useRef(null);
   const location = useSelector((state: RootState) => state.currentLocation);
-  console.log(location);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -86,7 +85,11 @@ const NaverMap = () => {
     };
   }, [location]);
   if (!location.latitude || !location.longitude)
-    return <NaverMapView>Loading</NaverMapView>;
+    return (
+      <NaverMapView>
+        <Loading src={loading} alt="loadig" />
+      </NaverMapView>
+    );
   return (
     <Container>
       <NaverMapView ref={mapRef} />
@@ -100,6 +103,12 @@ const NaverMapView = styled.div`
   width: 440px;
   height: 440px;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
-
+const Loading = styled.img`
+  width: 200px;
+  height: 200px;
+`;
 export default NaverMap;

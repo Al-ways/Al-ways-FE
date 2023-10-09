@@ -7,16 +7,17 @@ import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
 const MapTemplate = () => {
   const [searchValue, setSearchValue] = useState('');
   // const navigate = useNavigate();
-  // const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams] = useSearchParams();
 
+  // const q = searchParams.get('q');
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
-  //  클릭 이벤트
+  // //  클릭 이벤트
   // const handleSearchClick = () => {
-  //   setSearchParams({ query: searchValue });
-  //   navigate('/search'); // '/search' 경로로 이동
+  //   navigate(`/map?q=${searchValue}}`); // '/list' 경로로 이동
   // };
+
   return (
     <Container>
       <SearchInput value={searchValue} onChange={handleInputChange} />

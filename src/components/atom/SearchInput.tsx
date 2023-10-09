@@ -16,7 +16,7 @@ const SearchInput = ({ value, onChange }: SearchInputProps) => {
     </Container>
   );
 };
-const Container = styled.div`
+const Container = styled.form`
   width: 480px;
   height: 50px;
 `;
