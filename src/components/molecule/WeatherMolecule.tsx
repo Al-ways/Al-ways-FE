@@ -3,22 +3,12 @@ import Text from '../atom/Text';
 import { COLORS } from '../../share/colors';
 import Weather from '../atom/Weather';
 
-interface WeatherData {
-  name: string;
-  main: {
-    temp: number;
-  };
-  weather: {
-    description: string;
-  }[];
-}
-
 const WeatherMolecule = ({ weather }: { weather: WeatherData }) => {
   // console.log(weather);
 
   // 날씨 번역
   const weatherTranslation: { [key: string]: string } = {
-    'sky is clear': '맑음',
+    'clear sky': '맑음',
     'few clouds': '흐림',
     'scattered clouds': '흐림',
     'broken clouds': '흐림',
@@ -34,6 +24,7 @@ const WeatherMolecule = ({ weather }: { weather: WeatherData }) => {
 
   // 번역한 날씨명 변수
   const translatedWeather = weatherTranslation[weather.weather[0].description];
+  // console.log(`현재 날씨: ${weather.weather[0].description}`);
 
   let weatherTitle;
   switch (translatedWeather) {

@@ -3,16 +3,6 @@ import WeatherMolecule from '../molecule/WeatherMolecule';
 import { useNavigate } from 'react-router-dom';
 import LoadingMolecule from '../molecule/LoadingMolecule';
 
-interface WeatherData {
-  name: string;
-  main: {
-    temp: number;
-  };
-  weather: {
-    description: string;
-  }[];
-}
-
 const WeatherOrganism = ({ weather }: { weather: WeatherData | null }) => {
   const navigate = useNavigate();
 
@@ -21,7 +11,7 @@ const WeatherOrganism = ({ weather }: { weather: WeatherData | null }) => {
       {weather ? (
         <WeatherMolecule weather={weather} />
       ) : (
-        <LoadingMolecule txt={'날씨 정보를 로딩중입니다. ☀️🌤️☁️'} />
+        <LoadingMolecule txt={'날씨 정보를 로딩중입니다.'} />
       )}
     </Container>
   );
