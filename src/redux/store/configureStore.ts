@@ -18,9 +18,11 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import examinationReducer from '../reducers/examinationSlice';
+import optionSelectSlice from '../reducers/optionSelectSlice';
 export const store = configureStore({
   reducer: {
     examination: examinationReducer,
+    optionSelect: optionSelectSlice,
   },
 });
 
