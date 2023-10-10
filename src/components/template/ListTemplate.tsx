@@ -13,7 +13,18 @@ import Text from '../atom/Text';
 // }
 const ListTemplate = () => {
   // const option = useSelector((state: RootState) => state.optionSelect);
-
+  // if (data.length === 0) {
+  //   return (
+  //     <TextBox>
+  //       <Text
+  //         width={'270'}
+  //         height={'20'}
+  //         align={'center'}
+  //         txt={'일치하는 장소가 없습니다.'}
+  //       />
+  //     </TextBox>
+  //   );
+  // }
   return (
     <Container>
       <OptionSelectMolecule />
@@ -33,4 +44,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+// const TextBox = styled.div`
+//   width: 270px;
+//   height: 20px;
+// `;
 export default ListTemplate;
