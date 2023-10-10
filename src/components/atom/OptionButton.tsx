@@ -1,12 +1,46 @@
 import styled from '@emotion/styled';
+import { useDispatch } from 'react-redux';
+import {
+  setSortOption,
+  setCatagoryOption,
+  setTagOption,
+} from '../../redux/reducers/optionSelectSlice';
 interface OptionButtonProps {
   list: string[];
+  type: string;
 }
-const OptionButton = ({ list }: OptionButtonProps) => {
+const OptionButton = ({ list, type }: OptionButtonProps) => {
+  const dispatch = useDispatch();
+
+  const handleOptionChange = (
+    e: React.ChangeEvent<HTMLSelectElement>,
+    type: string,
+  ) => {
+    switch (type) {
+      case 'sort':
+        dispatch(setSortOption(e.target.value));
+        break;
+      case 'catagory':
+        dispatch(setCatagoryOption(e.target.value));
+        break;
+      case 'tag':
+        dispatch(setTagOption(e.target.value));
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
-    <Container>
-      {list.map((option) => (
-        <option value={option}>{option}</option>
+    <Container
+      onChange={(e) => {
+        handleOptionChange(e, type);
+      }}
+    >
+      {list.map((option, idx) => (
+        <option value={option} key={idx}>
+          {option}
+        </option>
       ))}
     </Container>
   );
