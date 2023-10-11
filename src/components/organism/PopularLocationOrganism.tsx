@@ -2,10 +2,15 @@ import styled from '@emotion/styled';
 import PopularLocationHeaderMolecule from '../molecule/PopularLocationHeaderMolecule';
 import LargeThumbnailMolecule from '../molecule/LargeThumbnailMolecule';
 
-const PopularLocationOrganism = () => {
+const PopularLocationOrganism = ({
+  weather,
+}: {
+  weather: WeatherData | null;
+}) => {
+  // console.log(weather);
   return (
     <Container>
-      <PopularLocationHeaderMolecule />
+      <PopularLocationHeaderMolecule weather={weather} />
       <LargeThumbnailMolecule />
     </Container>
   );

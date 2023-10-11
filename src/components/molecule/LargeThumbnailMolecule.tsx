@@ -3,15 +3,21 @@ import { COLORS } from '../../share/colors';
 import Img from '../atom/Img';
 import Text from '../atom/Text';
 import { bars } from '../../api/bar';
+import { useNavigate } from 'react-router-dom';
 
 const LargeThumbnailMolecule = () => {
+  const navigate = useNavigate();
+
   // 높은 별점 순 5개 업소
   const sortedBars = [...bars].sort((a, b) => b.rating - a.rating).slice(0, 5);
 
   return (
     <LargeThumbnailWrapper>
       {sortedBars.map((bar) => (
-        <ThumbNailContainer key={bar.id}>
+        <ThumbNailContainer
+          key={bar.id}
+          onClick={() => navigate(`/detail/${bar.id}`)}
+        >
           <Img
             src={bar.image}
             alt={bar.title}

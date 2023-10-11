@@ -33,7 +33,7 @@ const MainTemplate = () => {
       <SliderMolecule />
       <SearchOrganism />
       <WeatherOrganism weather={weather} />
-      <PopularLocationOrganism />
+      <PopularLocationOrganism weather={weather} />
       <CommunityOrganism />
     </>
   );
