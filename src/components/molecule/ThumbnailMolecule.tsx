@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import { COLORS } from '../../share/colors';
 import Text from '../atom/Text';
 import Img from '../atom/Img';
-import barImage1 from '../../assets/main/bar1.jpg';
-import barImage2 from '../../assets/main/bar2.jpg';
-import barImage3 from '../../assets/main/bar3.png';
+import barImage1 from '../../assets/main/bar/bar1.jpg';
+import barImage2 from '../../assets/main/bar/bar2.jpg';
+import barImage3 from '../../assets/main/bar/bar3.png';
 
 const ThumbnailMolecule = () => {
   const BarImages = [barImage1, barImage2, barImage3];

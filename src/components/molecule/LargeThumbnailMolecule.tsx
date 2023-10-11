@@ -1,48 +1,20 @@
 import styled from '@emotion/styled';
 import { COLORS } from '../../share/colors';
-import barImage1 from '../../assets/main/bar1.jpg';
-import barImage2 from '../../assets/main/bar2.jpg';
-import barImage3 from '../../assets/main/bar3.png';
-import barImage4 from '../../assets/main/bar4.jpg';
-import barImage5 from '../../assets/main/bar5.jpg';
 import Img from '../atom/Img';
 import Text from '../atom/Text';
+import { bars } from '../../api/bar';
 
 const LargeThumbnailMolecule = () => {
-  /* 바 이미지 */
-  const BarImages = [barImage1, barImage2, barImage3, barImage4, barImage5];
+  // 높은 별점 순 5개 업소
+  const sortedBars = [...bars].sort((a, b) => b.rating - a.rating).slice(0, 5);
 
   return (
     <LargeThumbnailWrapper>
-      {/* <ThumbNailContainer>
-        <Img
-          src={barImage1}
-          alt={'bar'}
-          width={'210'}
-          height={'180'}
-          mt={'20'}
-          br={'10'}
-        />
-        <Text
-          width={'210'}
-          height={'24'}
-          fonts={'24'}
-          mt={'20'}
-          txt={'비어테라스'}
-        />
-        <Text
-          width={'210'}
-          height={'16'}
-          fonts={'16'}
-          mt={'5'}
-          txt={'서울특별시 강남구 테헤란로8길 20 1층'}
-        />
-      </ThumbNailContainer> */}
-      {BarImages.map((src, index) => (
-        <ThumbNailContainer key={index}>
+      {sortedBars.map((bar) => (
+        <ThumbNailContainer key={bar.id}>
           <Img
-            src={src}
-            alt={'bar'}
+            src={bar.image}
+            alt={bar.title}
             width={'210'}
             height={'180'}
             mt={'20'}
@@ -53,14 +25,14 @@ const LargeThumbnailMolecule = () => {
             height={'24'}
             fonts={'24'}
             mt={'20'}
-            txt={`Bar ${index + 1}`}
+            txt={bar.title}
           />
           <Text
             width={'210'}
             height={'16'}
             fonts={'16'}
-            mt={'5'}
-            txt={`address ${index + 1}`}
+            mt={'10'}
+            txt={bar.location}
           />
         </ThumbNailContainer>
       ))}

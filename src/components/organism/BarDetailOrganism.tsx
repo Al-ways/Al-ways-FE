@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import InformationMolecule from '../molecule/InformationMolecule';
 import Text from '../atom/Text';
 import Img from '../atom/Img';
-import BarImage from '../../assets/main/bar1.jpg';
+import BarImage from '../../assets/main/bar/bar1.jpg';
 
 const BarDetailOrganism = () => {
   return (
