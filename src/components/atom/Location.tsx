@@ -16,9 +16,10 @@ const Location = () => {
 export default Location;
 
 const Image = styled.div`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   margin-right: 5px;
 
+  background-size: cover;
   background-image: url(${locationImage});
 `;

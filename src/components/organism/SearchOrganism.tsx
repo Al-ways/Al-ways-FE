@@ -8,15 +8,17 @@ const SearchOrganism = () => {
       <Text
         txt={'술집 찾기'}
         width={'440'}
-        height={'24'}
-        fonts={'24'}
+        height={'20'}
+        fonts={'20'}
+        fontw={'700'}
         mb={'20'}
       />
       <BoxContainer>
         <BoxMolecule
           width={'130'}
           height={'130'}
-          fonts={'20'}
+          fonts={'16'}
+          fontw={'400'}
           br={'10'}
           txt={'추천받기'}
           routes={'/recommended'}
@@ -24,7 +26,8 @@ const SearchOrganism = () => {
         <BoxMolecule
           width={'130'}
           height={'130'}
-          fonts={'20'}
+          fonts={'16'}
+          fontw={'400'}
           br={'10'}
           txt={'검색하기'}
           routes={'/search'}
@@ -32,7 +35,8 @@ const SearchOrganism = () => {
         <BoxMolecule
           width={'130'}
           height={'130'}
-          fonts={'20'}
+          fonts={'16'}
+          fontw={'400'}
           br={'10'}
           txt={'지도보기'}
           routes={'/map'}
