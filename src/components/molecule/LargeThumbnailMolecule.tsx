@@ -4,6 +4,8 @@ import Img from '../atom/Img';
 import Text from '../atom/Text';
 import { bars } from '../../api/bar';
 import { useNavigate } from 'react-router-dom';
+import NodataMolecule from './NodataMolecule';
+import { getStars } from '../../utils/ratingUtil';
 
 const LargeThumbnailMolecule = () => {
   const navigate = useNavigate();
@@ -12,37 +14,52 @@ const LargeThumbnailMolecule = () => {
   const sortedBars = [...bars].sort((a, b) => b.rating - a.rating).slice(0, 5);
 
   return (
-    <LargeThumbnailWrapper>
-      {sortedBars.map((bar) => (
-        <ThumbNailContainer
-          key={bar.id}
-          onClick={() => navigate(`/detail/${bar.id}`)}
-        >
-          <Img
-            src={bar.image}
-            alt={bar.title}
-            width={'210'}
-            height={'180'}
-            mt={'20'}
-            br={'10'}
-          />
-          <Text
-            width={'210'}
-            height={'24'}
-            fonts={'24'}
-            mt={'20'}
-            txt={bar.title}
-          />
-          <Text
-            width={'210'}
-            height={'16'}
-            fonts={'16'}
-            mt={'10'}
-            txt={bar.location}
-          />
-        </ThumbNailContainer>
-      ))}
-    </LargeThumbnailWrapper>
+    <>
+      {sortedBars && sortedBars.length > 0 ? (
+        <LargeThumbnailWrapper>
+          {sortedBars.map((bar) => (
+            <ThumbNailContainer
+              key={bar.id}
+              onClick={() => navigate(`/detail/${bar.id}`)}
+            >
+              <Img
+                src={bar.image}
+                alt={bar.title}
+                width={'250'}
+                height={'200'}
+                btlr={'10'}
+                btrr={'10'}
+              />
+              <TitleWrapper>
+                <Text
+                  // width={'105'}
+                  height={'16'}
+                  fonts={'16'}
+                  fontw={'400'}
+                  txt={bar.title}
+                />
+                <Text
+                  // width={'105'}
+                  height={'16'}
+                  fonts={'14'}
+                  txt={getStars(bar.rating)}
+                />
+              </TitleWrapper>
+
+              <Text
+                width={'210'}
+                height={'14'}
+                fonts={'14'}
+                mt={'15'}
+                txt={bar.location}
+              />
+            </ThumbNailContainer>
+          ))}
+        </LargeThumbnailWrapper>
+      ) : (
+        <NodataMolecule txt={'이번 주 인기 술집이 없습니다.'} />
+      )}
+    </>
   );
 };
 
@@ -65,7 +82,7 @@ const LargeThumbnailWrapper = styled.div`
     background-color: ${COLORS.dark_gray};
   }
   &::-webkit-scrollbar-thumb {
-    background-color: ${COLORS.white};
+    background-color: ${COLORS.light_gray};
     border-radius: 10px;
   }
 `;
@@ -86,4 +103,13 @@ const ThumbNailContainer = styled.div`
   &:last-child {
     margin-right: 0;
   }
+`;
+
+const TitleWrapper = styled.div`
+  width: 210px;
+  height: 16px;
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
 `;
