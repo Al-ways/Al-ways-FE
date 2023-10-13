@@ -1,59 +1,50 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
-import { COLORS } from '../../share/colors';
 import Weather from '../atom/Weather';
+import {
+  weatherBackgroundColor,
+  weatherTranslation,
+} from '../../utils/weatherUtils';
 
 const WeatherMolecule = ({ weather }: { weather: WeatherData }) => {
-  // console.log(weather);
-
-  // 날씨 번역
-  const weatherTranslation: { [key: string]: string } = {
-    'clear sky': '맑음',
-    'few clouds': '흐림',
-    'scattered clouds': '흐림',
-    'broken clouds': '흐림',
-    'overcast clouds': '흐림',
-    'shower rain': '비',
-    'light rain': '비',
-    'moderate rain': '비',
-    Rain: '비',
-    Thunderstorm: '천둥번개',
-    snow: '눈',
-    mist: '안개',
-  };
-
   // 번역한 날씨명 변수
   const translatedWeather = weatherTranslation[weather.weather[0].description];
+
+  // 설정한 날씨 배경색
+  const backgroundColor = weatherBackgroundColor[translatedWeather];
+
   // console.log(`현재 날씨: ${weather.weather[0].description}`);
 
-  let weatherTitle;
-  switch (translatedWeather) {
-    case '맑음':
-      weatherTitle = '오늘은 술 마시기 좋은 날!';
-      break;
-    case '흐림':
-      weatherTitle = '흐린 날엔 어디로 가볼까?';
-      break;
-    case '천둥번개':
-      weatherTitle = '이 날씨에 나가시려구요? ';
-      break;
-    case '안개':
-      weatherTitle = `${translatedWeather} 낀 날엔 어디로 가볼까?`;
-      break;
-    default:
-      weatherTitle = `${translatedWeather} 날엔 어디로 가볼까?`;
-      break;
-  }
+  // const weatherTitle = `오늘의 ? ${translatedWeather}`;
+
+  // let weatherTitle;
+  // switch (translatedWeather) {
+  //   case '맑음':
+  //     weatherTitle = '오늘은 술 마시기 좋은 날!';
+  //     break;
+  //   case '흐림':
+  //     weatherTitle = '흐린 날엔 어디로 가볼까?';
+  //     break;
+  //   case '천둥번개':
+  //     weatherTitle = '이 날씨에 나가시려구요? ';
+  //     break;
+  //   case '안개':
+  //     weatherTitle = `${translatedWeather} 낀 날엔 어디로 가볼까?`;
+  //     break;
+  //   default:
+  //     weatherTitle = '오늘같은 날씨엔 어디로?';
+  //     break;
+  // }
 
   return (
-    <WheatherBanner>
+    <WheatherBanner backgroundColor={backgroundColor}>
       <Text
         width={'400'}
-        height={'24'}
-        fonts={'24'}
+        height={'20'}
+        fonts={'20'}
         fontw={'400'}
         mt={'20'}
-        txt={weatherTitle}
+        txt={'오늘 날씨에 맞는 술집을 추천해드려요.'}
       />
       <Text
         width={'400'}
@@ -72,7 +63,7 @@ const WeatherMolecule = ({ weather }: { weather: WeatherData }) => {
 
 export default WeatherMolecule;
 
-const WheatherBanner = styled.div`
+const WheatherBanner = styled.div<{ backgroundColor: string }>`
   width: 440px;
   height: 110px;
   border-radius: 10px;
@@ -82,5 +73,5 @@ const WheatherBanner = styled.div`
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  background-color: ${COLORS.dark_gray};
+  background-color: ${(props) => props.backgroundColor};
 `;

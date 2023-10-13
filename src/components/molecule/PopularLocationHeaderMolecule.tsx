@@ -9,12 +9,12 @@ const PopularLocationHeaderMolecule = ({
 }) => {
   return (
     <PopularLocationHeader>
-      <Text mr={'10'} fontw={'700'} txt={'이번 주 인기 술집'} />
+      <Text mr={'15'} fontw={'700'} txt={'이번 주 인기 술집'} />
       <IconTitle>
         <Location />
         <Text
           txt={weather ? weather.name : '위치 정보를 로딩중입니다.'}
-          fonts={weather ? '16' : '12'}
+          fonts={weather ? '14' : '12'}
         />
       </IconTitle>
     </PopularLocationHeader>

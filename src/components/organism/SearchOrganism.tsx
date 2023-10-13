@@ -16,7 +16,7 @@ const SearchOrganism = () => {
       <BoxContainer>
         <BoxMolecule
           width={'130'}
-          height={'130'}
+          height={'100'}
           fonts={'16'}
           fontw={'400'}
           br={'10'}
@@ -25,7 +25,7 @@ const SearchOrganism = () => {
         />
         <BoxMolecule
           width={'130'}
-          height={'130'}
+          height={'100'}
           fonts={'16'}
           fontw={'400'}
           br={'10'}
@@ -34,7 +34,7 @@ const SearchOrganism = () => {
         />
         <BoxMolecule
           width={'130'}
-          height={'130'}
+          height={'100'}
           fonts={'16'}
           fontw={'400'}
           br={'10'}
@@ -51,7 +51,7 @@ export default SearchOrganism;
 /* 술집 찾기 메뉴 */
 const Container = styled.div`
   width: 480px;
-  height: 174px;
+  height: 140px;
   margin-bottom: 30px;
 
   display: flex;
@@ -61,7 +61,7 @@ const Container = styled.div`
 
 const BoxContainer = styled.div`
   width: 440px;
-  height: 130px;
+  height: 100px;
 
   display: flex;
   justify-content: space-between;

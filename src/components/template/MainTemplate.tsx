@@ -31,8 +31,8 @@ const MainTemplate = () => {
   return (
     <>
       <SliderMolecule />
-      <SearchOrganism />
       <WeatherOrganism weather={weather} />
+      <SearchOrganism />
       <PopularLocationOrganism weather={weather} />
       <CommunityOrganism />
     </>
