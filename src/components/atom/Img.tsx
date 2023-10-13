@@ -11,8 +11,22 @@ interface ImgProps {
   mb?: string;
   mr?: string;
   ml?: string;
+  btlr?: string;
+  btrr?: string;
 }
-const Img = ({ src, alt, width, height, br, mt, mb, mr, ml }: ImgProps) => {
+const Img = ({
+  src,
+  alt,
+  width,
+  height,
+  br,
+  mt,
+  mb,
+  mr,
+  ml,
+  btlr,
+  btrr,
+}: ImgProps) => {
   return (
     <ImgContainer
       src={src}
@@ -24,6 +38,8 @@ const Img = ({ src, alt, width, height, br, mt, mb, mr, ml }: ImgProps) => {
       mb={mb}
       mr={mr}
       ml={ml}
+      btlr={btlr}
+      btrr={btrr}
     />
   );
 };
@@ -35,6 +51,8 @@ const ImgContainer = styled.img<{
   mb?: string;
   mr?: string;
   ml?: string;
+  btlr?: string;
+  btrr?: string;
 }>`
   width: ${(props) => props.width + 'px' || 'auto'};
   height: ${(props) => props.height + 'px' || 'auto'};
@@ -45,6 +63,8 @@ const ImgContainer = styled.img<{
   margin-bottom: ${(props) => props.mb + 'px' || '0px'};
   margin-right: ${(props) => props.mr + 'px' || '0px'};
   margin-left: ${(props) => props.ml + 'px' || '0px'};
+  border-top-left-radius: ${(props) => props.btlr + 'px' || '0px'};
+  border-top-right-radius: ${(props) => props.btrr + 'px' || '0px'};
   background-position: center;
 `;
 export default Img;

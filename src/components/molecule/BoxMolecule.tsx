@@ -9,6 +9,7 @@ interface BoxProps {
   txt: string;
   color?: string;
   fonts: string;
+  fontw?: string;
   br?: string;
   routes?: string;
 }
@@ -19,6 +20,7 @@ const BoxMolecule = ({
   color,
   txt,
   fonts,
+  fontw,
   br,
   routes,
 }: BoxProps) => {
@@ -36,6 +38,7 @@ const BoxMolecule = ({
         txt={txt}
         vertical={height}
         fonts={fonts}
+        fontw={fontw}
         align={'center'}
         br={br}
         onClick={handleClick}

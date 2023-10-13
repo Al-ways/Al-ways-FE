@@ -1,70 +1,65 @@
 import styled from '@emotion/styled';
 import { COLORS } from '../../share/colors';
-import barImage1 from '../../assets/main/bar1.jpg';
-import barImage2 from '../../assets/main/bar2.jpg';
-import barImage3 from '../../assets/main/bar3.png';
-import barImage4 from '../../assets/main/bar4.jpg';
-import barImage5 from '../../assets/main/bar5.jpg';
 import Img from '../atom/Img';
 import Text from '../atom/Text';
+import { bars } from '../../api/bar';
+import { useNavigate } from 'react-router-dom';
+import NodataMolecule from './NodataMolecule';
+import { getStars } from '../../utils/ratingUtil';
 
 const LargeThumbnailMolecule = () => {
-  /* 바 이미지 */
-  const BarImages = [barImage1, barImage2, barImage3, barImage4, barImage5];
+  const navigate = useNavigate();
+
+  // 높은 별점 순 5개 업소
+  const sortedBars = [...bars].sort((a, b) => b.rating - a.rating).slice(0, 5);
 
   return (
-    <LargeThumbnailWrapper>
-      {/* <ThumbNailContainer>
-        <Img
-          src={barImage1}
-          alt={'bar'}
-          width={'210'}
-          height={'180'}
-          mt={'20'}
-          br={'10'}
-        />
-        <Text
-          width={'210'}
-          height={'24'}
-          fonts={'24'}
-          mt={'20'}
-          txt={'비어테라스'}
-        />
-        <Text
-          width={'210'}
-          height={'16'}
-          fonts={'16'}
-          mt={'5'}
-          txt={'서울특별시 강남구 테헤란로8길 20 1층'}
-        />
-      </ThumbNailContainer> */}
-      {BarImages.map((src, index) => (
-        <ThumbNailContainer key={index}>
-          <Img
-            src={src}
-            alt={'bar'}
-            width={'210'}
-            height={'180'}
-            mt={'20'}
-            br={'10'}
-          />
-          <Text
-            width={'210'}
-            height={'24'}
-            fonts={'24'}
-            mt={'20'}
-            txt={`Bar ${index + 1}`}
-          />
-          <Text
-            width={'210'}
-            height={'16'}
-            fonts={'16'}
-            mt={'5'}
-            txt={`address ${index + 1}`}
-          />
-        </ThumbNailContainer>
-      ))}
-    </LargeThumbnailWrapper>
+    <>
+      {sortedBars && sortedBars.length > 0 ? (
+        <LargeThumbnailWrapper>
+          {sortedBars.map((bar) => (
+            <ThumbNailContainer
+              key={bar.id}
+              onClick={() => navigate(`/detail/${bar.id}`)}
+            >
+              <Img
+                src={bar.image}
+                alt={bar.title}
+                width={'250'}
+                height={'200'}
+                btlr={'10'}
+                btrr={'10'}
+              />
+              <TitleWrapper>
+                <Text
+                  // width={'105'}
+                  height={'16'}
+                  fonts={'16'}
+                  fontw={'400'}
+                  txt={bar.title}
+                />
+                <Text
+                  // width={'105'}
+                  height={'16'}
+                  fonts={'14'}
+                  txt={getStars(bar.rating)}
+                />
+              </TitleWrapper>
+
+              <Text
+                width={'210'}
+                height={'14'}
+                fonts={'14'}
+                mt={'15'}
+                txt={bar.location}
+              />
+            </ThumbNailContainer>
+          ))}
+        </LargeThumbnailWrapper>
+      ) : (
+        <NodataMolecule txt={'이번 주 인기 술집이 없습니다.'} />
+      )}
+    </>
   );
 };
 
@@ -87,7 +82,7 @@ const LargeThumbnailWrapper = styled.div`
     background-color: ${COLORS.dark_gray};
   }
   &::-webkit-scrollbar-thumb {
-    background-color: ${COLORS.white};
+    background-color: ${COLORS.light_gray};
     border-radius: 10px;
   }
 `;
@@ -108,4 +103,13 @@ const ThumbNailContainer = styled.div`
   &:last-child {
     margin-right: 0;
   }
+`;
+
+const TitleWrapper = styled.div`
+  width: 210px;
+  height: 16px;
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
 `;

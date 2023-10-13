@@ -11,7 +11,7 @@ interface LoadingProps {
   bgc?: string;
 }
 
-const LoadingMolecule = ({
+const NodataMolecule = ({
   txt,
   width,
   height,
@@ -33,7 +33,7 @@ const LoadingMolecule = ({
   );
 };
 
-export default LoadingMolecule;
+export default NodataMolecule;
 
 const LoadingContainter = styled.div<LoadingProps>`
   width: ${(props) => (props.width ? props.width + 'px' : '440px')};

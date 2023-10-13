@@ -8,6 +8,7 @@ interface IColors {
   light_gray: string;
   mint: string;
   sky: string;
+  deep_sky: string;
   violet: string;
   purple: string;
   navy: string;
@@ -16,6 +17,7 @@ interface IColors {
   red: string;
   pink: string;
   orange: string;
+  yellow: string;
 }
 
 export const COLORS: IColors = {
@@ -31,6 +33,7 @@ export const COLORS: IColors = {
   // 생성되는 card들에 뿌려줄 배경 색. (카드 색상 확인 후 수정 예정)
   mint: '#7FB7BB',
   sky: '#868ED7',
+  deep_sky: '#7A8EA5',
   violet: '#8E6EEA',
   purple: '#6431A3',
   navy: '#2B324B',
@@ -39,6 +42,7 @@ export const COLORS: IColors = {
   red: '#C35E5F',
   pink: '#FF87A3',
   orange: '#FFBAAB',
+  yellow: '#eddfce',
 };
 
 // card color
