@@ -57,7 +57,7 @@ const LargeThumbnailMolecule = () => {
           ))}
         </LargeThumbnailWrapper>
       ) : (
-        <NodataMolecule txt={'이번 주 인기 술집이 없습니다.'} />
+        <NodataMolecule txt={'이번 주의 인기 술집이 없습니다.'} />
       )}
     </>
   );
