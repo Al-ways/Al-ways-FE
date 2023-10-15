@@ -8,18 +8,12 @@ const PopularKeywordMolecule = () => {
     <PolularKeywordContainer>
       {words.map((word, index) => (
         <TextContainer>
+          <Text width={'20'} height={'16'} fonts={'14'} txt={`${index + 1}.`} />
           <Text
-            key={index}
-            width={'25'}
-            height={'20'}
-            fonts={'20'}
-            txt={`${index + 1}.`}
-          />
-          <Text
-            key={index}
-            width={'375'}
-            height={'20'}
-            fonts={'20'}
+            width={'380'}
+            height={'16'}
+            fonts={'16'}
+            fontw={'400'}
             cursor={'pointer'}
             txt={`${word}`}
           />
@@ -33,7 +27,7 @@ export default PopularKeywordMolecule;
 
 const PolularKeywordContainer = styled.div`
   width: 440px;
-  height: 220px;
+  height: 200px;
   border-radius: 10px;
 
   display: flex;
@@ -43,8 +37,11 @@ const PolularKeywordContainer = styled.div`
 
 const TextContainer = styled.div`
   width: 400px;
-  height: 20px;
-  margin: 20px 0 0 20px;
+  height: 16px;
+  margin-top: 20px;
+  margin-left: 20px;
+  /* margin: 20px 0 0 20px; */
+  /* margin: 0 auto; */
 
   display: flex;
 `;
