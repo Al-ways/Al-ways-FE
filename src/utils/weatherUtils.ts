@@ -24,7 +24,7 @@ export const weatherTranslation: { [key: string]: string } = {
 
 // 혀재 날씨에 따른 배경색
 export const weatherBackgroundColor: { [key: string]: string } = {
-  맑음: COLORS.yellow,
+  맑음: '#fc8c0a',
   흐림: COLORS.gray,
   비: COLORS.gray,
   천둥번개: COLORS.dark_gray,

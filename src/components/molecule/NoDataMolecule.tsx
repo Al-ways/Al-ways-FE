@@ -2,13 +2,14 @@ import styled from '@emotion/styled';
 import { COLORS } from '../../share/colors';
 import Text from '../atom/Text';
 
-interface LoadingProps {
+interface MoleculeProps {
   txt?: string;
   width?: string;
   height?: string;
   fonts?: string;
   br?: string;
   bgc?: string;
+  mb?: string;
 }
 
 const NoDataMolecule = ({
@@ -18,9 +19,10 @@ const NoDataMolecule = ({
   fonts,
   br,
   bgc,
-}: LoadingProps) => {
+  mb,
+}: MoleculeProps) => {
   return (
-    <LoadingContainter>
+    <NodataContainer mb={mb}>
       <Text
         txt={txt}
         width={width}
@@ -29,17 +31,18 @@ const NoDataMolecule = ({
         br={br}
         bgc={bgc}
       />
-    </LoadingContainter>
+    </NodataContainer>
   );
 };
 
 export default NoDataMolecule;
 
-const LoadingContainter = styled.div<LoadingProps>`
+const NodataContainer = styled.div<MoleculeProps>`
   width: ${(props) => (props.width ? props.width + 'px' : '440px')};
   height: ${(props) => (props.height ? props.height + 'px' : '110px')};
-  font-size: ${(props) => (props.fonts ? 'px' : '16px')};
+  font-size: ${(props) => (props.fonts ? 'px' : '14px')};
   border-radius: ${(props) => (props.br ? props.br + 'px' : '10px')};
+  margin-bottom: ${(props) => (props.mb ? props.mb + 'px' : 'auto')};
   background-color: ${COLORS.dark_gray};
 
   display: flex;
