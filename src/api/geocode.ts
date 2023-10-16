@@ -2,7 +2,9 @@
 // lat과 lon을 매개변수로 받아 현재 좌표에 따른 주소로 번역해줌
 
 export const getLocationAddressData = async ({ lat, lon }: CoordsData) => {
-  const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=AIzaSyBpuyJC1CcRcg7_jVLfZkNc554upIZ_wb4`;
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${
+    import.meta.env.VITE_GEOCODE_KEY
+  }`;
   const response = await fetch(url);
   const data = await response.json();
 
