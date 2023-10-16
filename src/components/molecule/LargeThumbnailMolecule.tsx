@@ -4,7 +4,7 @@ import Img from '../atom/Img';
 import Text from '../atom/Text';
 import { bars } from '../../api/bar';
 import { useNavigate } from 'react-router-dom';
-import NodataMolecule from './NodataMolecule';
+import NoDataMolecule from './NoDataMolecule';
 import { getStars } from '../../utils/ratingUtil';
 
 const LargeThumbnailMolecule = () => {
@@ -57,7 +57,7 @@ const LargeThumbnailMolecule = () => {
           ))}
         </LargeThumbnailWrapper>
       ) : (
-        <NodataMolecule txt={'이번 주 인기 술집이 없습니다.'} />
+        <NoDataMolecule txt={'이번 주 인기 술집이 없습니다.'} />
       )}
     </>
   );

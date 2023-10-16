@@ -1,21 +1,20 @@
 import { useState, useEffect } from 'react';
 
 export const useCurrentLocation = () => {
-  const [lat, setLat] = useState<number | null>(null);
-  const [lon, setLon] = useState<number | null>(null);
+  const [coords, setCoords] = useState<CoordsData | null>(null);
 
-  const getCurrentLocation = () => {
+  const getLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       let lat = position.coords.latitude;
       let lon = position.coords.longitude;
-      setLat(lat);
-      setLon(lon);
+
+      setCoords({ lat, lon });
     });
   };
 
   useEffect(() => {
-    getCurrentLocation();
+    getLocation();
   }, []);
 
-  return { lat, lon };
+  return { coords };
 };

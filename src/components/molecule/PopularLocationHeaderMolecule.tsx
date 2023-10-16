@@ -3,18 +3,20 @@ import Text from '../atom/Text';
 import Location from '../atom/Location';
 
 const PopularLocationHeaderMolecule = ({
-  weather,
+  address,
 }: {
-  weather: WeatherData | null;
+  address: string | null;
 }) => {
+  // 주소 내 추출한 구 이름
+  const district = address?.split(' ')[2];
   return (
     <PopularLocationHeader>
       <Text mr={'15'} fontw={'700'} txt={'이번 주 인기 술집'} />
       <IconTitle>
         <Location />
         <Text
-          txt={weather ? weather.name : '위치 정보를 로딩중입니다.'}
-          fonts={weather ? '14' : '12'}
+          txt={district ? district : '위치 정보를 로딩중입니다.'}
+          fonts={district ? '14' : '12'}
         />
       </IconTitle>
     </PopularLocationHeader>
