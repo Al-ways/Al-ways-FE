@@ -1,13 +1,19 @@
-import { useState } from 'react';
 import styled from '@emotion/styled';
 import SearchInput from '../atom/SearchInput';
 import NaverMap from '../atom/NaverMap';
 import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
+import { useSearchQueryString } from '../../hooks/useSearchQueryString';
 const MapTemplate = () => {
-  const [search, setSearch] = useState('');
+  const { searchValue, handleInputChange, searchNavigate } =
+    useSearchQueryString('map');
+
   return (
     <Container>
-      <SearchInput value={search} setValue={setSearch} />
+      <SearchInput
+        value={searchValue}
+        handleChange={handleInputChange}
+        submit={searchNavigate}
+      />
       <NaverMap />
       <ThumbnailMolecule />
     </Container>

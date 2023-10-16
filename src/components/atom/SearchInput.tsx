@@ -2,21 +2,22 @@ import styled from '@emotion/styled';
 
 interface SearchInputProps {
   value: string;
-  setValue: (value: string) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  submit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
-const SearchInput = ({ value, setValue }: SearchInputProps) => {
+const SearchInput = ({ value, handleChange, submit }: SearchInputProps) => {
   return (
-    <Container>
+    <Container onSubmit={submit}>
       <Input
         placeholder="Search"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={handleChange}
         maxLength={30}
       />
     </Container>
   );
 };
-const Container = styled.div`
+const Container = styled.form`
   width: 480px;
   height: 50px;
 `;
