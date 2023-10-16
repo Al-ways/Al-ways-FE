@@ -6,9 +6,14 @@ import {
   weatherTranslation,
 } from '../../utils/weatherUtils';
 
-const WeatherMolecule = ({ weather }: { weather: WeatherData }) => {
+const WeatherMolecule = ({ weather, address }: CurrentLocationData) => {
+  if (!address || !weather) return null;
+
   // 번역한 날씨명 변수
   const translatedWeather = weatherTranslation[weather.weather[0].description];
+
+  // 주소 내 추출한 구 이름
+  const district = address.split(' ')[2];
 
   // 설정한 날씨 배경색
   const backgroundColor = weatherBackgroundColor[translatedWeather];
@@ -50,7 +55,7 @@ const WeatherMolecule = ({ weather }: { weather: WeatherData }) => {
         width={'400'}
         height={'14'}
         fonts={'14'}
-        txt={`${weather.name}, ${Math.floor(
+        txt={`${district}, ${Math.floor(
           weather.main.temp,
         )}°C, ${translatedWeather}`}
         bottom={'20'}

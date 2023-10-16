@@ -17,10 +17,11 @@ const Prev = () => {
 export default Prev;
 
 const Button = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin-left: 20px;
 
   cursor: pointer;
   background-image: url(${prevImage});
+  background-size: cover;
 `;

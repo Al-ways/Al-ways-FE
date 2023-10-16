@@ -12,7 +12,7 @@ interface MoleculeProps {
   mb?: string;
 }
 
-const NodataMolecule = ({
+const NoDataMolecule = ({
   txt,
   width,
   height,
@@ -35,7 +35,7 @@ const NodataMolecule = ({
   );
 };
 
-export default NodataMolecule;
+export default NoDataMolecule;
 
 const NodataContainer = styled.div<MoleculeProps>`
   width: ${(props) => (props.width ? props.width + 'px' : '440px')};

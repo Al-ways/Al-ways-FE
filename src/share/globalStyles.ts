@@ -119,6 +119,12 @@ const GlobalStyles = css`
   body {
     line-height: 1;
     background-image: url(${background});
+    /* background-color: #df91ed; */
+    /* background-color: #b980ff; */
+    /* background-color: #bb8cf5; */
+    /* background-color: #ff8ff0; */
+    /* background-color: #fcbbf4; */
+    /* background-color: #ffa1d6; */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

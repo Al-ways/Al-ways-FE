@@ -7,9 +7,9 @@ const SearchTemplate = () => {
   return (
     <>
       <SearchInputMolecule />
-      <SortTextMolecule />
+      {/* <SortTextMolecule /> */}
       <PopularKeywordOrganism />
-      <ThumbnailOrganism />
+      {/* <ThumbnailOrganism /> */}
     </>
   );
 };

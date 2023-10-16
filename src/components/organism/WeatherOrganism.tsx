@@ -1,17 +1,18 @@
 import styled from '@emotion/styled';
 import WeatherMolecule from '../molecule/WeatherMolecule';
 import { useNavigate } from 'react-router-dom';
-import NodataMolecule from '../molecule/NodataMolecule';
+import NoDataMolecule from '../molecule/NoDataMolecule';
+// import NoDataMolecule from '../molecule/NoDataMolecule';
 
-const WeatherOrganism = ({ weather }: { weather: WeatherData | null }) => {
+const WeatherOrganism = ({ weather, address }: CurrentLocationData) => {
   const navigate = useNavigate();
 
   return (
     <Container onClick={() => navigate('/recommended')}>
-      {weather ? (
-        <WeatherMolecule weather={weather} />
+      {weather && address ? (
+        <WeatherMolecule weather={weather} address={address} />
       ) : (
-        <NodataMolecule txt={'날씨 정보를 로딩중입니다.'} />
+        <NoDataMolecule txt={'날씨 정보를 로딩중입니다.'} />
       )}
     </Container>
   );
