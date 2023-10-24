@@ -37,7 +37,7 @@ const Router = () => {
         <Route path="/search/" element={<Search />} />
         <Route path="/map" element={<Map />} />
         <Route path="/recommended" element={<Recommended />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:id" element={<Detail />} />
         <Route path="/my/:id" element={<My />} />
         <Route path="/my/:id/edit" element={<EditProfile />} />
         <Route path="/my/:id/wishlist" element={<Wishlist />} />

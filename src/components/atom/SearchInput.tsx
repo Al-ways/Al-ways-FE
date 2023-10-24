@@ -6,7 +6,7 @@ interface SearchInputProps {
 }
 const SearchInput = ({ value, onChange }: SearchInputProps) => {
   return (
-    <Container>
+    <Container onSubmit={submit}>
       <Input
         placeholder="Search"
         value={value}

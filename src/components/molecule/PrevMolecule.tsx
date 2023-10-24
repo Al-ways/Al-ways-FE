@@ -13,6 +13,6 @@ export default PrevMolecule;
 
 const Container = styled.div`
   width: 480px;
-  height: 50px;
+  height: 40px;
   margin-bottom: 30px;
 `;

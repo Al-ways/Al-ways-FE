@@ -1,20 +1,26 @@
 import styled from '@emotion/styled';
-import rainyImage from '../../assets/icons/weather-rainy.png';
+import { weatherImages } from '../../utils/weatherUtils';
 
-const Weather = () => {
-  return <Image />;
+interface WeatherProps {
+  translatedWeather: string;
+}
+
+const Weather = ({ translatedWeather }: WeatherProps) => {
+  const weatherImg = weatherImages[translatedWeather];
+
+  return <Image weatherImg={weatherImg} />;
 };
 
 export default Weather;
 
-const Image = styled.div`
-  width: 100px;
-  height: 100px;
-  top: 25px;
+const Image = styled.div<{ weatherImg: string }>`
+  width: 70px;
+  height: 70px;
+  top: 20px;
   right: 20px;
 
   position: absolute;
-  background-image: url(${rainyImage});
+  background-image: url(${(props) => props.weatherImg});
   background-size: cover;
 
   animation: fadeIn 2s;

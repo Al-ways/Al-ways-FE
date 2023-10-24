@@ -18,11 +18,12 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import examinationReducer from '../reducers/examinationSlice';
-import currentLocationsSlice from '../reducers/currentLocationsSlice';
+
+import optionSelectSlice from '../reducers/optionSelectSlice';
 export const store = configureStore({
   reducer: {
     examination: examinationReducer,
-    currentLocation: currentLocationsSlice,
+    optionSelect: optionSelectSlice,
   },
 });
 

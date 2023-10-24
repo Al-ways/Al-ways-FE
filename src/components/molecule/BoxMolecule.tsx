@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
 import { COLORS } from '../../share/colors';
+import { useNavigate } from 'react-router-dom';
 
 interface BoxProps {
   width: string;
@@ -8,10 +9,27 @@ interface BoxProps {
   txt: string;
   color?: string;
   fonts: string;
+  fontw?: string;
   br?: string;
+  routes?: string;
 }
 
-const BoxMolecule = ({ width, height, color, txt, fonts, br }: BoxProps) => {
+const BoxMolecule = ({
+  width,
+  height,
+  color,
+  txt,
+  fonts,
+  fontw,
+  br,
+  routes,
+}: BoxProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (routes) navigate(routes);
+  };
+
   return (
     <BoxContainer width={width} height={height} color={color} br={br}>
       <Text
@@ -20,8 +38,10 @@ const BoxMolecule = ({ width, height, color, txt, fonts, br }: BoxProps) => {
         txt={txt}
         vertical={height}
         fonts={fonts}
+        fontw={fontw}
         align={'center'}
         br={br}
+        onClick={handleClick}
       />
     </BoxContainer>
   );

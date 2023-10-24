@@ -7,8 +7,9 @@ const PopularKeywordOrganism = () => {
     <Container>
       <Text
         width={'440'}
-        height={'24'}
-        fonts={'24'}
+        height={'20'}
+        fonts={'20'}
+        fontw={'700'}
         mb={'20'}
         txt={'오늘의 인기 검색어'}
       />
@@ -21,7 +22,8 @@ export default PopularKeywordOrganism;
 
 const Container = styled.div`
   width: 480px;
-  height: 264px;
+  height: 260px;
+  /* margin-top: 10px; */
   margin-bottom: 30px;
 
   display: flex;
