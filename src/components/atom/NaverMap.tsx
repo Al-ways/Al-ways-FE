@@ -20,6 +20,7 @@ interface LatLng {
 const NaverMap = () => {
   const mapRef = useRef(null);
   const location = useSelector((state: RootState) => state.currentLocation);
+  console.log(location);
 
   useEffect(() => {
     let markers: Marker[] = [];
@@ -45,8 +46,8 @@ const NaverMap = () => {
       const addMarkersInBounds = () => {
         const bounds = mapInstance.getBounds();
 
-        stores.forEach((store) => {
-          const position = new window.naver.maps.LatLng(store.lat, store.lng);
+        stores.forEach((store: any) => {
+          const position = new window.naver.maps.LatLng(store?.lat, store?.lng);
 
           if (bounds.hasLatLng(position)) {
             const existingMarker = markers.find((marker: Marker) =>
