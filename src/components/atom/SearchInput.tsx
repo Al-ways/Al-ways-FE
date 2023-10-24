@@ -2,15 +2,16 @@ import styled from '@emotion/styled';
 
 interface SearchInputProps {
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  submit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
-const SearchInput = ({ value, onChange }: SearchInputProps) => {
+const SearchInput = ({ value, handleChange, submit }: SearchInputProps) => {
   return (
     <Container onSubmit={submit}>
       <Input
         placeholder="Search"
         value={value}
-        onChange={onChange}
+        onChange={handleChange}
         maxLength={30}
       />
     </Container>

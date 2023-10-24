@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import OptionButton from '../atom/OptionButton';
-
 const OptionSelectMolecule = () => {
-
   const sortOption: string[] = ['정렬', '거리순', '리뷰순', '별점순'];
   const catagoryOption: string[] = ['카테고리', '이자카야', 'pup'];
   const tagOption: string[] = ['새로운', '깨끗한', '유명한'];
