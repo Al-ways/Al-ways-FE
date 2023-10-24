@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import SearchInput from '../atom/SearchInput';
 import NaverMap from '../atom/NaverMap';
 import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
+
 import { useSearchQueryString } from '../../hooks/useSearchQueryString';
 const MapTemplate = () => {
   const { searchValue, handleInputChange, searchNavigate } =
@@ -14,6 +15,7 @@ const MapTemplate = () => {
         handleChange={handleInputChange}
         submit={searchNavigate}
       />
+
       <NaverMap />
       <ThumbnailMolecule />
     </Container>

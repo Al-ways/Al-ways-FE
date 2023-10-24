@@ -2,8 +2,28 @@ import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 import globalStyles from './share/globalStyles';
 import Router from './routes/Router';
+import { useDispatch } from 'react-redux';
+import { setLocation } from './redux/reducers/currentLocationsSlice';
+import { useEffect } from 'react';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          dispatch(setLocation({ latitude, longitude }));
+        },
+        (error) => console.error(error),
+        { enableHighAccuracy: true },
+      );
+    } else {
+      console.log('Geolocation is not supported by this browser.');
+    }
+  }, [dispatch]);
+
   return (
     <>
       <Global styles={globalStyles} />
