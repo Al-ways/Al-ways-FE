@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import styled from '@emotion/styled';
 import Logo from '../atom/Logo';
 import DrawerMenu from '../atom/DrawerMenu';
 import Login from '../atom/Login';
 import { COLORS } from '../../share/colors';
+import { useIsLogin } from '../../hooks/useIsLogin';
 
 interface HeaderProps {
   toggleMenu: () => void;
@@ -14,13 +14,18 @@ const HeaderMolecule = ({ toggleMenu }: HeaderProps) => {
   // const toggleMenu = () => {
   //   setIsMenuOpen(!isMenuOpen);
   // };
+  const { isLogin, setIsLogin } = useIsLogin();
 
+  const logout = () => {
+    localStorage.removeItem('token');
+    setIsLogin(false);
+  };
   return (
     <>
       <Header>
         <DrawerMenu onClick={toggleMenu} />
         <Logo />
-        <Login />
+        {isLogin ? <button onClick={logout}>로그아웃</button> : <Login />}
       </Header>
       {/* {isMenuOpen && (
         <SidebarWrapper onClick={toggleMenu}>
