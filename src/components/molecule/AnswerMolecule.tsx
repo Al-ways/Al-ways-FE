@@ -5,15 +5,26 @@ import { useDispatch } from 'react-redux';
 import { addValue } from '../../redux/reducers/examinationSlice';
 interface QuestionMoeculeProps {
   page: number;
-  setPage: (page: number) => void;
+  nextPage: (page: number) => void;
 }
-const AnswerMolecule = ({ page, setPage }: QuestionMoeculeProps) => {
+// 1~6번 까지는 숫자만 넣고 7번은 유저 데이터에 다가 넣으면 된다.
+const AnswerMolecule = ({ page, nextPage }: QuestionMoeculeProps) => {
   const dispatch = useDispatch();
   const data = examination(page);
-
+  // // mbti 검사지
+  //   const mbtiPushData = (page:number,answerNum:number) =>{
+  //     // ex : [1,1,1,1,1,1]
+  //     dispatch(addValue(answerNum));
+  //     nextPage(page);
+  //   }
+  // // 7번 유저 취향 데이터
+  //   const userPushData = (page:number , userFavoriteDrink:string) =>{
+  //     dispatch(addValue(userFavoriteDrink));
+  //     nextPage(page);
+  //   }
   const handler = (page: number, value: string) => {
     dispatch(addValue(value));
-    setPage(page);
+    nextPage(page);
   };
   if (page === 6) {
     return (

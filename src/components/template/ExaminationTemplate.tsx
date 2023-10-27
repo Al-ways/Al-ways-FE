@@ -29,7 +29,7 @@ const ExaminationTemplate = () => {
     <>
       <ProgressHeaderMolecule page={page} />
       <QuestionMolecule page={page} />
-      <AnswerMolecule page={page} setPage={pageHandler} />
+      <AnswerMolecule page={page} nextPage={pageHandler} />
     </>
   );
 };
