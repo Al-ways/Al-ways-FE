@@ -40,6 +40,11 @@ const AnswerMolecule = ({ page, nextPage }: QuestionMoeculeProps) => {
   //   return state.examinatonAnswerArr.answerArr;
   // });
 
+  window.addEventListener('beforeunload', function (e: BeforeUnloadEvent) {
+    e.preventDefault();
+    e.returnValue = '';
+  });
+
   if (page === 6) {
     return (
       <QuestionMoleculeContainer>
