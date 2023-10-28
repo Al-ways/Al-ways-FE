@@ -12,9 +12,14 @@ const SocialLoginButtonMolecule = ({
   const kakao = Kakao;
   const google = Google;
   const naver = Naver;
+  const handleLogin = async (name: string) => {
+    const baseURL = `${import.meta.env.VITE_BASE_URL}/oauth2/authorize/`;
+    window.location.href = baseURL + name;
+  };
+
   if (name === 'kakao') {
     return (
-      <Container bgc={'#fee501'}>
+      <Container bgc={'#fee501'} onClick={() => handleLogin(name)}>
         <IconBox>
           <SocialIcon src={kakao} />
         </IconBox>
@@ -31,7 +36,7 @@ const SocialLoginButtonMolecule = ({
   }
   if (name === 'google') {
     return (
-      <Container bgc={'#ffffff'}>
+      <Container bgc={'#ffffff'} onClick={() => handleLogin(name)}>
         <IconBox>
           <SocialIcon src={google} />
         </IconBox>
@@ -48,7 +53,7 @@ const SocialLoginButtonMolecule = ({
   }
   if (name === 'naver') {
     return (
-      <Container bgc={'#02c75a'}>
+      <Container bgc={'#02c75a'} onClick={() => handleLogin(name)}>
         <IconBox>
           <SocialIcon src={naver} />
         </IconBox>
