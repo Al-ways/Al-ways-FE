@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import QuestionButton from '../atom/QuestionButton';
 import { examination } from '../../api/examination';
 import { useDispatch } from 'react-redux';
-import { addValue } from '../../redux/reducers/examinationSlice';
+import { pushAnswer } from '../../redux/reducers/examinationArrSlice';
+import { useSelector } from 'react-redux';
 interface QuestionMoeculeProps {
   page: number;
   nextPage: (page: number) => void;
@@ -22,21 +23,28 @@ const AnswerMolecule = ({ page, nextPage }: QuestionMoeculeProps) => {
   //     dispatch(addValue(userFavoriteDrink));
   //     nextPage(page);
   //   }
-  const handler = (page: number, value: string) => {
-    dispatch(addValue(value));
+  const answerArrPushHandler = (page: number, value: number) => {
+    dispatch(pushAnswer(value));
     nextPage(page);
   };
+  const findIndex = (answer: string) => {
+    return data.answer.indexOf(answer) + 1;
+  };
+  // interface AnswerRootState {
+  //   examinatonAnswerArr: AnswerState;
+  // }
+  // interface AnswerState {
+  //   answerArr: number[];
+  // }
+  // const answerArr = useSelector((state: AnswerRootState) => {
+  //   return state.examinatonAnswerArr.answerArr;
+  // });
+
   if (page === 6) {
     return (
       <QuestionMoleculeContainer>
         {data.answer.map((el: string, index: number) => {
-          return (
-            <QuestionButton
-              key={index}
-              click={() => handler(page, data.answer[index])}
-              txt={el}
-            />
-          );
+          return <QuestionButton key={index} txt={el} />;
         })}
       </QuestionMoleculeContainer>
     );
@@ -44,12 +52,16 @@ const AnswerMolecule = ({ page, nextPage }: QuestionMoeculeProps) => {
   return (
     <QuestionMoleculeContainer>
       <QuestionButton
-        click={() => handler(page, data.answer[0])}
         txt={data.answer[0]}
+        click={() => {
+          answerArrPushHandler(page, findIndex(data.answer[0]));
+        }}
       />
       <QuestionButton
-        click={() => handler(page, data.answer[1])}
         txt={data.answer[1]}
+        click={() => {
+          answerArrPushHandler(page, findIndex(data.answer[1]));
+        }}
       />
     </QuestionMoleculeContainer>
   );

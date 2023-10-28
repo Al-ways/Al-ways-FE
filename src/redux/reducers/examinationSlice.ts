@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface ExaminationState {
-  value: number | string[];
+  value: string[];
 }
 
 const initialState: ExaminationState = {
@@ -12,7 +12,7 @@ export const examinationSlice = createSlice({
   name: 'examination',
   initialState,
   reducers: {
-    addValue: (state: ExaminationState, action: PayloadAction<number>) => {
+    addValue: (state: ExaminationState, action: PayloadAction<string>) => {
       state.value.push(action.payload);
     },
   },
