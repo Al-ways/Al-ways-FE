@@ -41,14 +41,14 @@ const SidebarOrganism = ({ toggleMenu, isMenuOpen }: SidebarProps) => {
             }}
           />
         ))}
-
         <Text
           width={'280'}
           height={'16'}
           fonts={'16'}
+          fontw={'700'}
           bottom={'20'}
           cursor={'pointer'}
-          color={COLORS.dark_gray}
+          color={COLORS.gray}
           position={'absolute'}
           txt={'로그아웃'}
         />
@@ -97,6 +97,6 @@ const slideOut = keyframes`
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 `;
