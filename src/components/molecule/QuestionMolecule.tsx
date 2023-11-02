@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
 import Img from '../atom/Img';
-import { examination } from '../../api/examination';
+import { examinationData } from '../../api/examination';
 interface QuestionMoleculeProps {
   page: number;
 }
 const QuestionMolecule = ({ page }: QuestionMoleculeProps) => {
-  const data = examination(page);
+  const data = examinationData(page);
 
   return (
     <>

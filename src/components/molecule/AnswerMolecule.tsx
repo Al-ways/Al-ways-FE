@@ -1,59 +1,71 @@
 import styled from '@emotion/styled';
 import QuestionButton from '../atom/QuestionButton';
-import { examination } from '../../api/examination';
+import { examinationData, examinationResult } from '../../api/examination';
 import { useDispatch } from 'react-redux';
 import { pushAnswer } from '../../redux/reducers/examinationArrSlice';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { pushResult } from '../../redux/reducers/examinationResultArr';
 interface QuestionMoeculeProps {
   page: number;
   nextPage: (page: number) => void;
 }
-// 1~6번 까지는 숫자만 넣고 7번은 유저 데이터에 다가 넣으면 된다.
+interface AnswerRootState {
+  examinatonAnswerArr: {
+    answerArr: number[];
+  };
+}
+interface ResultRootState {
+  examinationResultArr: {
+    data: number[];
+  };
+}
 const AnswerMolecule = ({ page, nextPage }: QuestionMoeculeProps) => {
   const dispatch = useDispatch();
-  const data = examination(page);
-  // // mbti 검사지
-  //   const mbtiPushData = (page:number,answerNum:number) =>{
-  //     // ex : [1,1,1,1,1,1]
-  //     dispatch(addValue(answerNum));
-  //     nextPage(page);
-  //   }
-  // // 7번 유저 취향 데이터
-  //   const userPushData = (page:number , userFavoriteDrink:string) =>{
-  //     dispatch(addValue(userFavoriteDrink));
-  //     nextPage(page);
-  //   }
+  const data = examinationData(page);
+
+  const answerArr = useSelector((state: AnswerRootState) => {
+    return state.examinatonAnswerArr.answerArr;
+  });
+  const resultArr = useSelector((state: ResultRootState) => {
+    return state.examinationResultArr.data;
+  });
+  console.log(answerArr, resultArr);
+
+  // answer arr에 데이터 넣기
   const answerArrPushHandler = (page: number, value: number) => {
-    dispatch(pushAnswer(value));
-    nextPage(page);
+    if (page === 5) {
+      dispatch(pushAnswer(value));
+      dispatch(pushResult(examinationResult(answerArr)));
+      // user mbti 값 넣기
+      // answer arr 초기화
+      // navigation 결과 페이지
+    } else {
+      dispatch(pushAnswer(value));
+      nextPage(page);
+    }
   };
+
+  // arr 안에 데이터의 위치 확인
   const findIndex = (answer: string) => {
     return data.answer.indexOf(answer) + 1;
   };
-  // interface AnswerRootState {
-  //   examinatonAnswerArr: AnswerState;
-  // }
-  // interface AnswerState {
-  //   answerArr: number[];
-  // }
-  // const answerArr = useSelector((state: AnswerRootState) => {
-  //   return state.examinatonAnswerArr.answerArr;
-  // });
 
-  window.addEventListener('beforeunload', function (e: BeforeUnloadEvent) {
+  // 뒤로가기, 새로고침 방지
+  const preventClose = (e: BeforeUnloadEvent) => {
     e.preventDefault();
-    e.returnValue = '';
-  });
+    e.returnValue = ''; //Chrome에서 동작하도록; deprecated
+  };
 
-  if (page === 6) {
-    return (
-      <QuestionMoleculeContainer>
-        {data.answer.map((el: string, index: number) => {
-          return <QuestionButton key={index} txt={el} />;
-        })}
-      </QuestionMoleculeContainer>
-    );
-  }
+  useEffect(() => {
+    window.addEventListener('beforeunload', preventClose);
+    return () => {
+      window.removeEventListener('beforeunload', preventClose);
+    };
+  }, []);
+
+  // user data 저장
+
   return (
     <QuestionMoleculeContainer>
       <QuestionButton

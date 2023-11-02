@@ -16,6 +16,9 @@ export const examinationArrSlice = createSlice({
       state.answerArr = [];
     },
     pushAnswer: (state: InitialStateType, action: PayloadAction<number>) => {
+      if (state.answerArr.length >= 6) {
+        return;
+      }
       state.answerArr.push(action.payload);
     },
     popAnswer: (state: InitialStateType) => {

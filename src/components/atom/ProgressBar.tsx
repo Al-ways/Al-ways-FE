@@ -6,7 +6,7 @@ interface ProgressBarProps {
 }
 
 const ProgressBar = ({ page }: ProgressBarProps) => {
-  const progressbar = page * 14.28;
+  const progressbar = page * 16.66;
 
   return (
     <ProgressBarContainer>

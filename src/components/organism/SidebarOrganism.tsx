@@ -18,6 +18,7 @@ const SidebarOrganism = ({ toggleMenu, isMenuOpen }: SidebarProps) => {
   const handleSidebarClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
+
   const menuItems = [
     { txt: '검색', route: '/search' },
     { txt: '지도', route: '/map' },

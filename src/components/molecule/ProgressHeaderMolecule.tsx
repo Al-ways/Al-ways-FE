@@ -14,7 +14,7 @@ const ProgressHeaderMolecule = ({ page }: ProgressHeaderMoleculeProps) => {
         align={'end'}
         fonts={'10'}
         mb={'5'}
-        txt={`${page + 1}/7`}
+        txt={`${page + 1}/6`}
       />
       <ProgressBar page={page + 1} />
     </ProgressHeaderContainer>

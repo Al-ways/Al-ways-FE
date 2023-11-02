@@ -20,9 +20,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import optionSelectSlice from '../reducers/optionSelectSlice';
 import currentLocationsSlice from '../reducers/currentLocationsSlice';
 import examinationArrSlice from '../reducers/examinationArrSlice';
+import examinationResultArr from '../reducers/examinationResultArr';
 export const store = configureStore({
   reducer: {
     examinatonAnswerArr: examinationArrSlice,
+    examinationResultArr: examinationResultArr,
     optionSelect: optionSelectSlice,
     currentLocation: currentLocationsSlice,
   },
