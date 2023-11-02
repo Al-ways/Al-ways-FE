@@ -14,10 +14,15 @@ interface SidebarProps {
 }
 
 const SidebarOrganism = ({ toggleMenu, isMenuOpen }: SidebarProps) => {
+  console.log(isMenuOpen);
   const navigate = useNavigate();
+
+  // 현재 이벤트가 상위로 전파되는 것을 중단
   const handleSidebarClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
+
+  // 사이드바 메뉴
   const menuItems = [
     { txt: '검색', route: '/search' },
     { txt: '지도', route: '/map' },
@@ -97,6 +102,6 @@ const slideOut = keyframes`
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 `;

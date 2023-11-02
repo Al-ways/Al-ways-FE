@@ -26,11 +26,9 @@ const Router = () => {
   return (
     <BrowserRouter>
       <HeaderMolecule toggleMenu={toggleMenu} />
-      {/* {isMenuOpen && (
+      {isMenuOpen && (
         <SidebarOrganism toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-      )} */}
-      <SidebarOrganism toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-
+      )}
       {url == '/' ? null : <PrevMolecule />}
       <Routes>
         <Route path="/" element={<Main />} />
