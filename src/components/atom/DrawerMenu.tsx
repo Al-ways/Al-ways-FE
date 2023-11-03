@@ -2,11 +2,11 @@
 // import MenuImage from '../../assets/icons/menu.png';
 
 // interface MenuIconButtonProps {
-//   toggleMenu: () => void;
+//   toggleSidebar: () => void;
 // }
 
-// const MenuIconButton = ({ toggleMenu }: MenuIconButtonProps) => {
-//   return <Menu onClick={toggleMenu} />;
+// const MenuIconButton = ({ toggleSidebar }: MenuIconButtonProps) => {
+//   return <Menu onClick={toggleSidebar} />;
 // };
 // const Menu = styled.div`
 //   width: 40px;

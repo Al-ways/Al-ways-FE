@@ -12,22 +12,28 @@ import Wishlist from '../pages/Wishlist';
 import Recommended from '../pages/Recommended';
 import Community from '../pages/Community';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
-import SidebarOrganism from '../components/organism/SidebarOrganism';
 import PrevMolecule from '../components/molecule/PrevMolecule';
 import { useState } from 'react';
+import SidebarOrganism from '../components/organism/SidebarOrganism';
 
 const Router = () => {
   const url = window.location.pathname;
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+
+  const [isSidebarOpen, setisSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setisSidebarOpen(true);
   };
+
+  console.log(isSidebarOpen);
 
   return (
     <BrowserRouter>
-      <HeaderMolecule toggleMenu={toggleMenu} />
-      {isMenuOpen && (
-        <SidebarOrganism toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+      <HeaderMolecule toggleSidebar={toggleSidebar} />
+      {isSidebarOpen && (
+        <SidebarOrganism
+          isSidebarOpen={isSidebarOpen}
+          setisSidebarOpen={setisSidebarOpen}
+        />
       )}
       {url == '/' ? null : <PrevMolecule />}
       <Routes>

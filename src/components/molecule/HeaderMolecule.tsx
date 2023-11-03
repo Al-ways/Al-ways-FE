@@ -6,26 +6,26 @@ import Login from '../atom/Login';
 import { COLORS } from '../../share/colors';
 
 interface HeaderProps {
-  toggleMenu: () => void;
+  toggleSidebar: () => void;
 }
 
-const HeaderMolecule = ({ toggleMenu }: HeaderProps) => {
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const toggleMenu = () => {
-  //   setIsMenuOpen(!isMenuOpen);
+const HeaderMolecule = ({ toggleSidebar }: HeaderProps) => {
+  // const [isSidebarOpen, setisSidebarOpen] = useState(false);
+  // const toggleSidebar = () => {
+  //   setisSidebarOpen(!isSidebarOpen);
   // };
 
   return (
     <>
       <Header>
-        <DrawerMenu onClick={toggleMenu} />
+        <DrawerMenu onClick={toggleSidebar} />
         <Logo />
         <Login />
       </Header>
-      {/* {isMenuOpen && (
-        <SidebarWrapper onClick={toggleMenu}>
-          <Sidebar isOpen={isMenuOpen}>
-            <CloseButton onClick={toggleMenu}>X</CloseButton>
+      {/* {isSidebarOpen && (
+        <SidebarWrapper onClick={toggleSidebar}>
+          <Sidebar isOpen={isSidebarOpen}>
+            <CloseButton onClick={toggleSidebar}>X</CloseButton>
             <MenuItem>Home</MenuItem>
             <MenuItem>Profile</MenuItem>
             <MenuItem>Settings</MenuItem>

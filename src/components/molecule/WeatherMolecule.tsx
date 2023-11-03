@@ -10,6 +10,8 @@ const WeatherMolecule = ({ weather, address }: CurrentLocationData) => {
   // 번역한 날씨명 변수
   const translatedWeather = weatherTranslation[weather.weather[0].description];
 
+  // console.log(weather);
+
   // 주소 내 추출한 구 이름
   const district = address.split(' ')[2];
 
