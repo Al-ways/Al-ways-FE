@@ -17,6 +17,7 @@ import PrevMolecule from '../components/molecule/PrevMolecule';
 import { useState } from 'react';
 import { Divide } from 'emotion-icons/fa-solid';
 import RedirectLogin from '../pages/RedirectLogin';
+import ExaminationResult from '../pages/ExaminationResult';
 
 const Router = () => {
   const url = window.location.pathname;
@@ -47,6 +48,7 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/community" element={<Community />} />
         <Route path="/oauth2/redirect" element={<RedirectLogin />} />
+        <Route path="/result" element={<ExaminationResult />} />
       </Routes>
     </BrowserRouter>
   );

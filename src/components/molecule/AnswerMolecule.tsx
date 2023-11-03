@@ -6,6 +6,7 @@ import { pushAnswer } from '../../redux/reducers/examinationArrSlice';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { pushResult } from '../../redux/reducers/examinationResultArr';
+import { useNavigate } from 'react-router-dom';
 interface QuestionMoeculeProps {
   page: number;
   nextPage: (page: number) => void;
@@ -21,22 +22,24 @@ interface ResultRootState {
   };
 }
 const AnswerMolecule = ({ page, nextPage }: QuestionMoeculeProps) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const data = examinationData(page);
 
-  const answerArr = useSelector((state: AnswerRootState) => {
-    return state.examinatonAnswerArr.answerArr;
-  });
-  const resultArr = useSelector((state: ResultRootState) => {
-    return state.examinationResultArr.data;
-  });
-  console.log(answerArr, resultArr);
+  // const answerArr = useSelector((state: AnswerRootState) => {
+  //   return state.examinatonAnswerArr.answerArr;
+  // });
+  // const resultArr = useSelector((state: ResultRootState) => {
+  //   return state.examinationResultArr.data;
+  // });
 
   // answer arr에 데이터 넣기
   const answerArrPushHandler = (page: number, value: number) => {
+    // dispatch(pushResult(result));
+
     if (page === 5) {
       dispatch(pushAnswer(value));
-      dispatch(pushResult(examinationResult(answerArr)));
+      navigate('/result');
       // user mbti 값 넣기
       // answer arr 초기화
       // navigation 결과 페이지

@@ -445,5 +445,5 @@ export const examinationResult = (answerArr: number[]) => {
     },
   ];
 
-  return result.find((item) => item.id === answer);
+  return result.filter((item) => item.id === answer)[0];
 };
