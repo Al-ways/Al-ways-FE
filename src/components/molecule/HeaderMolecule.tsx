@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from '@emotion/styled';
 import Logo from '../atom/Logo';
 import DrawerMenu from '../atom/DrawerMenu';
@@ -6,14 +5,13 @@ import Login from '../atom/Login';
 import { COLORS } from '../../share/colors';
 
 interface HeaderProps {
-  toggleSidebar: () => void;
+  setisSidebarOpen: (value: boolean) => void;
 }
 
-const HeaderMolecule = ({ toggleSidebar }: HeaderProps) => {
-  // const [isSidebarOpen, setisSidebarOpen] = useState(false);
-  // const toggleSidebar = () => {
-  //   setisSidebarOpen(!isSidebarOpen);
-  // };
+const HeaderMolecule = ({ setisSidebarOpen }: HeaderProps) => {
+  const toggleSidebar = () => {
+    setisSidebarOpen(true);
+  };
 
   return (
     <>
@@ -22,16 +20,6 @@ const HeaderMolecule = ({ toggleSidebar }: HeaderProps) => {
         <Logo />
         <Login />
       </Header>
-      {/* {isSidebarOpen && (
-        <SidebarWrapper onClick={toggleSidebar}>
-          <Sidebar isOpen={isSidebarOpen}>
-            <CloseButton onClick={toggleSidebar}>X</CloseButton>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>Profile</MenuItem>
-            <MenuItem>Settings</MenuItem>
-          </Sidebar>
-        </SidebarWrapper>
-      )} */}
     </>
   );
 };

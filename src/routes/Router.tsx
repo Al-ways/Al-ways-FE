@@ -19,22 +19,13 @@ import SidebarOrganism from '../components/organism/SidebarOrganism';
 const Router = () => {
   const url = window.location.pathname;
 
+  // 사이드바 상태
   const [isSidebarOpen, setisSidebarOpen] = useState(false);
-  const toggleSidebar = () => {
-    setisSidebarOpen(true);
-  };
-
-  console.log(isSidebarOpen);
 
   return (
     <BrowserRouter>
-      <HeaderMolecule toggleSidebar={toggleSidebar} />
-      {isSidebarOpen && (
-        <SidebarOrganism
-          isSidebarOpen={isSidebarOpen}
-          setisSidebarOpen={setisSidebarOpen}
-        />
-      )}
+      <HeaderMolecule setisSidebarOpen={setisSidebarOpen} />
+      {isSidebarOpen && <SidebarOrganism setisSidebarOpen={setisSidebarOpen} />}
       {url == '/' ? null : <PrevMolecule />}
       <Routes>
         <Route path="/" element={<Main />} />
