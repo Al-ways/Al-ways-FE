@@ -11,7 +11,13 @@ interface AnswerRootState {
 }
 interface ResultRootState {
   examinationResultArr: {
-    data: number[];
+    data: [
+      {
+        id: number;
+        name: string;
+        description: string;
+      },
+    ];
   };
 }
 function ExaminationResult() {
@@ -26,14 +32,19 @@ function ExaminationResult() {
 
   const res = examinationResult(answerArr);
   useEffect(() => {
-    dispatch(pushResult(res));
+    if (res) {
+      dispatch(pushResult(res));
+    }
   }, []);
+
+  if (resultArr === 0) {
+    return <div>loading...</div>;
+  }
   return (
     <div>
-      <div>{res.id}</div>
-      <div>{res.description}</div>
-      <div>{res.name}</div>
-      <div></div>
+      {resultArr.map((data) => {
+        return <div>{data.name}</div>;
+      })}
     </div>
   );
 }
