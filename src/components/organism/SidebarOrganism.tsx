@@ -21,7 +21,7 @@ const SidebarOrganism = ({ setisSidebarOpen }: SidebarProps) => {
   const navigate = useNavigate();
 
   // close 시 애니메이션 동작하지 않아 상태 추가
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   // SidebarWrapper or Close 클릭 시 side bar 닫기
   const toggleSidebar = () => {
@@ -87,23 +87,24 @@ const SidebarOrganism = ({ setisSidebarOpen }: SidebarProps) => {
 export default SidebarOrganism;
 
 const SidebarWrapper = styled.div`
-  width: 480px;
-  height: 909px;
+  width: 100%;
+  height: 100%;
   z-index: 1;
 
-  position: absolute;
-  display: flex;
+  position: absolute; // 수정된 부분
+  right: 0; // 추가된 부분
+  top: 0; // 추가된 부분
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
 const Sidebar = styled.div<AnimationProps>`
   width: 320px;
-  height: 909px;
+  height: 100%;
 
-  align-items: center;
-  display: flex;
-  flex-direction: column;
   position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   background-color: #141414;
 
   animation: ${(props) => props.animation} 0.25s ease-out;

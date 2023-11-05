@@ -13,14 +13,18 @@ import Recommended from '../pages/Recommended';
 import Community from '../pages/Community';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import PrevMolecule from '../components/molecule/PrevMolecule';
-import { useState } from 'react';
 import SidebarOrganism from '../components/organism/SidebarOrganism';
 
-const Router = () => {
+interface RouterProps {
+  isSidebarOpen: boolean;
+  setisSidebarOpen: (value: boolean) => void;
+}
+
+const Router = ({ isSidebarOpen, setisSidebarOpen }: RouterProps) => {
   const url = window.location.pathname;
 
-  // 사이드바 상태
-  const [isSidebarOpen, setisSidebarOpen] = useState(false);
+  // // 사이드바 상태
+  // const [isSidebarOpen, setisSidebarOpen] = useState(false);
 
   return (
     <BrowserRouter>

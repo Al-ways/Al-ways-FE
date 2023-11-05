@@ -2,14 +2,25 @@ import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 import globalStyles from './share/globalStyles';
 import Router from './routes/Router';
+import { useState } from 'react';
+
+interface LayoutProps {
+  isSidebarOpen: boolean;
+}
 
 const App = () => {
+  // 사이드바 상태
+  const [isSidebarOpen, setisSidebarOpen] = useState<boolean>(false);
+
   return (
     <>
       <Global styles={globalStyles} />
       <Background>
-        <Layout>
-          <Router />
+        <Layout isSidebarOpen={isSidebarOpen}>
+          <Router
+            isSidebarOpen={isSidebarOpen}
+            setisSidebarOpen={setisSidebarOpen}
+          />
         </Layout>
       </Background>
     </>
@@ -41,7 +52,7 @@ const Background = styled.div`
   }
 `;
 
-const Layout = styled.div`
+const Layout = styled.div<LayoutProps>`
   min-width: 480px;
   max-width: 100%;
   height: 909px;
@@ -53,7 +64,7 @@ const Layout = styled.div`
   background-color: black;
 
   /* 스크롤 바 생성 */
-  overflow-y: auto;
+  overflow-y: ${(props) => (props.isSidebarOpen ? 'hidden' : 'auto')};
 
   /* 스크롤 바 안보이게 설정 */
   ::-webkit-scrollbar {
