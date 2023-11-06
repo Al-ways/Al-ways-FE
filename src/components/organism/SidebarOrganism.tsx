@@ -8,29 +8,28 @@ import BreakLine from '../atom/BreakLine';
 import Text from '../atom/Text';
 import SidebarMenuMolecule from '../molecule/SidebarMenuMolecule';
 import SidebarUserStateMolecule from '../molecule/SidebarUserStateMolecule';
-
-interface SidebarProps {
-  setisSidebarOpen: (value: boolean) => void;
-}
+import { useDispatch } from 'react-redux';
+import { toggleSidebar } from '../../redux/reducers/sidebarSlice';
 
 interface AnimationProps {
   animation: typeof slideIn | typeof slideOut;
 }
 
-const SidebarOrganism = ({ setisSidebarOpen }: SidebarProps) => {
+const SidebarOrganism = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // close 시 애니메이션 동작하지 않아 상태 추가
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   // SidebarWrapper or Close 클릭 시 side bar 닫기
-  const toggleSidebar = () => {
+  const handletoggleSidebar = () => {
     setIsAnimating(!isAnimating);
 
     // side bar를 닫을 때 setTimeOut 시간 후 sidebarWrapper를 없애주기
     if (!isAnimating) {
       setTimeout(() => {
-        setisSidebarOpen(false);
+        dispatch(toggleSidebar());
       }, 200); // 애니메이션의 지속 시간과 같게 설정하면 깜빡임 발생함
     }
   };
@@ -49,12 +48,12 @@ const SidebarOrganism = ({ setisSidebarOpen }: SidebarProps) => {
   ];
 
   return (
-    <SidebarWrapper onClick={toggleSidebar}>
+    <SidebarWrapper onClick={handletoggleSidebar}>
       <Sidebar
         onClick={handleSidebarClick}
         animation={isAnimating ? slideOut : slideIn}
       >
-        <Close toggleSidebar={toggleSidebar} />
+        <Close handletoggleSidebar={handletoggleSidebar} />
         <SidebarUserStateMolecule />
         <BreakLine width={'280'} height={'5'} mb={'30'} />
         {menuItems.map((item, index) => (
@@ -64,7 +63,7 @@ const SidebarOrganism = ({ setisSidebarOpen }: SidebarProps) => {
             onClick={() => {
               navigate(item.route);
               // 라우터 이동 시 사이드바 닫히게
-              if (toggleSidebar) toggleSidebar();
+              if (handletoggleSidebar) handletoggleSidebar();
             }}
           />
         ))}

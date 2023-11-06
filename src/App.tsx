@@ -3,24 +3,28 @@ import styled from '@emotion/styled';
 import globalStyles from './share/globalStyles';
 import Router from './routes/Router';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 interface LayoutProps {
   isSidebarOpen: boolean;
 }
 
+interface RootState {
+  sidebar: {
+    isOpen: boolean;
+  };
+}
+
 const App = () => {
   // 사이드바 상태
-  const [isSidebarOpen, setisSidebarOpen] = useState<boolean>(false);
+  const isSidebarOpen = useSelector((state: RootState) => state.sidebar.isOpen);
 
   return (
     <>
       <Global styles={globalStyles} />
       <Background>
         <Layout isSidebarOpen={isSidebarOpen}>
-          <Router
-            isSidebarOpen={isSidebarOpen}
-            setisSidebarOpen={setisSidebarOpen}
-          />
+          <Router />
         </Layout>
       </Background>
     </>

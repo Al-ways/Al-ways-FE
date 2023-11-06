@@ -3,20 +3,16 @@ import Logo from '../atom/Logo';
 import DrawerMenu from '../atom/DrawerMenu';
 import Login from '../atom/Login';
 import { COLORS } from '../../share/colors';
+import { useDispatch } from 'react-redux';
+import { toggleSidebar } from '../../redux/reducers/sidebarSlice';
 
-interface HeaderProps {
-  setisSidebarOpen: (value: boolean) => void;
-}
-
-const HeaderMolecule = ({ setisSidebarOpen }: HeaderProps) => {
-  const toggleSidebar = () => {
-    setisSidebarOpen(true);
-  };
+const HeaderMolecule = () => {
+  const dispatch = useDispatch();
 
   return (
     <>
       <Header>
-        <DrawerMenu onClick={toggleSidebar} />
+        <DrawerMenu onClick={() => dispatch(toggleSidebar())} />
         <Logo />
         <Login />
       </Header>
