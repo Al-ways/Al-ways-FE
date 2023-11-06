@@ -90,9 +90,9 @@ const SidebarWrapper = styled.div`
   height: 100%;
   z-index: 1;
 
-  position: absolute; // 수정된 부분
-  right: 0; // 추가된 부분
-  top: 0; // 추가된 부분
+  position: absolute;
+  right: 0;
+  top: 0;
   background-color: rgba(0, 0, 0, 0.5);
 `;
 

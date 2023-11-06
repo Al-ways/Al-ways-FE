@@ -18,6 +18,8 @@ interface RootState {
 }
 
 const App = () => {
+  const dispatch = useDispatch();
+
   // 사이드바 상태(오픈 시 스크롤바 없애야하므로 필요함)
   const isSidebarOpen = useSelector((state: RootState) => state.sidebar.isOpen);
 
