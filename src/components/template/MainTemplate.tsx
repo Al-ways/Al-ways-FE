@@ -45,7 +45,7 @@ const MainTemplate = () => {
     }
   }, [coords]);
 
-  console.log(`weather: ${weather}, address: ${address}`);
+  // console.log(`weather: ${weather}, address: ${address}`);
 
   return (
     <>

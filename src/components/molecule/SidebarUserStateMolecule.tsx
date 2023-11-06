@@ -7,7 +7,13 @@ const SidebarUserStateMolecule = () => {
     <>
       <Wrapper>
         <ProfileImage />
-        <Text width={'220'} height={'40'} fonts={'20'} txt={'닉네임'} />
+        <Text
+          width={'220'}
+          height={'40'}
+          fonts={'20'}
+          fontw={'400'}
+          txt={'닉네임'}
+        />
       </Wrapper>
     </>
   );

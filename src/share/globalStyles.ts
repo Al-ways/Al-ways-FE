@@ -134,6 +134,7 @@ const GlobalStyles = css`
       background-image: url(${backgroundNone});
     }
   }
+
   */ ol,
   ul {
     list-style: none;

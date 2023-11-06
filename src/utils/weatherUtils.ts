@@ -16,21 +16,22 @@ export const weatherTranslation: { [key: string]: string } = {
   'shower rain': '비',
   'light rain': '비',
   'moderate rain': '비',
+  haze: '안개',
   Rain: '비',
   Thunderstorm: '천둥번개',
   snow: '눈',
   mist: '안개',
 };
 
-// 혀재 날씨에 따른 배경색
-export const weatherBackgroundColor: { [key: string]: string } = {
-  맑음: '#fc8c0a',
-  흐림: COLORS.gray,
-  비: COLORS.gray,
-  천둥번개: COLORS.dark_gray,
-  눈: COLORS.deep_sky,
-  안개: COLORS.light_gray,
-};
+// // 혀재 날씨에 따른 배경색
+// export const weatherBackgroundColor: { [key: string]: string } = {
+//   맑음: '#fc8c0a',
+//   흐림: COLORS.gray,
+//   비: COLORS.gray,
+//   천둥번개: COLORS.dark_gray,
+//   눈: COLORS.deep_sky,
+//   안개: COLORS.gray,
+// };
 
 // 현재 날씨에 따른 날씨 이미지
 export const weatherImages: { [key: string]: string } = {
