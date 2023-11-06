@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 
 interface SearchInputProps {
   value: string;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  submit: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  submit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 const SearchInput = ({ value, handleChange, submit }: SearchInputProps) => {
   return (

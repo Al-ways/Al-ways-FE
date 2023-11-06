@@ -13,6 +13,10 @@ import Recommended from '../pages/Recommended';
 import Community from '../pages/Community';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
 import PrevMolecule from '../components/molecule/PrevMolecule';
+import { useState } from 'react';
+import { Divide } from 'emotion-icons/fa-solid';
+import RedirectLogin from '../pages/RedirectLogin';
+
 import SidebarOrganism from '../components/organism/SidebarOrganism';
 import { useSelector } from 'react-redux';
 
@@ -24,8 +28,9 @@ interface RootState {
 
 const Router = () => {
   const url = window.location.pathname;
-
-  // 사이드바 상태
+  const token = localStorage.getItem('token');
+ 
+    // 사이드바 상태
   const isSidebarOpen = useSelector((state: RootState) => state.sidebar.isOpen);
 
   return (
@@ -46,6 +51,7 @@ const Router = () => {
         <Route path="/my/:id/wishlist" element={<Wishlist />} />
         <Route path="/login" element={<Login />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/oauth2/redirect" element={<RedirectLogin />} />
       </Routes>
     </BrowserRouter>
   );

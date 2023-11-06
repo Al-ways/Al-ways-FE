@@ -3,6 +3,9 @@ import styled from '@emotion/styled';
 import globalStyles from './share/globalStyles';
 import Router from './routes/Router';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setLocation } from './redux/reducers/currentLocationsSlice';
+import { useEffect } from 'react';
 
 interface LayoutProps {
   isSidebarOpen: boolean;
@@ -17,6 +20,21 @@ interface RootState {
 const App = () => {
   // 사이드바 상태(오픈 시 스크롤바 없애야하므로 필요함)
   const isSidebarOpen = useSelector((state: RootState) => state.sidebar.isOpen);
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          dispatch(setLocation({ latitude, longitude }));
+        },
+        (error) => console.error(error),
+        { enableHighAccuracy: true },
+      );
+    } else {
+      console.log('Geolocation is not supported by this browser.');
+    }
+  }, [dispatch]);
 
   return (
     <>

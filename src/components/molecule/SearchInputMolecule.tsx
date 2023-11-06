@@ -1,12 +1,19 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
 import SearchInput from '../atom/SearchInput';
+import { useSearchQueryString } from '../../hooks/useSearchQueryString';
 
 const SearchInputMolecule = () => {
-  const [search, setSearch] = useState('');
+  const { searchValue, handleInputChange, searchNavigate } =
+    useSearchQueryString('search');
+
   return (
     <SearchContainer>
-      <SearchInput value={search} setValue={setSearch} />
+      <SearchInput
+        value={searchValue}
+        handleChange={handleInputChange}
+        submit={searchNavigate}
+      />
     </SearchContainer>
   );
 };

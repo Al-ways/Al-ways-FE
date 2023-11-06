@@ -5,16 +5,29 @@ import Login from '../atom/Login';
 import { COLORS } from '../../share/colors';
 import { useDispatch } from 'react-redux';
 import { toggleSidebar } from '../../redux/reducers/sidebarSlice';
+import { useIsLogin } from '../../hooks/useIsLogin';
+
+interface HeaderProps {
+  toggleMenu: () => void;
+}
 
 const HeaderMolecule = () => {
   const dispatch = useDispatch();
 
+const HeaderMolecule = ({ toggleMenu }: HeaderProps) => {
+  const { isLogin, setIsLogin } = useIsLogin();
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    setIsLogin(false);
+  };
+  
   return (
     <>
       <Header>
         <DrawerMenu onClick={() => dispatch(toggleSidebar())} />
         <Logo />
-        <Login />
+        {isLogin ? <button onClick={logout}>로그아웃</button> : <Login />}
       </Header>
     </>
   );

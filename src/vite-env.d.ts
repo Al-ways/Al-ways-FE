@@ -6,6 +6,7 @@ interface ImportMetaEnv {
   readonly VITE_NAVER_KEY: string;
   readonly VITE_GEOCODE_KEY: string;
   readonly VITE_OPENWEATHERMAP_KEY: string;
+  readonly VITE_BASE_URL: string;
 }
 
 interface ImportMeta {
