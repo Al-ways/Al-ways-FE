@@ -2,7 +2,6 @@ import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 import globalStyles from './share/globalStyles';
 import Router from './routes/Router';
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 interface LayoutProps {
@@ -16,7 +15,7 @@ interface RootState {
 }
 
 const App = () => {
-  // 사이드바 상태
+  // 사이드바 상태(오픈 시 스크롤바 없애야하므로 필요함)
   const isSidebarOpen = useSelector((state: RootState) => state.sidebar.isOpen);
 
   return (

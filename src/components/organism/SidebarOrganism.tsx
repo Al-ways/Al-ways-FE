@@ -20,21 +20,21 @@ const SidebarOrganism = () => {
   const dispatch = useDispatch();
 
   // close 시 애니메이션 동작하지 않아 상태 추가
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
   // SidebarWrapper or Close 클릭 시 side bar 닫기
   const handletoggleSidebar = () => {
-    setIsAnimating(!isAnimating);
+    setSidebarOpen(!sidebarOpen);
 
     // side bar를 닫을 때 setTimeOut 시간 후 sidebarWrapper를 없애주기
-    if (!isAnimating) {
+    if (!sidebarOpen) {
       setTimeout(() => {
         dispatch(toggleSidebar());
       }, 200); // 애니메이션의 지속 시간과 같게 설정하면 깜빡임 발생함
     }
   };
 
-  // 사이드바 내부 클릭 시 상태 유지: 현자 사이드바를 벗어나지 않도록 함
+  // 사이드바 내 요소가 아닌 부분 클릭 시 상태 유지 (현재 사이드바를 벗어나지 않도록 함)
   const handleSidebarClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
@@ -51,7 +51,7 @@ const SidebarOrganism = () => {
     <SidebarWrapper onClick={handletoggleSidebar}>
       <Sidebar
         onClick={handleSidebarClick}
-        animation={isAnimating ? slideOut : slideIn}
+        animation={sidebarOpen ? slideOut : slideIn}
       >
         <Close handletoggleSidebar={handletoggleSidebar} />
         <SidebarUserStateMolecule />
