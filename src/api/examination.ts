@@ -50,7 +50,6 @@ interface Result {
 }
 export const examinationResult = (answerArr: number[]) => {
   const answer = answerArr.join('');
-  console.log(answer);
 
   const result: Result[] = [
     {

@@ -17,13 +17,14 @@ export const examinationResultArrSlice = createSlice({
   name: 'examinationResultArr',
   initialState,
   reducers: {
+    initResult: (state: InitialStateType) => {
+      state.data = [];
+    },
     pushResult: (state: InitialStateType, action: PayloadAction<Result>) => {
-      console.log(typeof action);
-
       state.data.push(action.payload);
     },
   },
 });
 
-export const { pushResult } = examinationResultArrSlice.actions;
+export const { initResult, pushResult } = examinationResultArrSlice.actions;
 export default examinationResultArrSlice.reducer;
