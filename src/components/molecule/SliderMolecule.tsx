@@ -6,8 +6,20 @@ import bannerImage2 from '../../assets/main/banner2.png';
 import bannerImage3 from '../../assets/main/banner3.png';
 import { useNavigate } from 'react-router-dom';
 
+interface BannersWrapperProp {
+  length: number;
+  currentIndex: number;
+}
+
+interface BannerProp {
+  image: string;
+}
+
 const SliderMolecule = () => {
   const navigate = useNavigate();
+
+  // 현재 보여지고 있는 배너(인덱스), 초기값 0 : 첫 번째 배너
+  const [BannerIndex, setBannerIndex] = useState(0);
 
   // 배너 정보
   const Banners = [
@@ -16,8 +28,15 @@ const SliderMolecule = () => {
     { image: bannerImage3, route: '/recommended' },
   ];
 
-  // 현재 보여지고 있는 배너(인덱스), 초기값 0 : 첫 번째 배너
-  const [BannerIndex, setBannerIndex] = useState(0);
+  // 슬라이더 내 각 dot 클릭시 dot의 index와 일치하는 배너 이미지로 이동
+  const handleClickDot = (index: number) => {
+    setBannerIndex(index);
+  };
+
+  // 슬라이더 내 각 배너 이미지 클릭시 일치하는 route로 이동
+  const handleBannerClick = () => {
+    navigate(Banners[BannerIndex].route);
+  };
 
   useEffect(() => {
     // setInterval 함수로 4초마다 실행되는 타이머 생성
@@ -26,23 +45,23 @@ const SliderMolecule = () => {
       setBannerIndex(
         (currentBannerIndex) => (currentBannerIndex + 1) % Banners.length,
       );
-    }, 4000);
+    }, 3000);
 
     // clearInterval 함수로 언마운트 시 타이머 제거
     return () => clearInterval(timer);
   }, [Banners]);
 
-  const handleClickDot = (index: number) => {
-    setBannerIndex(index);
-  };
-
-  const handleBannerClick = () => {
-    navigate(Banners[BannerIndex].route);
-  };
-
   return (
     <Slider>
-      <Banner image={Banners[BannerIndex].image} onClick={handleBannerClick} />
+      <BannersWrapper length={Banners.length} currentIndex={BannerIndex}>
+        {Banners.map((banner, index) => (
+          <Banner
+            key={index}
+            image={banner.image}
+            onClick={handleBannerClick}
+          />
+        ))}
+      </BannersWrapper>
       <DotBar
         BannerImages={Banners.map((banner) => banner.image)}
         activeDot={BannerIndex}
@@ -62,7 +81,15 @@ const Slider = styled.div`
   position: relative;
 `;
 
-const Banner = styled.div<{ image: string }>`
+const BannersWrapper = styled.div<BannersWrapperProp>`
+  width: ${(props) => props.length * 480}px;
+
+  display: flex;
+  transition: transform 1s;
+  transform: translateX(-${(props) => props.currentIndex * 480}px);
+`;
+
+const Banner = styled.div<BannerProp>`
   width: 480px;
   height: 320px;
 
