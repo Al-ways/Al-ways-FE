@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { examinationResult } from '../api/examination';
+import { filterMbti } from '../api/examination';
 import { useDispatch } from 'react-redux';
-import { pushResult } from '../redux/reducers/examinationResultArr';
+import { addResult } from '../redux/reducers/examinationResult';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import loading from '../assets/loading.gif';
 import Text from '../components/atom/Text';
+
 interface answerArrStateType {
   examinatonAnswerArr: {
     answerArr: Array<number>;
@@ -14,7 +15,7 @@ interface answerArrStateType {
 }
 interface resultArrStateType {
   examinationResultArr: {
-    data: Array<{ id: string; name: string; description: string; img: string }>;
+    data: string;
   };
 }
 function ExaminationResultLoading() {
@@ -24,25 +25,34 @@ function ExaminationResultLoading() {
     (state: answerArrStateType) => state.examinatonAnswerArr.answerArr,
   );
 
-  const resultArr = useSelector(
+  const result = useSelector(
     (state: resultArrStateType) => state.examinationResultArr.data,
   );
+  console.log(answerArr, result);
 
   useEffect(() => {
-    const result = examinationResult(answerArr);
-    dispatch(pushResult(result));
-  }, [answerArr, dispatch]);
+    if (answerArr.length === 0) {
+      navigate('/');
+    } else {
+      const result = filterMbti(answerArr);
+      dispatch(addResult(result));
+    }
+  }, [answerArr, dispatch, navigate]);
 
   useEffect(() => {
-    if (resultArr[0]?.name) {
+    if (answerArr.length === 0) {
+      navigate('/');
+    }
+    if (result) {
       const navigateResultPage = setInterval(() => {
-        navigate(`/result/${resultArr[0].name}`);
+        navigate(`/result/${result}`);
       }, 3000);
       return () => {
         clearInterval(navigateResultPage);
       };
     }
-  }, [resultArr, navigate]);
+  }, [result, navigate, answerArr]);
+
   return (
     <Container>
       <img src={loading} />
