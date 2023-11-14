@@ -1,35 +1,16 @@
 import ProgressHeaderMolecule from '../molecule/ProgressHeaderMolecule';
 import QuestionMolecule from '../molecule/QuestionMolecule';
 import AnswerMolecule from '../molecule/AnswerMolecule';
-import { useState } from 'react';
-// import { useSelector } from 'react-redux';
+import { useExamination } from '../../hooks/useExamination';
 
 const ExaminationTemplate = () => {
-  // interface ExaminationState {
-  //   value: number;
-  // }
-  // interface RootState {
-  //   examination: ExaminationState;
-  // }
-  //
-  // const value = useSelector((state: RootState) => {
-  //   return state.examination.value;
-  // });
-  const [page, setPage] = useState(0);
-
-  const pageHandler = (page: number) => {
-    if (page === 6) {
-      setPage(0);
-      return;
-    }
-    setPage(page + 1);
-  };
+  const { page, nextPage } = useExamination();
 
   return (
     <>
       <ProgressHeaderMolecule page={page} />
       <QuestionMolecule page={page} />
-      <AnswerMolecule page={page} setPage={pageHandler} />
+      <AnswerMolecule page={page} nextPage={nextPage} />
     </>
   );
 };

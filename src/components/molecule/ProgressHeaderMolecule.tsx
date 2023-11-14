@@ -1,11 +1,9 @@
 import styled from '@emotion/styled';
 import ProgressBar from '../atom/ProgressBar';
 import Text from '../atom/Text';
+import { PageType } from '../../types/examination';
 
-interface ProgressHeaderMoleculeProps {
-  page: number;
-}
-const ProgressHeaderMolecule = ({ page }: ProgressHeaderMoleculeProps) => {
+const ProgressHeaderMolecule = ({ page }: PageType) => {
   return (
     <ProgressHeaderContainer>
       <Text
@@ -14,7 +12,7 @@ const ProgressHeaderMolecule = ({ page }: ProgressHeaderMoleculeProps) => {
         align={'end'}
         fonts={'10'}
         mb={'5'}
-        txt={`${page + 1}/7`}
+        txt={`${page + 1}/6`}
       />
       <ProgressBar page={page + 1} />
     </ProgressHeaderContainer>

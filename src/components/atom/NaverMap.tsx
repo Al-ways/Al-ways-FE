@@ -20,7 +20,6 @@ interface LatLng {
 const NaverMap = () => {
   const mapRef = useRef(null);
   const location = useSelector((state: RootState) => state.currentLocation);
-  console.log(location);
 
   useEffect(() => {
     let markers: Marker[] = [];

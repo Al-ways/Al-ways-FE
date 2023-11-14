@@ -16,6 +16,8 @@ import PrevMolecule from '../components/molecule/PrevMolecule';
 import { useState } from 'react';
 import { Divide } from 'emotion-icons/fa-solid';
 import RedirectLogin from '../pages/RedirectLogin';
+import ExaminationResultLoading from '../pages/ExaminationResultLoading';
+import ExaminationResult from '../pages/ExaminationResult';
 
 import SidebarOrganism from '../components/organism/SidebarOrganism';
 import { useSelector } from 'react-redux';
@@ -40,10 +42,8 @@ const Router = () => {
       {url == '/' ? null : <PrevMolecule />}
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/examination" element={<Examination />} />
         <Route path="/list" element={<List />} />
         <Route path="/search/" element={<Search />} />
-        <Route path="/map" element={<Map />} />
         <Route path="/recommended" element={<Recommended />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/my/:id" element={<My />} />
@@ -52,6 +52,12 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/community" element={<Community />} />
         <Route path="/oauth2/redirect" element={<RedirectLogin />} />
+        {/* 지도 Route */}
+        <Route path="/map" element={<Map />} />
+        {/* 설문지 Route */}
+        <Route path="/examination" element={<Examination />} />
+        <Route path="/result/" element={<ExaminationResultLoading />} />
+        <Route path="/result/:mbti" element={<ExaminationResult />} />
       </Routes>
     </BrowserRouter>
   );

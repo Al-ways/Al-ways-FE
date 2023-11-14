@@ -1,13 +1,8 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import { PageType } from '../../types/examination';
 
-interface ProgressBarProps {
-  page: number;
-}
-
-const ProgressBar = ({ page }: ProgressBarProps) => {
-  const progressbar = page * 14.28;
-
+const ProgressBar = ({ page }: PageType) => {
+  const progressbar = page * 16.66;
   return (
     <ProgressBarContainer>
       <ProgressBarItem wid={progressbar}></ProgressBarItem>
@@ -27,4 +22,4 @@ const ProgressBarItem = styled.div<{ wid: number }>`
   border-radius: 10px;
   transition: width 0.5s ease-in-out;
 `;
-export default React.memo(ProgressBar);
+export default ProgressBar;
