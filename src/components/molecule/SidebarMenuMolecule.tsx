@@ -11,7 +11,13 @@ const SidebarMenuMolecule = ({ txt, onClick }: SidebarMenuProps) => {
   return (
     <>
       <Wrapper onClick={onClick}>
-        <Text width={'220'} height={'40'} fonts={'20'} txt={txt} />
+        <Text
+          width={'220'}
+          height={'40'}
+          fonts={'18'}
+          fontw={'400'}
+          txt={txt}
+        />
         <Next />
       </Wrapper>
     </>

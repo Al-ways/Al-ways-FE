@@ -12,7 +12,6 @@ import Wishlist from '../pages/Wishlist';
 import Recommended from '../pages/Recommended';
 import Community from '../pages/Community';
 import HeaderMolecule from '../components/molecule/HeaderMolecule';
-import SidebarOrganism from '../components/organism/SidebarOrganism';
 import PrevMolecule from '../components/molecule/PrevMolecule';
 import { useState } from 'react';
 import { Divide } from 'emotion-icons/fa-solid';
@@ -20,20 +19,26 @@ import RedirectLogin from '../pages/RedirectLogin';
 import ExaminationResultLoading from '../pages/ExaminationResultLoading';
 import ExaminationResult from '../pages/ExaminationResult';
 
+import SidebarOrganism from '../components/organism/SidebarOrganism';
+import { useSelector } from 'react-redux';
+
+interface RootState {
+  sidebar: {
+    isOpen: boolean;
+  };
+}
+
 const Router = () => {
   const url = window.location.pathname;
   const token = localStorage.getItem('token');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+ 
+    // 사이드바 상태
+  const isSidebarOpen = useSelector((state: RootState) => state.sidebar.isOpen);
 
   return (
     <BrowserRouter>
-      <HeaderMolecule toggleMenu={toggleMenu} />
-      {isMenuOpen && (
-        <SidebarOrganism toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-      )}
+      <HeaderMolecule />
+      {isSidebarOpen && <SidebarOrganism />}
       {url == '/' ? null : <PrevMolecule />}
       <Routes>
         <Route path="/" element={<Main />} />

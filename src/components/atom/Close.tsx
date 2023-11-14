@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import closeImage from '../../assets/icons/close.png';
 
 interface CloseProps {
-  toggleMenu?: () => void;
+  handletoggleSidebar?: () => void;
 }
 
-const Close = ({ toggleMenu }: CloseProps) => {
+const Close = ({ handletoggleSidebar }: CloseProps) => {
   return (
     <Container>
-      <Button onClick={toggleMenu} />
+      <Button onClick={handletoggleSidebar} />
     </Container>
   );
 };

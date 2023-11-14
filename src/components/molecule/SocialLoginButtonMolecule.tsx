@@ -13,7 +13,7 @@ const SocialLoginButtonMolecule = ({
   const google = Google;
   const naver = Naver;
   const handleLogin = async (name: string) => {
-    const baseURL = `${import.meta.env.BASE_URL}/oauth2/authorize/`;
+    const baseURL = `${import.meta.env.VITE_BASE_URL}/oauth2/authorize/`;
     window.location.href = baseURL + name;
   };
 

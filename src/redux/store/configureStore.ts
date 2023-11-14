@@ -18,6 +18,7 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import optionSelectSlice from '../reducers/optionSelectSlice';
+import sidebarSlice from '../reducers/sidebarSlice';
 import currentLocationsSlice from '../reducers/currentLocationsSlice';
 import examinationArrSlice from '../reducers/examinationArrSlice';
 import examinationResultArr from '../reducers/examinationResult';
@@ -26,6 +27,7 @@ export const store = configureStore({
     examinatonAnswerArr: examinationArrSlice,
     examinationResultArr: examinationResultArr,
     optionSelect: optionSelectSlice,
+    sidebar: sidebarSlice.reducer,
     currentLocation: currentLocationsSlice,
   },
 });

@@ -3,40 +3,26 @@ import Logo from '../atom/Logo';
 import DrawerMenu from '../atom/DrawerMenu';
 import Login from '../atom/Login';
 import { COLORS } from '../../share/colors';
+import { useDispatch } from 'react-redux';
+import { toggleSidebar } from '../../redux/reducers/sidebarSlice';
 import { useIsLogin } from '../../hooks/useIsLogin';
 
-interface HeaderProps {
-  toggleMenu: () => void;
-}
-
-const HeaderMolecule = ({ toggleMenu }: HeaderProps) => {
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const toggleMenu = () => {
-  //   setIsMenuOpen(!isMenuOpen);
-  // };
+const HeaderMolecule = () => {
+  const dispatch = useDispatch();
   const { isLogin, setIsLogin } = useIsLogin();
 
   const logout = () => {
     localStorage.removeItem('token');
     setIsLogin(false);
   };
+
   return (
     <>
       <Header>
-        <DrawerMenu onClick={toggleMenu} />
+        <DrawerMenu onClick={() => dispatch(toggleSidebar())} />
         <Logo />
         {isLogin ? <button onClick={logout}>로그아웃</button> : <Login />}
       </Header>
-      {/* {isMenuOpen && (
-        <SidebarWrapper onClick={toggleMenu}>
-          <Sidebar isOpen={isMenuOpen}>
-            <CloseButton onClick={toggleMenu}>X</CloseButton>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>Profile</MenuItem>
-            <MenuItem>Settings</MenuItem>
-          </Sidebar>
-        </SidebarWrapper>
-      )} */}
     </>
   );
 };

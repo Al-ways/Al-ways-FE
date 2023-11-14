@@ -1,10 +1,8 @@
 import styled from '@emotion/styled';
 import Text from '../atom/Text';
 import Weather from '../atom/Weather';
-import {
-  weatherBackgroundColor,
-  weatherTranslation,
-} from '../../utils/weatherUtils';
+import { weatherTranslation } from '../../utils/weatherUtils';
+import { COLORS } from '../../share/colors';
 
 const WeatherMolecule = ({ weather, address }: CurrentLocationData) => {
   if (!address || !weather) return null;
@@ -12,11 +10,13 @@ const WeatherMolecule = ({ weather, address }: CurrentLocationData) => {
   // 번역한 날씨명 변수
   const translatedWeather = weatherTranslation[weather.weather[0].description];
 
+  // console.log(weather);
+
   // 주소 내 추출한 구 이름
   const district = address.split(' ')[2];
 
   // 설정한 날씨 배경색
-  const backgroundColor = weatherBackgroundColor[translatedWeather];
+  // const backgroundColor = weatherBackgroundColor[translatedWeather];
 
   // console.log(`현재 날씨: ${weather.weather[0].description}`);
 
@@ -42,7 +42,7 @@ const WeatherMolecule = ({ weather, address }: CurrentLocationData) => {
   // }
 
   return (
-    <WheatherBanner backgroundColor={backgroundColor}>
+    <WheatherBanner backgroundColor={COLORS.gray}>
       <Text
         width={'400'}
         height={'20'}
