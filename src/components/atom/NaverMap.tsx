@@ -10,6 +10,10 @@ declare global {
     naver: any;
   }
 }
+interface Store {
+  lat: number;
+  lng: number;
+}
 interface Marker {
   setMap: (map: null | object) => void;
   getPosition: () => object;
@@ -29,7 +33,7 @@ const NaverMap = () => {
       import.meta.env.VITE_NAVER_KEY
     }`;
     script.async = true;
-
+    // scritp load 이벤트
     const handleScriptLoad = () => {
       const container = mapRef.current;
       const options = {
@@ -41,11 +45,28 @@ const NaverMap = () => {
       };
 
       const mapInstance = new window.naver.maps.Map(container, options);
+      // 마커 클릭 이벤트
+      const handleMarkerClick = (marker: Marker) => {
+        const store = stores.find((store) => {
+          const position = new window.naver.maps.LatLng(store?.lat, store?.lng);
+          return (marker.getPosition() as LatLng).equals(position);
+        });
 
+        if (store) {
+          const infoWindow = new window.naver.maps.InfoWindow({
+            content: `<div style="width:150px;text-align:center;padding:10px;color:black;">${store.name}</div>`,
+            position: marker.getPosition(),
+          });
+
+          infoWindow.open(mapInstance, marker);
+        }
+      };
+
+      // 마커 생성
       const addMarkersInBounds = () => {
         const bounds = mapInstance.getBounds();
 
-        stores.forEach((store: any) => {
+        stores.forEach((store: Store) => {
           const position = new window.naver.maps.LatLng(store?.lat, store?.lng);
 
           if (bounds.hasLatLng(position)) {
@@ -57,6 +78,11 @@ const NaverMap = () => {
               const markerOptions = { position, map: mapInstance };
               const marker = new window.naver.maps.Marker(markerOptions);
               markers.push(marker);
+
+              // 마커 클릭 이벤트
+              window.naver.maps.Event.addListener(marker, 'click', () => {
+                handleMarkerClick(marker);
+              });
             }
           }
         });
