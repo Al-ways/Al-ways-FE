@@ -1,7 +1,7 @@
 {
   "name": "al-ways",
   "private": true,
-  "proxy": "http://ec2-3-34-137-154.ap-northeast-2.compute.amazonaws.com:8080",
+  "proxy": "https://openapi.naver.com",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

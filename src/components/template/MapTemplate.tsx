@@ -4,6 +4,7 @@ import NaverMap from '../atom/NaverMap';
 import ThumbnailMolecule from '../molecule/ThumbnailMolecule';
 
 import { useSearchQueryString } from '../../hooks/useSearchQueryString';
+import KakaoMap from '../atom/KakaoMap';
 const MapTemplate = () => {
   const { searchValue, handleInputChange, searchNavigate } =
     useSearchQueryString('map');
@@ -15,8 +16,8 @@ const MapTemplate = () => {
         handleChange={handleInputChange}
         submit={searchNavigate}
       />
-
-      <NaverMap />
+      <KakaoMap />
+      {/* <NaverMap /> */}
       <ThumbnailMolecule />
     </Container>
   );
